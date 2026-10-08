@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v3.3</title>
+  <title>DriveTone Lab v3.4</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -255,7 +255,7 @@
     </section>
 
     <aside class="controls">
-      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">تشغيل الصوت</button><button id="coldStartBtn" class="btn">🔥 Cold Start</button><button id="revDemoBtn" class="btn">💥 Rev + Bangs</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn" style="display:none" aria-hidden="true">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">يحتاج المتصفح إلى ضغطة لبدء الصوت. زر Cold Start يحاكي تشغيل المحرك البارد، وزر Rev + Bangs يرفع الـRPM ثم يرفع القدم تلقائيًا لإظهار صوت العادم. GPS يحتاج HTTPS. حساس الحركة اختياري لتحسين الاستجابة ولا يغيّر السرعة.</p></div>
+      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">تشغيل الصوت</button><button id="coldStartBtn" class="btn">🔥 Cold Start</button><button id="revDemoBtn" class="btn">💥 Rev + Bangs</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">يحتاج المتصفح إلى ضغطة لبدء الصوت. زر Cold Start يحاكي تشغيل المحرك البارد، وزر Rev + Bangs يرفع الـRPM ثم يرفع القدم تلقائيًا لإظهار صوت العادم. GPS يحتاج HTTPS. حساس الحركة اختياري لتحسين الاستجابة ولا يغيّر السرعة.</p></div>
       <div class="section"><h2>2. شخصية المحرك</h2><select id="engineType" class="select">
 <option value="amg_gt63">Mercedes‑AMG GT 63 — 4.0 V8 Biturbo</option>
 <option value="mclaren_720s">McLaren 720S — 4.0 V8 Twin‑Turbo</option>
@@ -270,7 +270,7 @@
 </select>
 <div id="modelInfo" class="modelInfo"></div><p class="hint">هذه محاكاة فيزيائية مضبوطة بحسب بنية ومواصفات المحرك، وليست تسجيلات صوت أصلية أو رسمية من الشركات.</p></div>
       <div class="section"><h2>3. نمط القيادة</h2><div id="modeGroup" class="modeGroup"><button class="btn" data-mode="relaxed">Relaxed</button><button class="btn active" data-mode="normal">Normal</button><button class="btn" data-mode="sport">Sport</button></div></div>
-      <div class="section" style="display:none" aria-hidden="true"><h2>4. السرعة التجريبية</h2><div class="range"><div class="rangeHeader"><span>0</span><span id="demoValue">0 كم/س</span><span>240</span></div><input id="demoSpeed" type="range" min="0" max="240" value="0" step="1"></div></div>
+      <div class="section"><h2>4. السرعة التجريبية</h2><div class="range"><div class="rangeHeader"><span>0</span><span id="demoValue">0 كم/س</span><span>240</span></div><input id="demoSpeed" type="range" min="0" max="240" value="0" step="1"></div><p class="hint">الوضع التجريبي متاح للاختبار اليدوي فقط، لكنه ليس مصدر التشغيل الافتراضي.</p></div>
       <div class="section"><h2>5. استجابة المحرك</h2><div class="range"><div class="rangeHeader"><span>ناعم</span><span id="sensValue">1.0x</span><span>حاد</span></div><input id="sensitivity" type="range" min="0.5" max="2" value="1" step="0.1"></div></div>
       <div class="section"><h2>6. مستوى العادم</h2><div class="range"><div class="rangeHeader"><span>هادئ</span><span id="exhaustValue">65%</span><span>قوي</span></div><input id="exhaust" type="range" min="0" max="1" value="0.65" step="0.01"></div></div>
       <div class="section"><h2>7. Pops & Bangs — فرقعة الشكمان</h2><select id="popMode" class="select"><option value="off">مطفأ</option><option value="natural">طبيعي</option><option value="sport" selected>Sport — بوم + Crackles</option><option value="wild">Wild — قوي ومتكرر</option></select><p class="hint">تظهر الفرقعات عند رفع القدم وتنزيل الغيار، وتختلف شخصيتها حسب المحرك. وضع Wild مخصص للاستعراض.</p></div>
@@ -304,10 +304,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.3</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.3 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.4</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.4 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v3.3</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v3.4</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1320,6 +1320,7 @@
   function closeSceneDrawer(){sceneDrawerOpen=false;document.body.classList.remove('scene-drawer-open');ui.sceneDrawer?.setAttribute('aria-hidden','true');ui.sceneDrawerOverlay?.setAttribute('aria-hidden','true');}
   async function applyScenePreset(key,{close=true}={}){
     const p=scenePresets[key]; if(!p) return;
+    if(close){weatherAuto=false;localStorage.setItem('drivetone.weatherAuto','false');syncWeatherButton();}
     if(ui.sceneType) ui.sceneType.value=p.scene;
     localStorage.setItem('drivetone.scene',p.scene);
     roadViz.setScene(p.scene);
@@ -1377,7 +1378,7 @@
     weatherAuto=true;localStorage.setItem('drivetone.weatherAuto','true');syncWeatherButton();syncDriveHud();syncSourceLabel();
     await requestGps();
   };
-  $('demoBtn').onclick=()=>{};
+  $('demoBtn').onclick=()=>{demo=true;targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');$('startGps').classList.remove('active');syncSourceLabel();syncDriveHud();};
   $('startAudio').onclick=async()=>{await audio.start();$('startAudio').classList.remove('pulse');$('startAudio').textContent='الصوت يعمل';syncDriveHud();};
   ui.coldStartBtn.onclick=async()=>{ui.coldStartBtn.classList.add('active');await audio.coldStart();setTimeout(()=>ui.coldStartBtn.classList.remove('active'),3200);};
   ui.revDemoBtn.onclick=async()=>{ui.revDemoBtn.classList.add('active');await audio.revDemo();setTimeout(()=>ui.revDemoBtn.classList.remove('active'),3900);};
@@ -1392,7 +1393,7 @@
   ui.volume.oninput=()=>{ui.volValue.textContent=Math.round(+ui.volume.value*100)+'%';localStorage.setItem('drivetone.vol',ui.volume.value);};
   ui.exhaust.oninput=()=>{ui.exhaustValue.textContent=Math.round(+ui.exhaust.value*100)+'%';localStorage.setItem('drivetone.exhaust',ui.exhaust.value);};
   ui.engineType.onchange=async()=>{localStorage.setItem('drivetone.engine',ui.engineType.value);if(audio.running)await audio.setEngine(ui.engineType.value);syncModelInfo();syncDriveHud();};
-  ui.sceneType.onchange=()=>{localStorage.setItem('drivetone.scene',ui.sceneType.value);roadViz.setScene(ui.sceneType.value);syncDriveHud();renderSceneDrawer();};
+  ui.sceneType.onchange=()=>{weatherAuto=false;localStorage.setItem('drivetone.weatherAuto','false');syncWeatherButton();localStorage.setItem('drivetone.scene',ui.sceneType.value);roadViz.setScene(ui.sceneType.value);syncDriveHud();renderSceneDrawer();};
   ui.sceneDrawerOverlay.onclick=closeSceneDrawer;
   ui.sceneDrawerClose.onclick=closeSceneDrawer;
   ui.sceneDrawerList.onclick=e=>{const card=e.target.closest('[data-preset]'); if(card) applyScenePreset(card.dataset.preset);};
