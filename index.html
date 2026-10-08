@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v5.6</title>
+  <title>DriveTone Lab v5.7</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v5.6 Live dashboard display themes */
+    /* v5.7 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v5.6 portrait/landscape Classic Blue corrections */
+    /* v5.7 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v5.6 Classic Blue — faithful 16:9 reference layout */
+    /* v5.7 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v5.6 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v5.7 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v5.6 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v5.7 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v5.6 dedicated dashboard batch */
+    /* v5.7 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -450,7 +450,7 @@
       .neonLeftStack,.neonRightStack{width:28%}.neonCenterStage{left:29%;right:29%}.neonHex{width:42vw}.neonBottomRail{grid-template-columns:1fr 1fr;height:17%}
     }
 
-    /* v5.6 performance mode for in-car browsers */
+    /* v5.7 performance mode for in-car browsers */
     body.driving-mode .redSide,
     body.driving-mode .redMain,
     body.driving-mode .redBottomCard,
@@ -787,10 +787,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Tesla Intel Atom Multi-RPM • v5.6</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">v5.6 تصلح تبديل بنوك الصوت فعليًا وتعرض البنك الجاري تشغيله. تنبيه: بنوك V8/F136 الحالية مصدرها engine-sim وليست تسجيلات سيارات ميدانية؛ لذلك هي مرحلة مؤقتة وليست الجودة النهائية.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Tesla Intel Atom Multi-RPM • v5.7</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">v5.7 تصلح تبديل بنوك الصوت فعليًا وتعرض البنك الجاري تشغيله. تنبيه: بنوك V8/F136 الحالية مصدرها engine-sim وليست تسجيلات سيارات ميدانية؛ لذلك هي مرحلة مؤقتة وليست الجودة النهائية.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v5.6</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v5.7</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1162,20 +1162,21 @@
     }
 
     _bankDef(type='v8'){
-      const root='https://cdn.jsdelivr.net/gh/finicu212/REDLINE@master/public/audio/';
-      const defs={
-        amg:{key:'amg_lsv8',label:'AMG profile • LS cross-plane base',tone:'v8',rpmScale:.92,filter:5200,gain:1.00,samples:[[1000,root+'v8_gv8/1000.wav'],[3000,root+'v8_gv8/3000.wav'],[5000,root+'v8_gv8/5000.wav'],[6500,root+'v8_gv8/6500.wav']]},
-        mclaren:{key:'mclaren_lsv8',label:'McLaren profile • LS cross-plane base',tone:'v8',rpmScale:1.05,filter:6900,gain:.88,samples:[[1000,root+'v8_gv8/1000.wav'],[3000,root+'v8_gv8/3000.wav'],[5000,root+'v8_gv8/5000.wav'],[6500,root+'v8_gv8/6500.wav']]},
-        bmw:{key:'bmw_six',label:'BMW profile • 6-cylinder base',tone:'i6',rpmScale:1.00,filter:6500,gain:.94,samples:[[1100,root+'v6_tsp/1100.wav'],[3000,root+'v6_tsp/3000.wav'],[5000,root+'v6_tsp/5000.wav'],[7000,root+'v6_tsp/7000.wav']]},
-        porsche:{key:'porsche_six',label:'Porsche profile • 6-cylinder base',tone:'i6',rpmScale:1.12,filter:7900,gain:.86,samples:[[1100,root+'v6_tsp/1100.wav'],[3000,root+'v6_tsp/3000.wav'],[5000,root+'v6_tsp/5000.wav'],[7000,root+'v6_tsp/7000.wav']]},
-        ferrari458:{key:'f458_f136',label:'Ferrari 458 profile • F136 flat-plane base',tone:'hyper',rpmScale:1.00,filter:9000,gain:.90,samples:[[1000,root+'v8_v8f/1000.wav'],[3000,root+'v8_v8f/3000.wav'],[5000,root+'v8_v8f/5000.wav'],[7000,root+'v8_v8f/7000.wav'],[9000,root+'v8_v8f/9000.wav']]},
-        ferrariV12:{key:'ferrari_v12_proxy',label:'Ferrari V12 proxy • F136 base',tone:'hyper',rpmScale:.93,filter:8200,gain:.96,samples:[[1000,root+'v8_v8f/1000.wav'],[3000,root+'v8_v8f/3000.wav'],[5000,root+'v8_v8f/5000.wav'],[7000,root+'v8_v8f/7000.wav'],[9000,root+'v8_v8f/9000.wav']]},
-        v8:{key:'generic_v8',label:'Generic cross-plane V8',tone:'v8',rpmScale:1,filter:5600,gain:1,samples:[[1000,root+'v8_gv8/1000.wav'],[3000,root+'v8_gv8/3000.wav'],[5000,root+'v8_gv8/5000.wav'],[6500,root+'v8_gv8/6500.wav']]},
-        v8tt:{key:'generic_v8tt',label:'Generic V8 twin-turbo',tone:'v8',rpmScale:1.02,filter:6200,gain:.94,samples:[[1000,root+'v8_gv8/1000.wav'],[3000,root+'v8_gv8/3000.wav'],[5000,root+'v8_gv8/5000.wav'],[6500,root+'v8_gv8/6500.wav']]},
-        i6:{key:'generic_i6',label:'Generic 6-cylinder',tone:'i6',rpmScale:1,filter:6500,gain:.94,samples:[[1100,root+'v6_tsp/1100.wav'],[3000,root+'v6_tsp/3000.wav'],[5000,root+'v6_tsp/5000.wav'],[7000,root+'v6_tsp/7000.wav']]},
-        v10:{key:'generic_v10_proxy',label:'V10 proxy • F136 base',tone:'hyper',rpmScale:1.08,filter:9000,gain:.84,samples:[[1000,root+'v8_v8f/1000.wav'],[3000,root+'v8_v8f/3000.wav'],[5000,root+'v8_v8f/5000.wav'],[7000,root+'v8_v8f/7000.wav'],[9000,root+'v8_v8f/9000.wav']]}
+      const root='https://cdn.jsdelivr.net/gh/finicu212/REDLINE@master/public/audio/v6_delorean/';
+      const real=[[960,root+'960.wav'],[1600,root+'1600.wav'],[2870,root+'2870.wav'],[3670,root+'3670.wav']];
+      const profiles={
+        amg:{key:'real_amg',label:'Real Road • DeLorean V6 recording • AMG EQ',rpmScale:.88,filter:4700,gain:1.00,samples:real},
+        mclaren:{key:'real_mclaren',label:'Real Road • DeLorean V6 recording • McLaren EQ',rpmScale:1.06,filter:6500,gain:.90,samples:real},
+        bmw:{key:'real_bmw',label:'Real Road • DeLorean V6 recording • BMW EQ',rpmScale:1.00,filter:5900,gain:.96,samples:real},
+        porsche:{key:'real_porsche',label:'Real Road • DeLorean V6 recording • Porsche EQ',rpmScale:1.12,filter:7200,gain:.88,samples:real},
+        ferrari458:{key:'real_f458',label:'Real Road • DeLorean V6 recording • Ferrari EQ',rpmScale:1.18,filter:7600,gain:.86,samples:real},
+        ferrariV12:{key:'real_f12',label:'Real Road • DeLorean V6 recording • V12 EQ',rpmScale:1.10,filter:7000,gain:.90,samples:real},
+        v8:{key:'real_v8',label:'Real Road • DeLorean V6 recording',rpmScale:.92,filter:5000,gain:1.00,samples:real},
+        v8tt:{key:'real_v8tt',label:'Real Road • DeLorean V6 recording • Turbo EQ',rpmScale:.98,filter:5600,gain:.96,samples:real},
+        i6:{key:'real_i6',label:'Real Road • DeLorean V6 recording • I6 EQ',rpmScale:1.00,filter:5900,gain:.96,samples:real},
+        v10:{key:'real_v10',label:'Real Road • DeLorean V6 recording • High-rev EQ',rpmScale:1.18,filter:7600,gain:.84,samples:real}
       };
-      return defs[type]||defs.v8;
+      return profiles[type]||profiles.v8;
     }
     async startLiteBank(type='v8'){
       const def=this._bankDef(type);
@@ -1218,7 +1219,8 @@
     updateLiteBank(rpm,thr,isDecel,shiftCut,type='v8'){
       const ctx=this.bankCtx,layers=this.bankLayers,def=this.bankDef||this._bankDef(type);
       if(!ctx||!layers.length)return;
-      const mappedRpm=rpm*(def.rpmScale||1);
+      const normalized=clamp((rpm-750)/(9000-750),0,1);
+      const mappedRpm=(960+(3670-960)*Math.pow(normalized,.78))*(def.rpmScale||1);
       const t=ctx.currentTime;
       let lo=0;
       while(lo<layers.length-2&&mappedRpm>layers[lo+1].rpm)lo++;
@@ -1237,7 +1239,7 @@
         const target=Math.max(.0001,w*master);
         L.gain.gain.setTargetAtTime(target,t,.045);
         // Fine pitch correction only: never stretch a recording far from its native RPM.
-        const ratio=clamp(mappedRpm/Math.max(1,L.rpm),.88,1.12);
+        const ratio=clamp(mappedRpm/Math.max(1,L.rpm),.94,1.06);
         L.src.playbackRate.setTargetAtTime(ratio,t,.06);
         const cut=def.filter||6200;
         L.filter.frequency.setTargetAtTime(cut+clamp(thr,0,1)*900,t,.08);
@@ -2126,11 +2128,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.6'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.7'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v5.6');
+    localStorage.setItem('drivetone.dashboardMigration','v5.7');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
