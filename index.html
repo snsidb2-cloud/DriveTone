@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v2.9</title>
+  <title>DriveTone Lab v3.0</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -304,10 +304,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v2.9</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v2.9 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.0</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.0 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v2.9</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v3.0</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -335,7 +335,18 @@
       if(!force&&Math.abs(r.width-this.lastW)<1&&Math.abs(r.height-this.lastH)<1&&dpr===this.dpr)return;
       this.lastW=r.width;this.lastH=r.height;this.dpr=dpr;this.canvas.width=Math.max(1,Math.round(r.width*dpr));this.canvas.height=Math.max(1,Math.round(r.height*dpr));this.ctx.setTransform(dpr,0,0,dpr,0,0);
     }
-    _project(z,w,h,horizon,curve=0){const zz=Math.max(2.6,z),cameraHeight=1.32,roadHalfMeters=5.25,focalY=h*1.42,focalX=w*.78,y=horizon+(focalY*cameraHeight)/zz,half=(focalX*roadHalfMeters)/zz,p=clamp((y-horizon)/Math.max(1,h-horizon),0,1),center=w*.5+curve*p;return {y,half,center,p};}
+    _curveOffset(z,w){
+      const d=this.distance,zz=Math.max(0,z);
+      // Curvature is accumulated with distance so the road actually bends into the horizon
+      // instead of translating sideways as a rigid trapezoid.
+      const a=Math.sin((d+zz)*.00315)*.62;
+      const b=Math.sin((d+zz)*.00112+1.7)*.38;
+      const near=Math.sin(d*.00315)*.62+Math.sin(d*.00112+1.7)*.38;
+      const delta=(a+b-near);
+      const depth=clamp(zz/220,0,1);
+      return delta*w*.115*Math.pow(depth,.74);
+    }
+    _project(z,w,h,horizon,curve=0){const zz=Math.max(2.6,z),cameraHeight=1.32,roadHalfMeters=5.25,focalY=h*1.42,focalX=w*.78,y=horizon+(focalY*cameraHeight)/zz,half=(focalX*roadHalfMeters)/zz,p=clamp((y-horizon)/Math.max(1,h-horizon),0,1),center=w*.5+this._curveOffset(zz,w)+curve*p*.18;return {y,half,center,p};}
     _sky(w,h,horizon,scene){
       const c=this.ctx;let g=c.createLinearGradient(0,0,0,horizon);
       if(scene==='city' || scene==='night'){g.addColorStop(0,scene==='night'?'#02060d':'#07101f');g.addColorStop(.55,scene==='night'?'#0a1322':'#17233a');g.addColorStop(1,scene==='night'?'#19283b':'#da6d4e');}
@@ -415,11 +426,12 @@
       }
     }
     _gantries(w,h,horizon,curve,scene){
-      if(scene==='tunnel'||scene==='foggy')return; const c=this.ctx,visible=220,period=150,phase=(this.distance*.98)%period;
+      if(scene==='tunnel'||scene==='foggy')return; const c=this.ctx,visible=220,period=115,phase=(this.distance*.98)%period;
       for(let z=period-phase;z<visible;z+=period){if(z<18)continue;const p=this._project(z,w,h,horizon,curve),left=p.center-p.half*1.10,right=p.center+p.half*1.10,top=p.y-(22+90*p.p),lw=Math.max(1,2.2*p.p);
         c.strokeStyle=scene==='night'||scene==='city'?'rgba(155,173,190,.44)':'rgba(95,108,118,.48)';c.lineWidth=lw;c.beginPath();c.moveTo(left,p.y);c.lineTo(left,top);c.lineTo(right,top);c.lineTo(right,p.y);c.stroke();
-        const signW=(right-left)*.23,signH=Math.max(5,18*p.p);c.fillStyle=scene==='night'||scene==='city'?'rgba(18,61,91,.82)':'rgba(26,93,124,.84)';c.fillRect(p.center-signW*.55,top+4,signW,signH);
-        c.fillStyle='rgba(242,248,252,.58)';c.fillRect(p.center-signW*.42,top+8,signW*.74,Math.max(1,2*p.p));
+        const signW=(right-left)*.18,signH=Math.max(5,18*p.p);c.fillStyle=scene==='night'||scene==='city'?'rgba(18,61,91,.82)':'rgba(26,93,124,.84)';
+        c.fillRect(p.center-signW*1.18,top+4,signW,signH);c.fillRect(p.center+signW*.18,top+4,signW,signH);
+        c.fillStyle='rgba(242,248,252,.62)';c.fillRect(p.center-signW*1.06,top+8,signW*.74,Math.max(1,2*p.p));c.fillRect(p.center+signW*.30,top+8,signW*.74,Math.max(1,2*p.p));
       }
     }
     _roadside(w,h,horizon,curve,scene){
@@ -430,6 +442,21 @@
         else{c.fillStyle='rgba(240,244,250,.42)';c.fillRect(x-size*.11,p.y-size*2.8,size*.22,size*2.8);c.fillStyle=scene==='city'?'rgba(255,196,105,.86)':'rgba(225,238,255,.75)';c.beginPath();c.arc(x,p.y-size*3.15,Math.max(1,size*.28),0,Math.PI*2);c.fill();}}
     }
 
+    _roadsideDepth(w,h,horizon,curve,scene){
+      if(scene==='tunnel'||scene==='foggy')return;
+      const c=this.ctx,visible=205,period=34,phase=(this.distance*1.04)%period;
+      for(let side of [-1,1])for(let z=-phase;z<visible;z+=period){
+        if(z<5)continue;const p=this._project(z,w,h,horizon,curve),x=p.center+side*p.half*1.38,sz=Math.max(.7,11*p.p);
+        if(scene==='night'||scene==='city'){
+          c.strokeStyle='rgba(150,166,184,.16)';c.lineWidth=Math.max(1,sz*.10);c.beginPath();c.moveTo(x,p.y);c.lineTo(x,p.y-sz*5.4);c.stroke();
+          c.fillStyle='rgba(255,228,164,.42)';c.beginPath();c.arc(x,p.y-sz*5.55,Math.max(1,sz*.26),0,Math.PI*2);c.fill();
+        }else{
+          c.fillStyle=scene==='snowy'?'rgba(114,126,133,.48)':scene==='sunny'?'rgba(55,73,43,.60)':'rgba(61,70,67,.50)';
+          c.fillRect(x-sz*.08,p.y-sz*1.6,sz*.16,sz*1.6);
+          c.beginPath();c.arc(x,p.y-sz*2.0,Math.max(1,sz*.52),0,Math.PI*2);c.fill();
+        }
+      }
+    }
     _guardrails(w,h,horizon,curve,scene){
       if(scene==='tunnel') return; const c=this.ctx,visible=220,period=12,phase=(this.distance*1.10)%period;
       c.strokeStyle=scene==='city'?'rgba(220,230,240,.16)':scene==='rainy'?'rgba(206,220,232,.18)':'rgba(225,232,238,.12)';
@@ -457,7 +484,7 @@
     _stormFlash(w,h){if(Math.floor(this.distance*1.7)%97===0){const c=this.ctx;c.fillStyle='rgba(230,240,255,.10)';c.fillRect(0,0,w,h);}}
     render(dt,speed,rpm,gear,boost,accel){
       this.resize();const c=this.ctx,w=this.lastW,h=this.lastH;if(!w||!h)return;const visualSpeedGain=1.72;this.distance+=Math.max(0,speed)/3.6*dt*visualSpeedGain;
-      const horizon=h*(this.scene==='tunnel'?.445:.455),curve=Math.sin(this.distance*.0048)*w*.006+Math.sin(this.distance*.0018)*w*.003;
+      const horizon=h*(this.scene==='tunnel'?.445:.455),curve=Math.sin(this.distance*.0048)*w*.0015+Math.sin(this.distance*.0018)*w*.0008;
       this._sky(w,h,horizon,this.scene);this._skyline(w,horizon,this.scene);
       if(this.scene==='tunnel'){c.fillStyle='#0e1012';c.fillRect(0,horizon,w,h-horizon);this._road(w,h,horizon,curve,this.scene);this._tunnel(w,h,horizon,curve);}
       else{const ground=c.createLinearGradient(0,horizon,0,h);ground.addColorStop(0,this.scene==='city'?'#2c1d19':this.scene==='sunny'?'#526133':this.scene==='cloudy'?'#4f5650':(this.scene==='rainy'||this.scene==='storm')?'#384149':this.scene==='snowy'?'#d6dee3':this.scene==='foggy'?'#929a98':this.scene==='night'?'#10151c':this.scene==='sunset'?'#433026':'#1f2023');ground.addColorStop(1,this.scene==='sunny'?'#10140f':(this.scene==='rainy'||this.scene==='storm')?'#11151a':this.scene==='snowy'?'#9ba6ad':this.scene==='foggy'?'#66706d':'#090b0e');c.fillStyle=ground;c.fillRect(0,horizon,w,h-horizon);this._road(w,h,horizon,curve,this.scene);}
@@ -469,6 +496,7 @@
       this._solidLine(w,h,horizon,curve,.94,'rgba(242,245,247,.88)',.0048);
       this._reflectors(w,h,horizon,curve,this.scene);
       this._gantries(w,h,horizon,curve,this.scene);
+      this._roadsideDepth(w,h,horizon,curve,this.scene);
       this._guardrails(w,h,horizon,curve,this.scene);this._roadside(w,h,horizon,curve,this.scene);this._speedStreaks(w,h,horizon,speed);if(this.scene==='rainy'||this.scene==='storm')this._rain(w,h,horizon,speed);if(this.scene==='snowy')this._snow(w,h,horizon,speed);if(this.scene==='foggy')this._fog(w,h,horizon);if(this.scene==='storm')this._stormFlash(w,h);this._atmosphere(w,h,horizon,this.scene);
       const gg=c.createRadialGradient(w*.5,h*1.02,0,w*.5,h*1.02,w*.54);gg.addColorStop(0,`rgba(255,106,0,${clamp(Math.abs(accel)/9,0,.16)})`);gg.addColorStop(1,'rgba(255,106,0,0)');c.fillStyle=gg;c.fillRect(0,h*.64,w,h*.36);
     }
