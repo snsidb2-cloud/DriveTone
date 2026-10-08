@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v3.9</title>
+  <title>DriveTone Lab v4.0</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v3.9 Live dashboard display themes */
+    /* v4.0 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v3.9 portrait/landscape Classic Blue corrections */
+    /* v4.0 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -282,6 +282,72 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:82px minmax(125px,.58fr) minmax(350px,2fr) minmax(145px,.66fr);grid-template-rows:1fr 64px;inset:max(44px,calc(env(safe-area-inset-top) + 40px)) 8px 6px;gap:7px}
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
+    }
+
+    /* v4.0 Classic Blue — faithful 16:9 reference layout */
+    .dashboardHud[data-theme="blue"] .dashBoardShell,
+    .dashboardHud[data-theme="blue"] .dashBottomStrip{display:none!important}
+    .dashboardHud[data-theme="blue"]{background:rgba(0,0,0,.08)}
+    .dashboardHud[data-theme="blue"] .blueClassic{
+      display:block;position:absolute;z-index:9;pointer-events:none;
+      width:min(calc(100vw - 20px),calc((100vh - 72px)*1.7778));
+      aspect-ratio:16/9;height:auto;left:50%;top:50%;
+      transform:translate(-50%,-50%);overflow:hidden;border-radius:18px;
+      background:linear-gradient(180deg,rgba(2,9,17,.26),rgba(2,7,13,.18));
+      box-shadow:0 26px 75px rgba(0,0,0,.34);color:#fff;direction:ltr
+    }
+    .dashboardHud[data-theme="blue"] .blueClassic:before{
+      content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+      background:
+        linear-gradient(180deg,rgba(0,6,14,.25),rgba(0,5,12,.06) 38%,rgba(0,0,0,.22)),
+        radial-gradient(circle at 50% 47%,rgba(36,136,245,.08),transparent 35%);
+    }
+    .dashboardHud[data-theme="blue"] .blueTopbar{
+      position:absolute;left:7.2%;right:1.8%;top:2.5%;height:10.2%;
+      display:flex;align-items:center;justify-content:space-between;z-index:5;direction:rtl;
+      border-bottom:1px solid rgba(255,255,255,.07)
+    }
+    .blueTitleWrap{display:flex;align-items:center;gap:11px}.blueTitleIcon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(24,93,155,.12);font-size:25px}
+    .blueTitleWrap strong{display:block;font-size:clamp(18px,2.1vw,34px);line-height:1.05}.blueTitleWrap small{display:block;margin-top:4px;color:rgba(255,255,255,.58);font-size:clamp(8px,.9vw,14px)}
+    .blueTopStatus{display:flex;align-items:center;gap:12px;font-size:clamp(9px,.85vw,14px);color:rgba(255,255,255,.82)}
+    .blueSidebar{position:absolute;left:0;top:0;bottom:0;width:6.3%;min-width:70px;padding:2.5% .55%;display:flex;flex-direction:column;gap:1.1%;background:linear-gradient(180deg,rgba(4,12,22,.92),rgba(5,10,17,.94));border-right:1px solid rgba(255,255,255,.07);z-index:7;direction:rtl}
+    .blueNavItem{height:14.5%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:10px;color:rgba(255,255,255,.60);font-size:clamp(7px,.62vw,11px);text-align:center}
+    .blueNavItem span{font-size:clamp(16px,1.7vw,28px)}.blueNavItem.active{color:#fff;background:linear-gradient(180deg,rgba(45,156,255,.30),rgba(45,156,255,.12));border:1px solid rgba(69,170,255,.54);box-shadow:0 0 24px rgba(35,140,255,.22),inset 0 0 20px rgba(46,161,255,.10)}
+    .blueLeftCards{position:absolute;left:8.3%;top:20.8%;width:18.1%;display:grid;gap:3.2%;z-index:5;direction:rtl}
+    .blueRightCards{position:absolute;right:2.7%;top:18.8%;width:24%;display:grid;gap:3.2%;z-index:5;direction:rtl}
+    .blueRefCard{padding:clamp(10px,1.35vw,22px);border-radius:16px;background:linear-gradient(180deg,rgba(5,17,31,.73),rgba(3,11,21,.82));border:1px solid rgba(115,184,255,.18);box-shadow:inset 0 0 26px rgba(45,156,255,.025)}
+    .blueRefLabel{font-size:clamp(8px,.82vw,13px);color:rgba(255,255,255,.58)}.blueRefGear{font-size:clamp(34px,4.4vw,72px);font-weight:900;margin:4px 0 12px}
+    .bluePrnd{display:flex;justify-content:space-around;color:rgba(255,255,255,.52);font-size:clamp(8px,.8vw,13px)}.bluePrnd .active{color:#2d9cff;text-shadow:0 0 12px rgba(45,156,255,.7)}
+    .blueRefMetric{font-size:clamp(28px,3.1vw,52px);font-weight:900}.blueRefUnit{font-size:clamp(10px,1vw,16px);margin-inline-start:4px;color:rgba(255,255,255,.66)}
+    .blueRefProgress{height:9px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}.blueRefProgress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#20a9f4,#69d4ff);box-shadow:0 0 14px rgba(45,156,255,.55)}
+    .blueGaugeStage{position:absolute;left:27.8%;top:11.4%;width:45.5%;height:62%;display:grid;place-items:center;z-index:4}
+    .blueTachoOuter{position:relative;width:100%;height:100%}
+    .blueTachoProgress{position:absolute;inset:2% 0 0;border-radius:50% 50% 46% 46%;background:conic-gradient(from 222deg,#2d9cff 0 var(--dashRpmPct),rgba(255,255,255,.10) var(--dashRpmPct) 74%,transparent 74% 100%);-webkit-mask:radial-gradient(ellipse at 50% 59%,transparent 0 68%,#000 69% 74%,transparent 75%);mask:radial-gradient(ellipse at 50% 59%,transparent 0 68%,#000 69% 74%,transparent 75%);filter:drop-shadow(0 0 17px rgba(45,156,255,.40))}
+    .blueTachoTicks{position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 222deg,rgba(255,255,255,.72) 0 .22deg,transparent .22deg 2.65deg);-webkit-mask:radial-gradient(ellipse at 50% 59%,transparent 0 78%,#000 79% 80.8%,transparent 81%);mask:radial-gradient(ellipse at 50% 59%,transparent 0 78%,#000 79% 80.8%,transparent 81%);opacity:.80}
+    .blueTachoOuter:after{content:"";position:absolute;right:3.3%;top:47%;width:5.2%;height:22%;border-radius:8px;background:linear-gradient(180deg,#ff2539,#c10d20);transform:rotate(8deg);box-shadow:0 0 18px rgba(255,37,57,.45)}
+    .blueTachoCore{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);text-align:center;z-index:3;width:56%}
+    .blueEngineLabel{font-size:clamp(8px,.85vw,13px);color:rgba(255,255,255,.53);line-height:1.35}.blueEngineLabel small{font-size:.9em}
+    .blueRefSpeed{font-size:clamp(72px,8.6vw,150px);font-weight:950;line-height:.84;letter-spacing:-5px;margin-top:10px;text-shadow:0 0 25px rgba(45,156,255,.20)}
+    .blueRefSpeedUnit{font-size:clamp(10px,1.05vw,17px);color:rgba(255,255,255,.64);margin-top:8px}.blueRefRpm{font-size:clamp(9px,.95vw,15px);color:#69d4ff;margin-top:7px;font-weight:800}
+    .blueRpmNum{position:absolute;z-index:4;font-size:clamp(11px,1.15vw,19px);font-weight:700;color:rgba(255,255,255,.90)}
+    .blueRpmNum.n0{left:13%;bottom:17%}.blueRpmNum.n1{left:11%;top:54%}.blueRpmNum.n2{left:18%;top:30%}.blueRpmNum.n3{left:33%;top:16%}.blueRpmNum.n4{left:49%;top:11%}.blueRpmNum.n5{right:31%;top:17%}.blueRpmNum.n6{right:17%;top:31%}.blueRpmNum.n7{right:10%;top:55%;color:#ff3046}
+    .blueGpsCardRow,.blueWeatherCardRow{display:flex;align-items:center;gap:clamp(8px,1.1vw,18px);direction:ltr}.blueGpsArrow{font-size:clamp(28px,3.6vw,56px);color:#4ba9ff;transform:rotate(-15deg)}
+    .blueRefGps{font-size:clamp(20px,2.4vw,38px);font-weight:900;margin-top:3px}.blueRefSub{font-size:clamp(8px,.78vw,12px);color:rgba(255,255,255,.54);margin-top:3px}
+    .blueWeatherIconRef{font-size:clamp(28px,3.2vw,52px)}.blueWeatherTempRef{font-size:clamp(26px,3.3vw,54px);font-weight:900;line-height:1}
+    .blueCarArt{position:absolute;right:2.2%;bottom:12.8%;width:27%;z-index:3;filter:drop-shadow(0 16px 22px rgba(0,0,0,.60));opacity:.96}.blueCarArt svg{width:100%;height:auto;display:block}
+    .blueTripStrip{position:absolute;left:8.3%;right:18.4%;bottom:4.3%;height:14.5%;display:grid;grid-template-columns:repeat(4,1fr);z-index:5;border:1px solid rgba(110,181,255,.17);background:linear-gradient(180deg,rgba(5,15,27,.68),rgba(3,9,17,.82));backdrop-filter:blur(14px);border-radius:16px;overflow:hidden;direction:rtl}
+    .blueTripItem{display:flex;align-items:center;justify-content:center;gap:10px;border-inline-start:1px solid rgba(255,255,255,.07)}.blueTripItem:last-child{border-inline-start:0}.blueTripItem>span{font-size:clamp(16px,1.8vw,30px);color:#cfe8ff}.blueTripItem small{display:block;font-size:clamp(7px,.68vw,11px);color:rgba(255,255,255,.50)}.blueTripItem b{display:block;margin-top:3px;font-size:clamp(10px,1.05vw,17px)}
+    body.driving-mode.dashboard-mode .driveHud{z-index:20}
+    .dashboardHud[data-theme="blue"]~*{}
+    @media(max-width:760px){
+      .dashboardHud[data-theme="blue"] .blueClassic{width:calc(100vw - 10px);top:46%;border-radius:10px}
+      .blueTitleWrap strong{font-size:12px}.blueTitleWrap small,.blueTopStatus{font-size:6px}.blueTitleIcon{width:24px;height:24px;font-size:14px}
+      .blueSidebar{min-width:0}.blueNavItem small{display:none}.blueNavItem span{font-size:13px}
+      .blueRefCard{padding:6px;border-radius:8px}.blueRefLabel,.blueRefSub{font-size:6px}.blueRefGear{font-size:24px;margin:2px 0 5px}.bluePrnd{font-size:6px}
+      .blueRefMetric{font-size:20px}.blueRefUnit{font-size:7px}.blueRefProgress{height:4px;margin-top:5px}
+      .blueRefSpeed{font-size:54px;letter-spacing:-3px}.blueEngineLabel{font-size:6px}.blueRefSpeedUnit,.blueRefRpm{font-size:7px}.blueRpmNum{font-size:7px}
+      .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
+      .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
   </style>
 </head>
@@ -421,39 +487,75 @@
             </div>
           </div>
           <div id="blueClassic" class="blueClassic">
-            <div class="blueRail">
-              <div class="blueRailTitle">أوضاع العرض</div>
-              <div class="blueRailItem"><span class="blueRailIcon">⌂</span>الرئيسية</div>
-              <div class="blueRailItem active"><span class="blueRailIcon">◔</span>لوحة العدادات</div>
-              <div class="blueRailItem"><span class="blueRailIcon">➤</span>الملاحة</div>
-              <div class="blueRailItem"><span class="blueRailIcon">♪</span>الصوت</div>
-              <div class="blueRailItem"><span class="blueRailIcon">⚙</span>الإعدادات</div>
+            <div class="blueTopbar">
+              <div class="blueTitleWrap"><span class="blueTitleIcon">◔</span><div><strong>لوحة العدادات</strong><small>وضع عرض القيادة</small></div></div>
+              <div class="blueTopStatus"><span id="blueTopGps">GPS</span><span>•</span><span id="blueTopWeather">—°</span><span>⌁</span><span>◈</span><span id="blueTopTime">--:--</span></div>
             </div>
-            <div class="blueSide">
-              <div class="blueInfo"><div class="blueLabel">الترس الحالي</div><div id="blueGear" class="blueGear">G1</div></div>
-              <div class="blueInfo"><div class="blueLabel">دواسة الوقود</div><div id="blueThrottle" class="blueValue">0%</div><div class="blueProgress"><i id="blueThrottleBar"></i></div></div>
-              <div class="blueGearBox"><div class="blueLabel">التسارع</div><div id="blueAccel" class="blueValue">0.00</div><div class="blueLabel">m/s²</div></div>
-            </div>
-            <div class="blueMain">
-              <div class="blueMainTitle"><strong>لوحة العدادات</strong><span>وضع عرض القيادة</span></div>
-              <div class="blueArc">
-                <div class="blueCore">
-                  <div id="blueSpeed" class="blueSpeed">0</div>
-                  <div class="blueUnit">كم/س</div>
-                  <div id="blueRpm" class="blueRpm">850<small>RPM</small></div>
+
+            <nav class="blueSidebar">
+              <div class="blueNavItem"><span>⌂</span><small>الرئيسية</small></div>
+              <div class="blueNavItem active"><span>◔</span><small>لوحة العدادات</small></div>
+              <div class="blueNavItem"><span>➤</span><small>الملاحة</small></div>
+              <div class="blueNavItem"><span>♪</span><small>الموسيقى</small></div>
+              <div class="blueNavItem"><span>▣</span><small>السيارة</small></div>
+              <div class="blueNavItem"><span>⚙</span><small>الإعدادات</small></div>
+            </nav>
+
+            <section class="blueLeftCards">
+              <div class="blueRefCard blueGearCard">
+                <div class="blueRefLabel">الترس الحالي</div>
+                <div id="blueGear" class="blueRefGear">D</div>
+                <div class="bluePrnd"><span>P</span><span>R</span><span>N</span><span class="active">D</span></div>
+              </div>
+              <div class="blueRefCard">
+                <div class="blueRefLabel">دواسة الوقود</div>
+                <div><span id="blueThrottle" class="blueRefMetric">0</span><span class="blueRefUnit">%</span></div>
+                <div class="blueRefProgress"><i id="blueThrottleBar"></i></div>
+              </div>
+            </section>
+
+            <section class="blueGaugeStage">
+              <div class="blueTachoOuter">
+                <div class="blueTachoProgress"></div>
+                <div class="blueTachoTicks"></div>
+                <div class="blueRpmNum n0">0</div><div class="blueRpmNum n1">1</div><div class="blueRpmNum n2">2</div><div class="blueRpmNum n3">3</div>
+                <div class="blueRpmNum n4">4</div><div class="blueRpmNum n5">5</div><div class="blueRpmNum n6">6</div><div class="blueRpmNum n7">7</div>
+                <div class="blueTachoCore">
+                  <div class="blueEngineLabel">دورة المحرك<br><small>x1000 rpm</small></div>
+                  <div id="blueSpeed" class="blueRefSpeed">0</div>
+                  <div class="blueRefSpeedUnit">كم/س</div>
+                  <div id="blueRpm" class="blueRefRpm">850 RPM</div>
                 </div>
               </div>
+            </section>
+
+            <section class="blueRightCards">
+              <div class="blueRefCard">
+                <div class="blueGpsCardRow"><div class="blueGpsArrow">➤</div><div><div class="blueRefLabel">مصدر نظام الملاحة</div><div id="blueGps" class="blueRefGps">GPS</div><div id="blueAccuracy" class="blueRefSub">بانتظار الدقة</div></div></div>
+              </div>
+              <div class="blueRefCard">
+                <div class="blueWeatherCardRow"><div id="blueWeatherIcon" class="blueWeatherIconRef">☀️</div><div><div class="blueRefLabel">الطقس الحالي</div><div id="blueWeatherTemp" class="blueWeatherTempRef">—°</div><div id="blueWeatherState" class="blueRefSub">بانتظار الطقس</div></div></div>
+              </div>
+            </section>
+
+            <div class="blueCarArt" aria-hidden="true">
+              <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="280" cy="260" rx="184" ry="22" fill="rgba(0,0,0,.35)"/>
+                <ellipse cx="151" cy="228" rx="31" ry="43" fill="#080b10"/><ellipse cx="409" cy="228" rx="31" ry="43" fill="#080b10"/>
+                <ellipse cx="151" cy="228" rx="17" ry="25" fill="#49525d"/><ellipse cx="409" cy="228" rx="17" ry="25" fill="#49525d"/>
+                <path d="M105 219 Q118 166 169 145 Q192 101 230 79 Q280 56 330 79 Q368 101 391 145 Q442 166 455 219 Q407 247 280 252 Q153 247 105 219Z" fill="#171d25"/>
+                <path d="M190 144 Q210 94 244 81 Q280 67 316 81 Q350 94 370 144 Q280 127 190 144Z" fill="#0d1620"/>
+                <path d="M131 178 Q177 154 219 165 L208 188 Q168 181 134 194Z" fill="#ff334b"/>
+                <path d="M429 178 Q383 154 341 165 L352 188 Q392 181 426 194Z" fill="#ff334b"/>
+                <path d="M130 223 Q280 252 430 223 L421 245 Q280 273 139 245 Z" fill="#0b0f14"/>
+              </svg>
             </div>
-            <div class="blueSide">
-              <div class="blueInfo"><div class="blueLabel">مصدر السرعة</div><div class="blueGpsRow"><div class="blueGpsIcon">➤</div><div id="blueGps" class="blueGpsState">GPS</div></div><div id="blueAccuracy" class="blueLabel">بانتظار الدقة</div></div>
-              <div class="blueInfo"><div class="blueLabel">الطقس الحالي</div><div class="blueWeather"><div id="blueWeatherIcon" class="blueWeatherIcon">☀️</div><div><div id="blueWeatherTemp" class="blueWeatherTemp">—°</div><div id="blueWeatherState" class="blueLabel">بانتظار الطقس</div></div></div></div>
-              <div class="blueInfo"><div class="blueLabel">BOOST / LOAD</div><div id="blueBoost" class="blueValue">0%</div><div class="blueProgress"><i id="blueBoostBar"></i></div></div>
-            </div>
-            <div class="blueBottom">
-              <div class="blueBottomCard"><small>السرعة</small><b id="blueMiniSpeed">0 كم/س</b></div>
-              <div class="blueBottomCard"><small>RPM</small><b id="blueMiniRpm">850</b></div>
-              <div class="blueBottomCard"><small>المصدر</small><b id="blueMiniSource">GPS</b></div>
-              <div class="blueBottomCard"><small>المشهد</small><b id="blueMiniScene">—</b></div>
+
+            <div class="blueTripStrip">
+              <div class="blueTripItem"><span>⌁</span><div><small>المسافة</small><b id="blueTripDistance">0.0 كم</b></div></div>
+              <div class="blueTripItem"><span>◷</span><div><small>الوقت</small><b id="blueTripTime">0:00</b></div></div>
+              <div class="blueTripItem"><span>◔</span><div><small>متوسط السرعة</small><b id="blueAvgSpeed">0 كم/س</b></div></div>
+              <div class="blueTripItem"><span>◎</span><div><small>المصدر</small><b id="blueMiniSource">GPS</b></div></div>
             </div>
           </div>
         </div>
@@ -527,10 +629,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.9</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.9 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.0</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.0 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v3.9</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v4.0</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -541,7 +643,7 @@
     demoSpeed:$('demoSpeed'),demoValue:$('demoValue'),sensitivity:$('sensitivity'),sensValue:$('sensValue'),volume:$('volume'),volValue:$('volValue'),
     exhaust:$('exhaust'),exhaustValue:$('exhaustValue'),popMode:$('popMode'),engineType:$('engineType'),modeGroup:$('modeGroup'),sampleStatus:$('sampleStatus'),modelInfo:$('modelInfo'),
     motionBtn:$('motionBtn'),coldStartBtn:$('coldStartBtn'),revDemoBtn:$('revDemoBtn'),driveModeBtn:$('driveModeBtn'),exitDriveMode:$('exitDriveMode'),driveHud:$('driveHud'),driveGpsDot:$('driveGpsDot'),driveGpsText:$('driveGpsText'),driveAudioDot:$('driveAudioDot'),driveAudioText:$('driveAudioText'),driveEngineText:$('driveEngineText'),driveModeText:$('driveModeText'),
-    driveCanvas:$('driveCanvas'),visualHud:$('visualHud'),visualSpeed:$('visualSpeed'),visualRpm:$('visualRpm'),visualGear:$('visualGear'),visualBoost:$('visualBoost'),visualRpmFill:$('visualRpmFill'),visualBoostFill:$('visualBoostFill'),visualSceneTag:$('visualSceneTag'),sceneType:$('sceneType'),teslaCarStage:$('teslaCarStage'),teslaCarLabel:$('teslaCarLabel'),teslaModel:$('teslaModel'),carSize:$('carSize'),colorGrid:$('colorGrid'),teslaMiniInfo:$('teslaMiniInfo'),sceneEdgeZone:$('sceneEdgeZone'),sceneDrawer:$('sceneDrawer'),sceneDrawerOverlay:$('sceneDrawerOverlay'),sceneDrawerClose:$('sceneDrawerClose'),sceneDrawerList:$('sceneDrawerList'),weatherAutoBtn:$('weatherAutoBtn'),weatherRefreshBtn:$('weatherRefreshBtn'),weatherLiveStatus:$('weatherLiveStatus'),driveWeather:$('driveWeather'),driveWeatherIcon:$('driveWeatherIcon'),driveWeatherTemp:$('driveWeatherTemp'),driveWeatherState:$('driveWeatherState'),driveWeatherWind:$('driveWeatherWind'),driveWeatherCloud:$('driveWeatherCloud'),driveWeatherLight:$('driveWeatherLight'),dashboardHud:$('dashboardHud'),dashSpeed:$('dashSpeed'),dashRpm:$('dashRpm'),dashGear:$('dashGear'),dashGearSide:$('dashGearSide'),dashThrottle:$('dashThrottle'),dashThrottleBar:$('dashThrottleBar'),dashAccel:$('dashAccel'),dashBoost:$('dashBoost'),dashBoostBar:$('dashBoostBar'),dashWeatherIcon:$('dashWeatherIcon'),dashWeatherTemp:$('dashWeatherTemp'),dashWeatherState:$('dashWeatherState'),dashGps:$('dashGps'),dashGpsAccuracy:$('dashGpsAccuracy'),dashMiniSpeed:$('dashMiniSpeed'),dashMiniRpm:$('dashMiniRpm'),dashMiniSource:$('dashMiniSource'),dashMiniScene:$('dashMiniScene'),dashQuickThemes:$('dashQuickThemes'),dashThemeName:$('dashThemeName'),dashRpmAlt:$('dashRpmAlt'),dashNeonRpmValue:$('dashNeonRpmValue'),dashNeonSegments:$('dashNeonSegments'),blueClassic:$('blueClassic'),blueSpeed:$('blueSpeed'),blueRpm:$('blueRpm'),blueGear:$('blueGear'),blueThrottle:$('blueThrottle'),blueThrottleBar:$('blueThrottleBar'),blueAccel:$('blueAccel'),blueGps:$('blueGps'),blueAccuracy:$('blueAccuracy'),blueWeatherIcon:$('blueWeatherIcon'),blueWeatherTemp:$('blueWeatherTemp'),blueWeatherState:$('blueWeatherState'),blueBoost:$('blueBoost'),blueBoostBar:$('blueBoostBar'),blueMiniSpeed:$('blueMiniSpeed'),blueMiniRpm:$('blueMiniRpm'),blueMiniSource:$('blueMiniSource'),blueMiniScene:$('blueMiniScene'),redSport:$('redSport'),redSpeed:$('redSpeed'),redRpm:$('redRpm'),redGear:$('redGear'),redRpmBar:$('redRpmBar'),redThrottle:$('redThrottle'),redThrottleBar:$('redThrottleBar'),redBoost:$('redBoost'),redBoostBar:$('redBoostBar'),redAccel:$('redAccel'),redWeatherIcon:$('redWeatherIcon'),redWeatherTemp:$('redWeatherTemp'),redWeatherState:$('redWeatherState'),redGps:$('redGps'),redAccuracy:$('redAccuracy'),redDriveMode:$('redDriveMode'),redMiniSpeed:$('redMiniSpeed'),redMiniRpm:$('redMiniRpm'),redMiniSource:$('redMiniSource'),redMiniScene:$('redMiniScene')
+    driveCanvas:$('driveCanvas'),visualHud:$('visualHud'),visualSpeed:$('visualSpeed'),visualRpm:$('visualRpm'),visualGear:$('visualGear'),visualBoost:$('visualBoost'),visualRpmFill:$('visualRpmFill'),visualBoostFill:$('visualBoostFill'),visualSceneTag:$('visualSceneTag'),sceneType:$('sceneType'),teslaCarStage:$('teslaCarStage'),teslaCarLabel:$('teslaCarLabel'),teslaModel:$('teslaModel'),carSize:$('carSize'),colorGrid:$('colorGrid'),teslaMiniInfo:$('teslaMiniInfo'),sceneEdgeZone:$('sceneEdgeZone'),sceneDrawer:$('sceneDrawer'),sceneDrawerOverlay:$('sceneDrawerOverlay'),sceneDrawerClose:$('sceneDrawerClose'),sceneDrawerList:$('sceneDrawerList'),weatherAutoBtn:$('weatherAutoBtn'),weatherRefreshBtn:$('weatherRefreshBtn'),weatherLiveStatus:$('weatherLiveStatus'),driveWeather:$('driveWeather'),driveWeatherIcon:$('driveWeatherIcon'),driveWeatherTemp:$('driveWeatherTemp'),driveWeatherState:$('driveWeatherState'),driveWeatherWind:$('driveWeatherWind'),driveWeatherCloud:$('driveWeatherCloud'),driveWeatherLight:$('driveWeatherLight'),dashboardHud:$('dashboardHud'),dashSpeed:$('dashSpeed'),dashRpm:$('dashRpm'),dashGear:$('dashGear'),dashGearSide:$('dashGearSide'),dashThrottle:$('dashThrottle'),dashThrottleBar:$('dashThrottleBar'),dashAccel:$('dashAccel'),dashBoost:$('dashBoost'),dashBoostBar:$('dashBoostBar'),dashWeatherIcon:$('dashWeatherIcon'),dashWeatherTemp:$('dashWeatherTemp'),dashWeatherState:$('dashWeatherState'),dashGps:$('dashGps'),dashGpsAccuracy:$('dashGpsAccuracy'),dashMiniSpeed:$('dashMiniSpeed'),dashMiniRpm:$('dashMiniRpm'),dashMiniSource:$('dashMiniSource'),dashMiniScene:$('dashMiniScene'),dashQuickThemes:$('dashQuickThemes'),dashThemeName:$('dashThemeName'),dashRpmAlt:$('dashRpmAlt'),dashNeonRpmValue:$('dashNeonRpmValue'),dashNeonSegments:$('dashNeonSegments'),blueClassic:$('blueClassic'),blueSpeed:$('blueSpeed'),blueRpm:$('blueRpm'),blueGear:$('blueGear'),blueThrottle:$('blueThrottle'),blueThrottleBar:$('blueThrottleBar'),blueGps:$('blueGps'),blueAccuracy:$('blueAccuracy'),blueWeatherIcon:$('blueWeatherIcon'),blueWeatherTemp:$('blueWeatherTemp'),blueWeatherState:$('blueWeatherState'),blueMiniSource:$('blueMiniSource'),blueTopGps:$('blueTopGps'),blueTopWeather:$('blueTopWeather'),blueTopTime:$('blueTopTime'),blueTripDistance:$('blueTripDistance'),blueTripTime:$('blueTripTime'),blueAvgSpeed:$('blueAvgSpeed'),redSport:$('redSport'),redSpeed:$('redSpeed'),redRpm:$('redRpm'),redGear:$('redGear'),redRpmBar:$('redRpmBar'),redThrottle:$('redThrottle'),redThrottleBar:$('redThrottleBar'),redBoost:$('redBoost'),redBoostBar:$('redBoostBar'),redAccel:$('redAccel'),redWeatherIcon:$('redWeatherIcon'),redWeatherTemp:$('redWeatherTemp'),redWeatherState:$('redWeatherState'),redGps:$('redGps'),redAccuracy:$('redAccuracy'),redDriveMode:$('redDriveMode'),redMiniSpeed:$('redMiniSpeed'),redMiniRpm:$('redMiniRpm'),redMiniSource:$('redMiniSource'),redMiniScene:$('redMiniScene')
   };
 
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -812,7 +914,7 @@
   }
 
   let demo=false, speed=0, targetSpeed=0, accel=0, lastSpeed=0, lastT=performance.now(), gear=1, rpm=850, throttle=0, boost=0, watchId=null;
-  let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0; let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null;
+  let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0, tripDistanceKm=0, tripSeconds=0; let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null;
   const roadViz=new RoadViz(ui.driveCanvas);
 
   const modes={
@@ -1515,10 +1617,10 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v3.9'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.0'){
     dashboardTheme='blue';
     localStorage.setItem('drivetone.dashboardTheme','blue');
-    localStorage.setItem('drivetone.dashboardMigration','v3.9');
+    localStorage.setItem('drivetone.dashboardMigration','v4.0');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -1739,12 +1841,24 @@
       if(ui.dashNeonRpmValue)ui.dashNeonRpmValue.textContent=(rp/1000).toFixed(1);
       if(ui.dashNeonSegments){const active=Math.round(clamp(rp/8000,0,1)*8);[...ui.dashNeonSegments.children].forEach((el,i)=>el.classList.toggle('on',i<active));}
       if(ui.blueClassic){
-        ui.blueSpeed.textContent=sp;ui.blueRpm.textContent=rp;ui.blueGear.textContent='G'+gear;
-        ui.blueThrottle.textContent=th+'%';ui.blueThrottleBar.style.width=th+'%';ui.blueAccel.textContent=accel.toFixed(2);
-        ui.blueGps.textContent=demo?'Demo':'GPS';ui.blueAccuracy.textContent=demo?'سرعة اختبار':(ui.accuracy?.textContent&&ui.accuracy.textContent!=='—'?'دقة '+ui.accuracy.textContent:'بانتظار الدقة');
-        ui.blueWeatherIcon.textContent=ui.driveWeatherIcon?.textContent||'☀️';ui.blueWeatherTemp.textContent=ui.driveWeatherTemp?.textContent||'—°';ui.blueWeatherState.textContent=ui.driveWeatherState?.textContent||'بانتظار الطقس';
-        ui.blueBoost.textContent=bo+'%';ui.blueBoostBar.style.width=bo+'%';
-        ui.blueMiniSpeed.textContent=sp+' كم/س';ui.blueMiniRpm.textContent=rp;ui.blueMiniSource.textContent=demo?'Demo':'GPS';ui.blueMiniScene.textContent=scenePresets[ui.sceneType?.value]?.label||ui.sceneType?.value||'—';
+        tripSeconds+=dt;tripDistanceKm+=Math.max(0,speed)*dt/3600;
+        const avg=tripSeconds>1?tripDistanceKm/(tripSeconds/3600):0;
+        ui.blueSpeed.textContent=sp;
+        ui.blueRpm.textContent=rp+' RPM';
+        ui.blueGear.textContent=gear>0?'D':'N';
+        ui.blueThrottle.textContent=th;ui.blueThrottleBar.style.width=th+'%';
+        ui.blueGps.textContent=demo?'Demo':'GPS';
+        ui.blueAccuracy.textContent=demo?'سرعة اختبار':(ui.accuracy?.textContent&&ui.accuracy.textContent!=='—'?'دقة '+ui.accuracy.textContent:'بانتظار الدقة');
+        ui.blueWeatherIcon.textContent=ui.driveWeatherIcon?.textContent||'☀️';
+        ui.blueWeatherTemp.textContent=ui.driveWeatherTemp?.textContent||'—°';
+        ui.blueWeatherState.textContent=ui.driveWeatherState?.textContent||'بانتظار الطقس';
+        ui.blueMiniSource.textContent=demo?'Demo':'GPS';
+        if(ui.blueTopGps)ui.blueTopGps.textContent=demo?'Demo':'GPS';
+        if(ui.blueTopWeather)ui.blueTopWeather.textContent=ui.driveWeatherTemp?.textContent||'—°';
+        if(ui.blueTopTime)ui.blueTopTime.textContent=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+        if(ui.blueTripDistance)ui.blueTripDistance.textContent=tripDistanceKm.toFixed(1)+' كم';
+        if(ui.blueTripTime){const m=Math.floor(tripSeconds/60),sec=Math.floor(tripSeconds%60);ui.blueTripTime.textContent=m+':'+String(sec).padStart(2,'0');}
+        if(ui.blueAvgSpeed)ui.blueAvgSpeed.textContent=Math.round(avg)+' كم/س';
       }
       if(ui.redSport){
         ui.redSpeed.textContent=sp;ui.redRpm.textContent=rp;ui.redGear.textContent='G'+gear;ui.redRpmBar.style.width=Math.round(clamp(rp/8000,0,1)*100)+'%';
