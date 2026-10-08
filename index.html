@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v3.2</title>
+  <title>DriveTone Lab v3.3</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -250,12 +250,12 @@
         <div class="tile"><div class="label">الخانق الافتراضي</div><div id="throttle" class="value">0%</div></div>
         <div class="tile"><div class="label">Boost</div><div id="boost" class="value">0%</div><div class="boostBar"><i></i></div></div>
         <div class="tile"><div class="label">دقة GPS</div><div id="accuracy" class="value">—</div></div>
-        <div class="tile"><div class="label">المصدر</div><div id="source" class="value">تجريبي</div></div>
+        <div class="tile"><div class="label">المصدر</div><div id="source" class="value">GPS</div></div>
       </div>
     </section>
 
     <aside class="controls">
-      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">تشغيل الصوت</button><button id="coldStartBtn" class="btn">🔥 Cold Start</button><button id="revDemoBtn" class="btn">💥 Rev + Bangs</button><button id="startGps" class="btn">تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn active">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">يحتاج المتصفح إلى ضغطة لبدء الصوت. زر Cold Start يحاكي تشغيل المحرك البارد، وزر Rev + Bangs يرفع الـRPM ثم يرفع القدم تلقائيًا لإظهار صوت العادم. GPS يحتاج HTTPS. حساس الحركة اختياري لتحسين الاستجابة ولا يغيّر السرعة.</p></div>
+      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">تشغيل الصوت</button><button id="coldStartBtn" class="btn">🔥 Cold Start</button><button id="revDemoBtn" class="btn">💥 Rev + Bangs</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn" style="display:none" aria-hidden="true">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">يحتاج المتصفح إلى ضغطة لبدء الصوت. زر Cold Start يحاكي تشغيل المحرك البارد، وزر Rev + Bangs يرفع الـRPM ثم يرفع القدم تلقائيًا لإظهار صوت العادم. GPS يحتاج HTTPS. حساس الحركة اختياري لتحسين الاستجابة ولا يغيّر السرعة.</p></div>
       <div class="section"><h2>2. شخصية المحرك</h2><select id="engineType" class="select">
 <option value="amg_gt63">Mercedes‑AMG GT 63 — 4.0 V8 Biturbo</option>
 <option value="mclaren_720s">McLaren 720S — 4.0 V8 Twin‑Turbo</option>
@@ -270,7 +270,7 @@
 </select>
 <div id="modelInfo" class="modelInfo"></div><p class="hint">هذه محاكاة فيزيائية مضبوطة بحسب بنية ومواصفات المحرك، وليست تسجيلات صوت أصلية أو رسمية من الشركات.</p></div>
       <div class="section"><h2>3. نمط القيادة</h2><div id="modeGroup" class="modeGroup"><button class="btn" data-mode="relaxed">Relaxed</button><button class="btn active" data-mode="normal">Normal</button><button class="btn" data-mode="sport">Sport</button></div></div>
-      <div class="section"><h2>4. السرعة التجريبية</h2><div class="range"><div class="rangeHeader"><span>0</span><span id="demoValue">0 كم/س</span><span>240</span></div><input id="demoSpeed" type="range" min="0" max="240" value="0" step="1"></div><p class="hint">حرّك السرعة بسرعة للأعلى أو الأسفل لتجربة ضغط البنزين ورفع القدم وتبديل الغيارات.</p></div>
+      <div class="section" style="display:none" aria-hidden="true"><h2>4. السرعة التجريبية</h2><div class="range"><div class="rangeHeader"><span>0</span><span id="demoValue">0 كم/س</span><span>240</span></div><input id="demoSpeed" type="range" min="0" max="240" value="0" step="1"></div></div>
       <div class="section"><h2>5. استجابة المحرك</h2><div class="range"><div class="rangeHeader"><span>ناعم</span><span id="sensValue">1.0x</span><span>حاد</span></div><input id="sensitivity" type="range" min="0.5" max="2" value="1" step="0.1"></div></div>
       <div class="section"><h2>6. مستوى العادم</h2><div class="range"><div class="rangeHeader"><span>هادئ</span><span id="exhaustValue">65%</span><span>قوي</span></div><input id="exhaust" type="range" min="0" max="1" value="0.65" step="0.01"></div></div>
       <div class="section"><h2>7. Pops & Bangs — فرقعة الشكمان</h2><select id="popMode" class="select"><option value="off">مطفأ</option><option value="natural">طبيعي</option><option value="sport" selected>Sport — بوم + Crackles</option><option value="wild">Wild — قوي ومتكرر</option></select><p class="hint">تظهر الفرقعات عند رفع القدم وتنزيل الغيار، وتختلف شخصيتها حسب المحرك. وضع Wild مخصص للاستعراض.</p></div>
@@ -304,10 +304,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.2</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.2 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.3</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.3 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v3.2</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v3.3</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -588,7 +588,7 @@
     localStorage.setItem('drivetone.teslaModel',selectedTesla);localStorage.setItem('drivetone.teslaPaint',selectedPaint);localStorage.setItem('drivetone.carSize',selectedCarSize);
   }
 
-  let demo=true, speed=0, targetSpeed=0, accel=0, lastSpeed=0, lastT=performance.now(), gear=1, rpm=850, throttle=0, boost=0, watchId=null;
+  let demo=false, speed=0, targetSpeed=0, accel=0, lastSpeed=0, lastT=performance.now(), gear=1, rpm=850, throttle=0, boost=0, watchId=null;
   let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0; let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null;
   const roadViz=new RoadViz(ui.driveCanvas);
 
@@ -1373,11 +1373,11 @@
   }
 
   $('startGps').onclick=async()=>{
-    demo=false;$('demoBtn').classList.remove('active');ui.source.textContent='GPS';
+    demo=false;$('demoBtn').classList.remove('active');$('startGps').classList.add('active');ui.source.textContent='GPS';
     weatherAuto=true;localStorage.setItem('drivetone.weatherAuto','true');syncWeatherButton();syncDriveHud();syncSourceLabel();
     await requestGps();
   };
-  $('demoBtn').onclick=()=>{demo=true;targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');syncSourceLabel();syncDriveHud();};
+  $('demoBtn').onclick=()=>{};
   $('startAudio').onclick=async()=>{await audio.start();$('startAudio').classList.remove('pulse');$('startAudio').textContent='الصوت يعمل';syncDriveHud();};
   ui.coldStartBtn.onclick=async()=>{ui.coldStartBtn.classList.add('active');await audio.coldStart();setTimeout(()=>ui.coldStartBtn.classList.remove('active'),3200);};
   ui.revDemoBtn.onclick=async()=>{ui.revDemoBtn.classList.add('active');await audio.revDemo();setTimeout(()=>ui.revDemoBtn.classList.remove('active'),3900);};
@@ -1473,7 +1473,13 @@
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
-  if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  // Production mode: GPS is always the default source. Ask for location automatically on every fresh load.
+  window.addEventListener('load',()=>{
+    demo=false;syncSourceLabel();syncDriveHud();
+    weatherAuto=true;localStorage.setItem('drivetone.weatherAuto','true');syncWeatherButton();
+    requestGps().catch(()=>{});
+    if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  });
 })();
 </script>
 </body>
