@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v4.8</title>
+  <title>DriveTone Lab v4.9</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v4.8 Live dashboard display themes */
+    /* v4.9 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v4.8 portrait/landscape Classic Blue corrections */
+    /* v4.9 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v4.8 Classic Blue — faithful 16:9 reference layout */
+    /* v4.9 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v4.8 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v4.9 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v4.8 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v4.9 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v4.8 dedicated dashboard batch */
+    /* v4.9 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -450,7 +450,7 @@
       .neonLeftStack,.neonRightStack{width:28%}.neonCenterStage{left:29%;right:29%}.neonHex{width:42vw}.neonBottomRail{grid-template-columns:1fr 1fr;height:17%}
     }
 
-    /* v4.8 performance mode for in-car browsers */
+    /* v4.9 performance mode for in-car browsers */
     body.driving-mode .redSide,
     body.driving-mode .redMain,
     body.driving-mode .redBottomCard,
@@ -787,10 +787,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.8</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.8 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.9</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.9 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v4.8</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v4.9</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1107,7 +1107,7 @@
     constructor(){
       this.ctx=null;this.master=null;this.engineBus=null;this.exhaustBus=null;this.intakeBus=null;this.filter=null;this.highShelf=null;this.comp=null;this.drive=null;
       this.voices=[];this.turboOsc=null;this.turboGain=null;this.turboFilter=null;this.airSrc=null;this.airGain=null;this.airFilter=null;this.noiseBuffer=null;
-      this.running=false;this.lastCrackle=0;this.lastBlowoff=0;this.prevBoost=0;this.prevThrottle=.04;this.realSamples=[];this.realReady=false;this.realStarted=false;
+      this.running=false;this.lastCrackle=0;this.lastBlowoff=0;this.prevBoost=0;this.prevThrottle=.04;this.realSamples=[];this.realReady=false;this.realStarted=false;this.lastDriveAmount=null;
     }
     async start(){
       if(this.running){await this.ctx.resume();return;}
@@ -1119,7 +1119,7 @@
       this.engineBus=this.ctx.createGain(); this.exhaustBus=this.ctx.createGain(); this.intakeBus=this.ctx.createGain();
       this.filter=this.ctx.createBiquadFilter(); this.filter.type='lowpass'; this.filter.frequency.value=1700; this.filter.Q.value=.75;
       this.highShelf=this.ctx.createBiquadFilter(); this.highShelf.type='highshelf'; this.highShelf.frequency.value=1900; this.highShelf.gain.value=-4;
-      this.drive=this.ctx.createWaveShaper(); this.drive.curve=makeDistortionCurve(20); this.drive.oversample='4x';
+      this.drive=this.ctx.createWaveShaper(); this.drive.curve=makeDistortionCurve(20); this.lastDriveAmount=20; this.drive.oversample='2x';
       this.engineBus.connect(this.filter); this.filter.connect(this.drive); this.drive.connect(this.highShelf); this.highShelf.connect(this.comp);
       this.exhaustBus.connect(this.comp); this.intakeBus.connect(this.comp); this.comp.connect(this.master); this.master.connect(this.ctx.destination);
 
@@ -1258,7 +1258,7 @@
         fireHz=48+(rpm/7000)*420; ratios=[1,2,3.01,5.02,.5]; driveAmount=4; lowpass=2550+(rpm/7000)*6400; voiceProfile=[.09,.04,.035,.018,.012];
       }
 
-      this.drive.curve=makeDistortionCurve(driveAmount);
+      if(this.lastDriveAmount!==driveAmount){this.drive.curve=makeDistortionCurve(driveAmount);this.lastDriveAmount=driveAmount;}
       const cut=clamp(shiftCut,0.14,1);
       this.voices.forEach((v,i)=>{
         const irregular=type==='v8' ? (1+Math.sin(t*(6.4+i*.8)+i*1.9)*.0052+Math.sin(t*2.3+i)*.0022) : (1+Math.sin(t*(10.7+i)+i)*.0022);
@@ -1309,7 +1309,7 @@
   class PhysicalEngineAudio{
     constructor(fallback){
       this.fallback=fallback;this.sim=null;this.running=false;this.failed=false;this.loading=null;this.lastT=performance.now();this.engineKey='phys_v8';
-      this.fxBus=null;this.lastPopAt=0;this.lastPopThrottle=.05;this.popSeq=0;this.sequence=null;this.sequenceToken=0;
+      this.fxBus=null;this.lastPopAt=0;this.lastPopThrottle=.05;this.popSeq=0;this.sequence=null;this.sequenceToken=0;this.lastControlAt=0;this.lastToneAt=0;
       this.repoRevision='f16e3f5ded382716f4342843d7e4463ebb7d0bd8';
       this.moduleUrl=`https://cdn.jsdelivr.net/gh/YigitSalihEmecen/Engine_Sim@${this.repoRevision}/src/engine-sim.js`;
     }
@@ -1493,6 +1493,7 @@
           if(this.sim.setAutoShift)this.sim.setAutoShift(true);
           this._applyStyle(ui.engineType.value);
           await this.sim.start();
+          this.lastControlAt=performance.now();this.lastToneAt=0;
           this.running=true;this.engineKey=ui.engineType.value;
           if(ui.sampleStatus)ui.sampleStatus.textContent='Physical Engine جاهز — الاشتعال والعادم والـdrivetrain يتم توليدها في الزمن الحقيقي.';
         }catch(e){
@@ -1517,7 +1518,7 @@
       if(this._isPhysical(type)){
         if(!this.sim && !this.failed)await this._load();
         if(this.sim && this.sim.setEngineType){
-          try{this.sim.setEngineType(this._profileFor(type));this._applyStyle(type);}catch(e){console.warn(e);}
+          try{this.sim.setEngineType(this._profileFor(type));this._applyStyle(type);this.lastControlAt=performance.now();this.lastToneAt=0;}catch(e){console.warn(e);}
         }
       }
     }
@@ -1531,7 +1532,10 @@
     update(rpm,thr,type,isDecel,shiftCut,boostAmount,roadSpeed=0,roadAccel=0){
       this.engineKey=type;
       if(this._isPhysical(type)&&this.sim){
-        const now=performance.now();const dt=Math.min(.05,Math.max(.005,(now-this.lastT)/1000));this.lastT=now;
+        const now=performance.now();
+        if(this.lastControlAt&&now-this.lastControlAt<32)return;
+        const dt=Math.min(.065,Math.max(.016,(now-(this.lastControlAt||this.lastT))/1000));
+        this.lastControlAt=now;this.lastT=now;
         const st=this.sim.getState?this.sim.getState():null;
         const simSpeed=st?.speedKmh||0;
         const err=roadSpeed-simSpeed;
@@ -1570,18 +1574,21 @@
             }
           }
           this.sim.setThrottle(gas);this.sim.setBrake(brake);
-          this.sim.setVolume(+ui.volume.value);
           const style=this._styleFor(type), bi=style.inputs, bt=style.tone;
-          if(this.sim.setInputs)this.sim.setInputs({
-            aggression:clamp(bi.aggression*(.62+.58*(+ui.exhaust.value)),0,1),
-            roughness:clamp(bi.roughness+(.045*(1-thr)),0,.22),
-            strain:clamp(bi.strain+thr*.09,0,.32),distance:bi.distance,environment:ui.sceneType?.value==='tunnel'?.92:(ui.sceneType?.value==='city'?.18:0)
-          });
-          if(this.sim.setTone)this.sim.setTone({
-            rumble:clamp(bt.rumble*(.90+.18*(+ui.exhaust.value)),.45,1.45),
-            brightness:clamp(bt.brightness*(isDecel?1.08:(.90+.18*thr)),.55,1.65),
-            punch:clamp(bt.punch*(isDecel?.88:(.90+.18*(+ui.exhaust.value))),.50,1.50)
-          });
+          if(now-this.lastToneAt>=96){
+            this.lastToneAt=now;
+            this.sim.setVolume(+ui.volume.value);
+            if(this.sim.setInputs)this.sim.setInputs({
+              aggression:clamp(bi.aggression*(.62+.58*(+ui.exhaust.value)),0,1),
+              roughness:clamp(bi.roughness+(.045*(1-thr)),0,.22),
+              strain:clamp(bi.strain+thr*.09,0,.32),distance:bi.distance,environment:ui.sceneType?.value==='tunnel'?.72:(ui.sceneType?.value==='city'?.14:0)
+            });
+            if(this.sim.setTone)this.sim.setTone({
+              rumble:clamp(bt.rumble*(.90+.18*(+ui.exhaust.value)),.45,1.45),
+              brightness:clamp(bt.brightness*(isDecel?1.08:(.90+.18*thr)),.55,1.65),
+              punch:clamp(bt.punch*(isDecel?.88:(.90+.18*(+ui.exhaust.value))),.50,1.50)
+            });
+          }
           this.sim.update(dt);
           // Pops & Bangs: only on a real lift/overrun, never as a constant machine-gun loop.
           const nowMs=performance.now(), throttleDrop=this.lastPopThrottle-thr;
@@ -1852,11 +1859,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.8'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.9'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v4.8');
+    localStorage.setItem('drivetone.dashboardMigration','v4.9');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -2082,7 +2089,8 @@
     const redline=physState?.redline||modes[driveMode].redline,prog=clamp(rpm/redline,0,1)*270;ui.gauge.style.setProperty('--p',prog+'deg');ui.gauge.classList.toggle('redline',rpm>redline*.91);
     if(ui.visualRpmFill)ui.visualRpmFill.style.width=Math.round(clamp(rpm/redline,0,1)*100)+'%';if(ui.visualBoostFill)ui.visualBoostFill.style.width=Math.round(clamp(boost,0,1)*100)+'%';
     ui.road.style.animationPlayState=speed>3?'running':'paused';document.documentElement.style.setProperty('--scene-speed',clamp(2.2-speed/135,.22,2.2)+'s');ui.speedGlow.style.opacity=String(clamp(speed/180,0,.9));
-    if(now-lastRoadFrame>=33){
+    const roadFrameGap=(audio?.sim&&speed>25)?50:33;
+    if(now-lastRoadFrame>=roadFrameGap){
       const roadDt=Math.min(.10,lastRoadFrame?(now-lastRoadFrame)/1000:dt);
       lastRoadFrame=now;
       roadViz.render(roadDt,speed,rpm,gear,boost,accel);
