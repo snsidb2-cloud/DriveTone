@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v4.1</title>
+  <title>DriveTone Lab v4.2</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v4.1 Live dashboard display themes */
+    /* v4.2 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v4.1 portrait/landscape Classic Blue corrections */
+    /* v4.2 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v4.1 Classic Blue — faithful 16:9 reference layout */
+    /* v4.2 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -353,6 +353,33 @@
       .blueRefSpeed{font-size:54px;letter-spacing:-3px}.blueEngineLabel{font-size:6px}.blueRefSpeedUnit,.blueRefRpm{font-size:7px}.blueRpmNum{font-size:7px}
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
+    }
+    /* v4.2 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    .blueRotateHint{display:none}
+    @media(max-width:760px) and (orientation:portrait){
+      .dashboardHud[data-theme="blue"] .blueClassic{
+        width:calc(100vw - 8px)!important;height:calc(100vh - 112px)!important;aspect-ratio:auto!important;
+        left:50%!important;top:calc(50% + 26px)!important;transform:translate(-50%,-50%)!important;
+        border-radius:12px!important;overflow:hidden!important
+      }
+      .blueTopbar{left:3%!important;right:3%!important;top:1.5%!important;height:8%!important}
+      .blueTitleWrap strong{font-size:18px!important}.blueTitleWrap small{font-size:9px!important}.blueTitleIcon{width:34px!important;height:34px!important;font-size:18px!important}
+      .blueTopStatus{font-size:8px!important;gap:6px!important}
+      .blueSidebar{left:2%!important;right:2%!important;top:10.5%!important;bottom:auto!important;width:auto!important;height:7.5%!important;min-width:0!important;padding:4px 6px!important;flex-direction:row!important;justify-content:space-between!important;border-right:0!important;border-bottom:1px solid rgba(255,255,255,.07)!important;background:rgba(4,12,22,.84)!important;border-radius:10px!important}
+      .blueNavItem{height:100%!important;width:16%!important;gap:1px!important;border-radius:8px!important}.blueNavItem small{display:none!important}.blueNavItem span{font-size:16px!important}
+      .blueLeftCards{left:3%!important;top:20%!important;width:44%!important;display:grid!important;gap:8px!important}
+      .blueRightCards{right:3%!important;top:20%!important;width:44%!important;display:grid!important;gap:8px!important}
+      .blueRefCard{padding:10px!important;border-radius:12px!important}.blueRefLabel,.blueRefSub{font-size:9px!important}.blueRefGear{font-size:34px!important;margin:2px 0 8px!important}.bluePrnd{font-size:9px!important}
+      .blueRefMetric{font-size:30px!important}.blueRefUnit{font-size:10px!important}.blueRefProgress{height:6px!important}
+      .blueGpsArrow{font-size:27px!important}.blueRefGps{font-size:24px!important}.blueWeatherIconRef{font-size:28px!important}.blueWeatherTempRef{font-size:28px!important}
+      .blueGaugeStage{left:4%!important;top:47%!important;width:92%!important;height:31%!important}
+      .blueTachoOuter{width:100%!important;height:100%!important}
+      .blueRefSpeed{font-size:78px!important}.blueEngineLabel{font-size:9px!important}.blueRefSpeedUnit{font-size:10px!important}.blueRefRpm{font-size:10px!important}
+      .blueRpmNum{font-size:10px!important}
+      .blueCarArt{right:4%!important;bottom:17%!important;width:33%!important;opacity:.72!important}
+      .blueTripStrip{left:3%!important;right:3%!important;bottom:3%!important;height:11.5%!important;grid-template-columns:1fr 1fr!important;border-radius:12px!important}
+      .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
+      .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
   </style>
 </head>
@@ -556,6 +583,7 @@
               </svg>
             </div>
 
+            <div class="blueRotateHint">↻ للأفضل: لف الهاتف أفقيًا</div>
             <div class="blueTripStrip">
               <div class="blueTripItem"><span>⌁</span><div><small>المسافة</small><b id="blueTripDistance">0.0 كم</b></div></div>
               <div class="blueTripItem"><span>◷</span><div><small>الوقت</small><b id="blueTripTime">0:00</b></div></div>
@@ -634,10 +662,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.1</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.1 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.2</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.2 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v4.1</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v4.2</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1622,11 +1650,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.1'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.2'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v4.1');
+    localStorage.setItem('drivetone.dashboardMigration','v4.2');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -1718,10 +1746,14 @@
     drivingView=true;document.body.classList.add('driving-mode');document.body.classList.toggle('dashboard-mode',drivingDisplay==='dashboard');ui.driveHud.setAttribute('aria-hidden','false');ui.dashboardHud?.setAttribute('aria-hidden',drivingDisplay==='dashboard'?'false':'true');syncDriveHud();renderSceneDrawer();
     setTimeout(()=>roadViz.resize(true),60);
     await requestWakeLock();
-    try{if(!document.fullscreenElement && document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen({navigationUI:'hide'});}catch(e){}
+    try{
+      if(!document.fullscreenElement && document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen({navigationUI:'hide'});
+      if(drivingDisplay==='dashboard' && screen.orientation?.lock)await screen.orientation.lock('landscape');
+    }catch(e){}
   }
   async function exitDrivingView(fromFullscreen=false){
     drivingView=false;document.body.classList.remove('driving-mode','dashboard-mode');ui.driveHud.setAttribute('aria-hidden','true');ui.dashboardHud?.setAttribute('aria-hidden','true');closeSceneDrawer();await releaseWakeLock();
+    try{if(screen.orientation?.unlock)screen.orientation.unlock();}catch(e){}
     try{if(!fromFullscreen && document.fullscreenElement && document.exitFullscreen)await document.exitFullscreen();}catch(e){}
   }
 
