@@ -1,0 +1,12 @@
+{
+  "name": "DriveTone Lab",
+  "short_name": "DriveTone",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#05070a",
+  "theme_color": "#090b10",
+  "lang": "ar",
+  "dir": "rtl"
+}
