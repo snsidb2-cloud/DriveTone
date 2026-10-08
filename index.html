@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v5.0</title>
+  <title>DriveTone Lab v5.1</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v5.0 Live dashboard display themes */
+    /* v5.1 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v5.0 portrait/landscape Classic Blue corrections */
+    /* v5.1 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v5.0 Classic Blue — faithful 16:9 reference layout */
+    /* v5.1 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v5.0 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v5.1 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v5.0 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v5.1 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v5.0 dedicated dashboard batch */
+    /* v5.1 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -450,7 +450,7 @@
       .neonLeftStack,.neonRightStack{width:28%}.neonCenterStage{left:29%;right:29%}.neonHex{width:42vw}.neonBottomRail{grid-template-columns:1fr 1fr;height:17%}
     }
 
-    /* v5.0 performance mode for in-car browsers */
+    /* v5.1 performance mode for in-car browsers */
     body.driving-mode .redSide,
     body.driving-mode .redMain,
     body.driving-mode .redBottomCard,
@@ -787,10 +787,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v5.0</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v5.0 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Tesla Intel Atom Safe • DriveTone v5.1</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">وضع Intel Atom Safe مفعّل افتراضيًا لـ Tesla Model 3 2019: محرك صوت خفيف، GPS سريع، ورسوم مخففة لتقليل احتمال انهيار متصفح السيارة.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v5.0</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v5.1</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -806,6 +806,7 @@
 
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   const lerp=(a,b,t)=>a+(b-a)*t;
+  const INTEL_ATOM_SAFE=true; // Tesla Model 3 2019 / MCU2: never load the heavy physical engine in production.
 
   class RoadViz{
     constructor(canvas){
@@ -1074,7 +1075,7 @@
   let demo=false, speed=0, targetSpeed=0, accel=0, lastSpeed=0, lastT=performance.now(), gear=1, rpm=850, throttle=0, boost=0, watchId=null;
   let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0, tripDistanceKm=0, tripSeconds=0;
   let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null, gpsFilteredSpeed=0, gpsLastFixAt=0, gpsLastAcceptedAt=0, gpsStationaryHits=0, gpsRejectCount=0;
-  let lastRoadFrame=0,lastHudFrame=0,lastLightCheckAt=0;
+  let lastRoadFrame=0,lastHudFrame=0,lastBaseHudFrame=0,lastLightCheckAt=0;
   const roadViz=new RoadViz(ui.driveCanvas);
 
   const modes={
@@ -1309,7 +1310,7 @@
   class PhysicalEngineAudio{
     constructor(fallback){
       this.fallback=fallback;this.sim=null;this.running=false;this.failed=false;this.loading=null;this.lastT=performance.now();this.engineKey='phys_v8';
-      this.fxBus=null;this.lastPopAt=0;this.lastPopThrottle=.05;this.popSeq=0;this.sequence=null;this.sequenceToken=0;this.lastControlAt=0;this.lastToneAt=0;this.carLite=false;
+      this.fxBus=null;this.lastPopAt=0;this.lastPopThrottle=.05;this.popSeq=0;this.sequence=null;this.sequenceToken=0;this.lastControlAt=0;this.lastToneAt=0;this.lastLiteAt=0;this.carLite=INTEL_ATOM_SAFE;
       this.repoRevision='f16e3f5ded382716f4342843d7e4463ebb7d0bd8';
       this.moduleUrl=`https://cdn.jsdelivr.net/gh/YigitSalihEmecen/Engine_Sim@${this.repoRevision}/src/engine-sim.js`;
     }
@@ -1478,6 +1479,12 @@
       }catch(e){console.warn('style apply',e);}
     }
     async _load(){
+      if(INTEL_ATOM_SAFE){
+        this.carLite=true;
+        await this.fallback.start();
+        this.running=true;
+        return;
+      }
       if(this.sim||this.failed)return;
       if(this.loading)return this.loading;
       this.loading=(async()=>{
@@ -1513,7 +1520,11 @@
     async enterCarMode(){
       this.carLite=true;
       this._finishSequence();
-      try{if(this.sim?.running)this.sim.stop();}catch(e){}
+      if(this.sim){
+        try{if(this.sim?.running)this.sim.stop();}catch(e){}
+        try{if(INTEL_ATOM_SAFE&&this.sim?.ctx?.state!=='closed')await this.sim.ctx.close();}catch(e){}
+        if(INTEL_ATOM_SAFE)this.sim=null;
+      }
       await this.fallback.start();
       if(this.fallback.master){
         const t=this.fallback.ctx?.currentTime||0;
@@ -1523,6 +1534,7 @@
       if(ui.sampleStatus)ui.sampleStatus.textContent='وضع السيارة: Audio Compatibility Mode — صوت أخف وأكثر ثباتًا لمتصفح السيارة.';
     }
     async exitCarMode(){
+      if(INTEL_ATOM_SAFE){this.carLite=true;return;}
       if(!this.carLite)return;
       this.carLite=false;
       if(this.fallback.master&&this.fallback.ctx){
@@ -1535,6 +1547,11 @@
       }
     }
     async start(){
+      if(INTEL_ATOM_SAFE){
+        this.carLite=true;await this.fallback.start();this.running=true;
+        if(ui.sampleStatus)ui.sampleStatus.textContent='Tesla Intel Atom Safe Mode — محرك صوت خفيف مخصص للاستقرار داخل Model 3 2019.';
+        return;
+      }
       if(this.carLite){
         await this.fallback.start();this.running=true;return;
       }
@@ -1547,6 +1564,7 @@
     }
     async setEngine(type){
       this.engineKey=type;
+      if(INTEL_ATOM_SAFE){this.carLite=true;return;}
       if(this._isPhysical(type)){
         if(this.carLite)return;
         if(!this.sim && !this.failed)await this._load();
@@ -1556,6 +1574,7 @@
       }
     }
     transient(kind,strength){
+      if(INTEL_ATOM_SAFE&&this.carLite)return;
       if(this.carLite){
         this.fallback.transient(kind,strength);return;
       }
@@ -1568,6 +1587,9 @@
     update(rpm,thr,type,isDecel,shiftCut,boostAmount,roadSpeed=0,roadAccel=0){
       this.engineKey=type;
       if(this.carLite){
+        const now=performance.now();
+        if(this.lastLiteAt&&now-this.lastLiteAt<40)return;
+        this.lastLiteAt=now;
         this.fallback.update(rpm,thr,this._liteType(type),isDecel,shiftCut,boostAmount);
         return;
       }
@@ -1709,12 +1731,14 @@
       const q=gpsQuality(acc);
       ui.accuracy.textContent=Math.round(acc)+' m • '+q.label;
       setGpsStatus('GPS متصل • '+q.label+' • '+Math.round(acc)+' م',q.ok);syncSourceLabel();
-      const wallNow=Date.now();
-      if(wallNow-lastLightCheckAt>60000){
-        lastLightCheckAt=wallNow;
-        applyImmediateLightScene(lat,lon).then(()=>refreshLiveWeather(lat,lon,false));
-      }else{
-        refreshLiveWeather(lat,lon,false);
+      if(!drivingView){
+        const wallNow=Date.now();
+        if(wallNow-lastLightCheckAt>60000){
+          lastLightCheckAt=wallNow;
+          applyImmediateLightScene(lat,lon).then(()=>refreshLiveWeather(lat,lon,false));
+        }else{
+          refreshLiveWeather(lat,lon,false);
+        }
       }
     }
     if(!Number.isFinite(lat)||!Number.isFinite(lon))return;
@@ -1900,11 +1924,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.0'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.1'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v5.0');
+    localStorage.setItem('drivetone.dashboardMigration','v5.1');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -2126,19 +2150,23 @@
     const physState=audio.getState();
     if(physState){rpm=physState.rpm;gear=physState.gear||gear;boost=physState.boost??boost;}
 
-    ui.speed.textContent=Math.round(speed);ui.rpm.textContent=Math.round(rpm);ui.gear.textContent=gear;ui.accel.textContent=accel.toFixed(2)+' m/s²';ui.throttle.textContent=Math.round(throttle*100)+'%';ui.boost.textContent=Math.round(boost*100)+'%';
-    if(ui.visualSpeed){ui.visualSpeed.textContent=Math.round(speed);ui.visualRpm.textContent=Math.round(rpm).toLocaleString('en-US');ui.visualGear.childNodes[0].nodeValue=String(gear);ui.visualBoost.textContent=Math.round(boost*100)+'%';}
-    document.documentElement.style.setProperty('--boost',Math.round(boost*100)+'%');
-    const redline=physState?.redline||modes[driveMode].redline,prog=clamp(rpm/redline,0,1)*270;ui.gauge.style.setProperty('--p',prog+'deg');ui.gauge.classList.toggle('redline',rpm>redline*.91);
-    if(ui.visualRpmFill)ui.visualRpmFill.style.width=Math.round(clamp(rpm/redline,0,1)*100)+'%';if(ui.visualBoostFill)ui.visualBoostFill.style.width=Math.round(clamp(boost,0,1)*100)+'%';
-    ui.road.style.animationPlayState=speed>3?'running':'paused';document.documentElement.style.setProperty('--scene-speed',clamp(2.2-speed/135,.22,2.2)+'s');ui.speedGlow.style.opacity=String(clamp(speed/180,0,.9));
-    const roadFrameGap=(audio?.sim&&speed>25)?50:33;
+    const baseHudGap=drivingView?100:33;
+    if(now-lastBaseHudFrame>=baseHudGap){
+      lastBaseHudFrame=now;
+      ui.speed.textContent=Math.round(speed);ui.rpm.textContent=Math.round(rpm);ui.gear.textContent=gear;ui.accel.textContent=accel.toFixed(2)+' m/s²';ui.throttle.textContent=Math.round(throttle*100)+'%';ui.boost.textContent=Math.round(boost*100)+'%';
+      if(ui.visualSpeed){ui.visualSpeed.textContent=Math.round(speed);ui.visualRpm.textContent=Math.round(rpm).toLocaleString('en-US');ui.visualGear.childNodes[0].nodeValue=String(gear);ui.visualBoost.textContent=Math.round(boost*100)+'%';}
+      document.documentElement.style.setProperty('--boost',Math.round(boost*100)+'%');
+      const redline=physState?.redline||modes[driveMode].redline,prog=clamp(rpm/redline,0,1)*270;ui.gauge.style.setProperty('--p',prog+'deg');ui.gauge.classList.toggle('redline',rpm>redline*.91);
+      if(ui.visualRpmFill)ui.visualRpmFill.style.width=Math.round(clamp(rpm/redline,0,1)*100)+'%';if(ui.visualBoostFill)ui.visualBoostFill.style.width=Math.round(clamp(boost,0,1)*100)+'%';
+      ui.road.style.animationPlayState=speed>3?'running':'paused';document.documentElement.style.setProperty('--scene-speed',clamp(2.2-speed/135,.22,2.2)+'s');ui.speedGlow.style.opacity=String(clamp(speed/180,0,.9));
+    }
+    const roadFrameGap=drivingView?(drivingDisplay==='dashboard'?100:66):33;
     if(now-lastRoadFrame>=roadFrameGap){
       const roadDt=Math.min(.10,lastRoadFrame?(now-lastRoadFrame)/1000:dt);
       lastRoadFrame=now;
       roadViz.render(roadDt,speed,rpm,gear,boost,accel);
     }
-    if(ui.dashboardHud && now-lastHudFrame>=66){
+    if(ui.dashboardHud && now-lastHudFrame>=(drivingView?100:66)){
       lastHudFrame=now;
       const sp=Math.round(speed),rp=Math.round(rpm),th=Math.round(throttle*100),bo=Math.round(boost*100);
       ui.dashboardHud.style.setProperty('--dashSpeedPct',Math.round(clamp(speed/240,0,1)*75)+'%');
