@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v2.7</title>
+  <title>DriveTone Lab v2.8</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -76,6 +76,15 @@
     .driveChip strong{color:#fff;white-space:nowrap}.driveChip .miniDot{width:8px;height:8px;border-radius:50%;background:var(--danger);box-shadow:0 0 12px currentColor;flex:0 0 auto}.driveChip .miniDot.ok{background:var(--ok)}
     .driveExit{pointer-events:auto;border:1px solid rgba(255,255,255,.18);background:rgba(17,21,29,.84);color:#fff;min-height:40px;padding:9px 14px;border-radius:14px;font-weight:800;cursor:pointer;white-space:nowrap}
     .driveExit:active{transform:scale(.98)}
+    .driveWeather{display:none;position:fixed;z-index:56;top:max(64px,calc(env(safe-area-inset-top) + 54px));right:max(12px,env(safe-area-inset-right));min-width:188px;max-width:min(310px,46vw);padding:11px 13px;border-radius:18px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(145deg,rgba(8,13,20,.80),rgba(11,17,26,.64));backdrop-filter:blur(18px) saturate(1.2);box-shadow:0 12px 36px rgba(0,0,0,.30);color:#fff;pointer-events:auto;transition:.25s ease}
+    .driveWeatherTop{display:flex;align-items:center;gap:10px}.driveWeatherIcon{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:rgba(255,255,255,.09);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+    .driveWeatherMain{min-width:0;flex:1}.driveWeatherTemp{font-size:22px;line-height:1;font-weight:900;letter-spacing:-.5px}.driveWeatherState{font-size:11px;color:#d4deea;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .driveWeatherMeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:9px;padding-top:8px;border-top:1px solid rgba(255,255,255,.09);font-size:10px;color:#b9c6d6}.driveWeatherMeta span{white-space:nowrap}
+    .driveWeather[data-theme="sunny"]{background:linear-gradient(145deg,rgba(86,55,8,.80),rgba(19,25,34,.68));border-color:rgba(255,196,90,.26)}
+    .driveWeather[data-theme="rainy"],.driveWeather[data-theme="storm"]{background:linear-gradient(145deg,rgba(15,42,68,.84),rgba(9,17,29,.72));border-color:rgba(95,173,255,.26)}
+    .driveWeather[data-theme="snowy"],.driveWeather[data-theme="foggy"],.driveWeather[data-theme="cloudy"]{background:linear-gradient(145deg,rgba(54,63,72,.82),rgba(17,23,31,.70))}
+    .driveWeather[data-theme="night"],.driveWeather[data-theme="city"]{background:linear-gradient(145deg,rgba(13,22,45,.88),rgba(5,9,18,.74));border-color:rgba(118,146,255,.20)}
+    body.driving-mode .driveWeather{display:block}
     body.driving-mode{overflow:hidden;background:#05070a}
     body.driving-mode .app{max-width:none;width:100vw;height:100dvh;min-height:100dvh;padding:0;gap:0;overflow:hidden}
     body.driving-mode .topbar,body.driving-mode .controls,body.driving-mode .footer{display:none!important}
@@ -102,6 +111,7 @@
     body.driving-mode .horizon{top:39%}
     @media(max-width:700px){
       .driveHud{align-items:flex-start}.driveHudGroup{max-width:72%}.driveChip{min-height:34px;padding:7px 10px;font-size:11px}.driveExit{min-height:36px;padding:8px 10px;font-size:12px}
+      .driveWeather{top:max(100px,calc(env(safe-area-inset-top) + 90px));right:max(8px,env(safe-area-inset-right));min-width:164px;max-width:48vw;padding:9px 10px;border-radius:15px}.driveWeatherIcon{width:34px;height:34px;font-size:19px}.driveWeatherTemp{font-size:19px}.driveWeatherMeta{gap:7px;font-size:9px}
       body.driving-mode .dash{padding-top:max(92px,calc(env(safe-area-inset-top) + 82px))}
       body.driving-mode .gauge{width:min(88vw,64vh,500px);padding:14px}
       body.driving-mode .speed{font-size:clamp(70px,25vw,118px);letter-spacing:-4px}
@@ -110,6 +120,7 @@
     }
     @media(max-height:520px) and (orientation:landscape){
       .driveHud{top:max(6px,env(safe-area-inset-top));left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right))}.driveChip{min-height:32px;padding:6px 9px}.driveExit{min-height:34px;padding:7px 10px}
+      .driveWeather{top:max(48px,calc(env(safe-area-inset-top) + 44px));right:max(8px,env(safe-area-inset-right));min-width:176px;max-width:35vw;padding:8px 10px}.driveWeatherIcon{width:31px;height:31px;font-size:18px}.driveWeatherTemp{font-size:18px}.driveWeatherMeta{margin-top:6px;padding-top:6px}
       body.driving-mode .dash{padding-top:max(46px,calc(env(safe-area-inset-top) + 42px));padding-bottom:max(6px,env(safe-area-inset-bottom))}
       body.driving-mode .gauge{width:min(78vh,47vw,420px);padding:11px}
       body.driving-mode .speed{font-size:clamp(58px,10vw,96px)}
@@ -167,6 +178,20 @@
       <div class="driveChip"><strong id="driveEngineText">V8 Muscle</strong><span>•</span><span id="driveModeText">Normal</span></div>
     </div>
     <button id="exitDriveMode" class="driveExit" type="button">خروج</button>
+  </div>
+  <div id="driveWeather" class="driveWeather" data-theme="night" aria-live="polite">
+    <div class="driveWeatherTop">
+      <div id="driveWeatherIcon" class="driveWeatherIcon">🌙</div>
+      <div class="driveWeatherMain">
+        <div id="driveWeatherTemp" class="driveWeatherTemp">—°</div>
+        <div id="driveWeatherState" class="driveWeatherState">بانتظار الطقس…</div>
+      </div>
+    </div>
+    <div class="driveWeatherMeta">
+      <span id="driveWeatherWind">💨 — km/h</span>
+      <span id="driveWeatherCloud">☁ —%</span>
+      <span id="driveWeatherLight">ليل/نهار —</span>
+    </div>
   </div>
   <div id="sceneEdgeZone" class="sceneEdgeZone" aria-hidden="true"></div>
   <div id="sceneDrawerOverlay" class="sceneDrawerOverlay" aria-hidden="true"></div>
@@ -279,10 +304,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v2.7</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v2.6 تضيف مزامنة تلقائية مع الطقس اللحظي حسب GPS، وتعيد بناء معاينات المشاهد لتعمل بشكل موثوق بدون صور سوداء.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v2.8</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v2.8 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v2.7</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v2.8</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -293,7 +318,7 @@
     demoSpeed:$('demoSpeed'),demoValue:$('demoValue'),sensitivity:$('sensitivity'),sensValue:$('sensValue'),volume:$('volume'),volValue:$('volValue'),
     exhaust:$('exhaust'),exhaustValue:$('exhaustValue'),popMode:$('popMode'),engineType:$('engineType'),modeGroup:$('modeGroup'),sampleStatus:$('sampleStatus'),modelInfo:$('modelInfo'),
     motionBtn:$('motionBtn'),coldStartBtn:$('coldStartBtn'),revDemoBtn:$('revDemoBtn'),driveModeBtn:$('driveModeBtn'),exitDriveMode:$('exitDriveMode'),driveHud:$('driveHud'),driveGpsDot:$('driveGpsDot'),driveGpsText:$('driveGpsText'),driveAudioDot:$('driveAudioDot'),driveAudioText:$('driveAudioText'),driveEngineText:$('driveEngineText'),driveModeText:$('driveModeText'),
-    driveCanvas:$('driveCanvas'),visualHud:$('visualHud'),visualSpeed:$('visualSpeed'),visualRpm:$('visualRpm'),visualGear:$('visualGear'),visualBoost:$('visualBoost'),visualRpmFill:$('visualRpmFill'),visualBoostFill:$('visualBoostFill'),visualSceneTag:$('visualSceneTag'),sceneType:$('sceneType'),teslaCarStage:$('teslaCarStage'),teslaCarLabel:$('teslaCarLabel'),teslaModel:$('teslaModel'),carSize:$('carSize'),colorGrid:$('colorGrid'),teslaMiniInfo:$('teslaMiniInfo'),sceneEdgeZone:$('sceneEdgeZone'),sceneDrawer:$('sceneDrawer'),sceneDrawerOverlay:$('sceneDrawerOverlay'),sceneDrawerClose:$('sceneDrawerClose'),sceneDrawerList:$('sceneDrawerList'),weatherAutoBtn:$('weatherAutoBtn'),weatherRefreshBtn:$('weatherRefreshBtn'),weatherLiveStatus:$('weatherLiveStatus')
+    driveCanvas:$('driveCanvas'),visualHud:$('visualHud'),visualSpeed:$('visualSpeed'),visualRpm:$('visualRpm'),visualGear:$('visualGear'),visualBoost:$('visualBoost'),visualRpmFill:$('visualRpmFill'),visualBoostFill:$('visualBoostFill'),visualSceneTag:$('visualSceneTag'),sceneType:$('sceneType'),teslaCarStage:$('teslaCarStage'),teslaCarLabel:$('teslaCarLabel'),teslaModel:$('teslaModel'),carSize:$('carSize'),colorGrid:$('colorGrid'),teslaMiniInfo:$('teslaMiniInfo'),sceneEdgeZone:$('sceneEdgeZone'),sceneDrawer:$('sceneDrawer'),sceneDrawerOverlay:$('sceneDrawerOverlay'),sceneDrawerClose:$('sceneDrawerClose'),sceneDrawerList:$('sceneDrawerList'),weatherAutoBtn:$('weatherAutoBtn'),weatherRefreshBtn:$('weatherRefreshBtn'),weatherLiveStatus:$('weatherLiveStatus'),driveWeather:$('driveWeather'),driveWeatherIcon:$('driveWeatherIcon'),driveWeatherTemp:$('driveWeatherTemp'),driveWeatherState:$('driveWeatherState'),driveWeatherWind:$('driveWeatherWind'),driveWeatherCloud:$('driveWeatherCloud'),driveWeatherLight:$('driveWeatherLight')
   };
 
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -1116,11 +1141,23 @@
     return 'sunny';
   }
   function weatherPhrase(code){if(code>=95)return 'عاصفة رعدية';if((code>=71&&code<=77)||code===85||code===86)return 'ثلوج';if(code===45||code===48)return 'ضباب';if((code>=51&&code<=67)||(code>=80&&code<=82))return 'مطر';if(code===0)return 'صحو';if(code<=3)return 'غيوم جزئية';return 'حالة جوية';}
+  function weatherIcon(code,scene){if(scene==='storm'||code>=95)return '⛈️';if(scene==='snowy'||(code>=71&&code<=86))return '❄️';if(scene==='foggy'||code===45||code===48)return '🌫️';if(scene==='rainy'||(code>=51&&code<=82))return '🌧️';if(scene==='night'||scene==='city')return '🌙';if(scene==='cloudy'||code>0)return '☁️';if(scene==='sunset')return '🌅';return '☀️';}
+  function updateDriveWeather(cur={},scene='night',lightPhase='night'){
+    if(!ui.driveWeather)return;
+    const code=Number(cur.weather_code||0),t=Number(cur.temperature_2m),wind=Math.round(Number(cur.wind_speed_10m||0)),cloud=Math.round(Number(cur.cloud_cover||0));
+    ui.driveWeather.dataset.theme=scene||'night';
+    ui.driveWeatherIcon.textContent=weatherIcon(code,scene);
+    ui.driveWeatherTemp.textContent=Number.isFinite(t)?t.toFixed(1)+'°':'—°';
+    ui.driveWeatherState.textContent=weatherPhrase(code);
+    ui.driveWeatherWind.textContent='💨 '+wind+' km/h';
+    ui.driveWeatherCloud.textContent='☁ '+cloud+'%';
+    ui.driveWeatherLight.textContent=lightPhase==='night'?'🌙 ليل':lightPhase==='twilight'?'🌅 شفق':'☀️ نهار';
+  }
   async function refreshLiveWeather(lat,lon,force=false){
     if(!weatherAuto && !force)return;const now=Date.now();if(!force&&now-lastWeatherAt<8*60*1000)return;lastWeatherAt=now;lastWeatherPos={lat,lon};
     if(ui.weatherLiveStatus)ui.weatherLiveStatus.innerHTML='<div class="modelNote">جارٍ تحديث الطقس اللحظي…</div>';
-    try{const q=new URLSearchParams({latitude:String(lat),longitude:String(lon),current:'temperature_2m,is_day,weather_code,cloud_cover,precipitation,rain,showers,snowfall,visibility,wind_speed_10m',daily:'sunrise,sunset',timezone:'auto',forecast_days:'1'});const res=await fetch('https://api.open-meteo.com/v1/forecast?'+q.toString(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);const data=await res.json();lastWeatherData=data;const cur=data.current||{},scene=weatherSceneFromCurrent(cur,data.daily||{},lat,lon);const key=scenePresets[scene]?scene:(scene==='night'?'night':'sunny');if(weatherAuto)await applyScenePreset(key,{close:false});const t=Number(cur.temperature_2m);const cloud=Math.round(Number(cur.cloud_cover||0));const wind=Math.round(Number(cur.wind_speed_10m||0));const light=localLightPhase(lat,lon,new Date());if(ui.weatherLiveStatus)ui.weatherLiveStatus.innerHTML=`<div><small>الحالة</small><strong>${weatherPhrase(Number(cur.weather_code||0))}</strong></div><div><small>الحرارة</small><strong>${Number.isFinite(t)?t.toFixed(1)+'°C':'—'}</strong></div><div><small>الغيوم / الرياح</small><strong>${cloud}% • ${wind} km/h</strong></div><div><small>الإضاءة</small><strong>${light.phase==='night'?'ليل':light.phase==='twilight'?'شفق':'نهار'}</strong></div><div class="modelNote">المشهد التلقائي: ${scenePresets[key]?.label||key}</div>`;
-    }catch(e){const light=localLightPhase(lat,lon,new Date());if(weatherAuto){const fallback=light.phase==='night'?'night':light.phase==='twilight'?'sunset':'sunny';if(scenePresets[fallback])await applyScenePreset(fallback,{close:false});}if(ui.weatherLiveStatus)ui.weatherLiveStatus.innerHTML=`<div class="modelNote">تعذر تحديث الطقس، لكن تحديد ${light.phase==='night'?'الليل':'النهار'} يعمل محليًا من GPS. المشهد الحالي: ${scenePresets[ui.sceneType?.value]?.label||ui.sceneType?.value}.</div>`;}
+    try{const q=new URLSearchParams({latitude:String(lat),longitude:String(lon),current:'temperature_2m,is_day,weather_code,cloud_cover,precipitation,rain,showers,snowfall,visibility,wind_speed_10m',daily:'sunrise,sunset',timezone:'auto',forecast_days:'1'});const res=await fetch('https://api.open-meteo.com/v1/forecast?'+q.toString(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);const data=await res.json();lastWeatherData=data;const cur=data.current||{},scene=weatherSceneFromCurrent(cur,data.daily||{},lat,lon);const key=scenePresets[scene]?scene:(scene==='night'?'night':'sunny');if(weatherAuto)await applyScenePreset(key,{close:false});const t=Number(cur.temperature_2m);const cloud=Math.round(Number(cur.cloud_cover||0));const wind=Math.round(Number(cur.wind_speed_10m||0));const light=localLightPhase(lat,lon,new Date());updateDriveWeather(cur,key,light.phase);if(ui.weatherLiveStatus)ui.weatherLiveStatus.innerHTML=`<div><small>الحالة</small><strong>${weatherPhrase(Number(cur.weather_code||0))}</strong></div><div><small>الحرارة</small><strong>${Number.isFinite(t)?t.toFixed(1)+'°C':'—'}</strong></div><div><small>الغيوم / الرياح</small><strong>${cloud}% • ${wind} km/h</strong></div><div><small>الإضاءة</small><strong>${light.phase==='night'?'ليل':light.phase==='twilight'?'شفق':'نهار'}</strong></div><div class="modelNote">المشهد التلقائي: ${scenePresets[key]?.label||key}</div>`;
+    }catch(e){const light=localLightPhase(lat,lon,new Date());const fallback=light.phase==='night'?'night':light.phase==='twilight'?'sunset':'sunny';updateDriveWeather({},fallback,light.phase);if(weatherAuto){if(scenePresets[fallback])await applyScenePreset(fallback,{close:false});}if(ui.weatherLiveStatus)ui.weatherLiveStatus.innerHTML=`<div class="modelNote">تعذر تحديث الطقس، لكن تحديد ${light.phase==='night'?'الليل':'النهار'} يعمل محليًا من GPS. المشهد الحالي: ${scenePresets[ui.sceneType?.value]?.label||ui.sceneType?.value}.</div>`;}
   }
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let sceneDrawerOpen=false,sceneSwipe=null;
