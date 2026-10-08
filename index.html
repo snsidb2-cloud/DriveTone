@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v3.7</title>
+  <title>DriveTone Lab v3.8</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v3.7 Live dashboard display themes */
+    /* v3.8 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -208,6 +208,31 @@
     .dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(230px,1fr) minmax(250px,1.15fr) minmax(230px,1fr);gap:clamp(10px,1vw,16px)}.dashboardHud[data-theme="amber"] .dashPanel:first-child{justify-content:center}.dashboardHud[data-theme="amber"] .dashPanel:last-child{justify-content:center}.dashboardHud[data-theme="amber"] .dashPanel:last-child .dashCard{display:none}.dashboardHud[data-theme="amber"] .dashExtraRpm{display:grid;width:min(42vh,24vw,340px)}.dashboardHud[data-theme="amber"] .dashCenter{background:linear-gradient(180deg,rgba(16,12,7,.82),rgba(5,5,5,.94))}.dashboardHud[data-theme="amber"] .dashGauge{width:min(50vh,30vw,410px)}.dashboardHud[data-theme="amber"] .dashBottomStrip{width:min(82%,1050px)}
     .dashboardHud[data-theme="neon"] .dashBoardShell{grid-template-columns:minmax(155px,.62fr) minmax(340px,1.55fr) minmax(220px,.9fr)}.dashboardHud[data-theme="neon"] .dashCenter{clip-path:polygon(5% 0,95% 0,100% 12%,100% 88%,95% 100%,5% 100%,0 88%,0 12%);border-radius:0;background:linear-gradient(180deg,rgba(2,17,24,.80),rgba(2,7,12,.94))}.dashboardHud[data-theme="neon"] .dashGauge{filter:drop-shadow(0 0 28px rgba(0,229,255,.34))}.dashboardHud[data-theme="neon"] .dashNeonRpm{display:block}.dashboardHud[data-theme="neon"] .dashPanel:last-child{background:linear-gradient(180deg,rgba(2,17,24,.72),rgba(3,8,13,.88))}
     .dashboardHud[data-theme="red"] .dashCenter{background:linear-gradient(180deg,rgba(20,6,9,.72),rgba(5,6,9,.94))}.dashboardHud[data-theme="red"] .dashGauge{box-shadow:inset 0 0 40px rgba(255,48,56,.06)}
+
+    /* Dedicated Sport Red layout */
+    .redSport{display:none;position:absolute;inset:max(58px,calc(env(safe-area-inset-top) + 48px)) clamp(16px,2vw,34px) clamp(14px,2vh,24px);z-index:7;pointer-events:none;direction:ltr}
+    .dashboardHud[data-theme="red"] .dashBoardShell,.dashboardHud[data-theme="red"] .dashBottomStrip{display:none!important}
+    .dashboardHud[data-theme="red"] .redSport{display:grid;grid-template-columns:minmax(150px,.68fr) minmax(430px,2fr) minmax(170px,.75fr);grid-template-rows:1fr auto;gap:14px}
+    .redSide,.redMain,.redBottomCard{border:1px solid rgba(255,55,64,.22);background:linear-gradient(180deg,rgba(19,5,8,.78),rgba(5,6,9,.94));backdrop-filter:blur(16px);box-shadow:0 18px 50px rgba(0,0,0,.32),inset 0 0 34px rgba(255,48,56,.045);border-radius:22px}
+    .redSide{padding:14px;display:flex;flex-direction:column;gap:10px;direction:rtl}
+    .redInfo{padding:13px;border-radius:16px;background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.065)}
+    .redLabel{font-size:10px;color:rgba(255,255,255,.50)}.redValue{margin-top:4px;font-size:clamp(22px,2.6vw,38px);font-weight:900}
+    .redMain{position:relative;display:grid;place-items:center;overflow:hidden}
+    .redMain:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,48,56,.12),transparent 44%);pointer-events:none}
+    .redTacho{position:relative;width:min(62vh,42vw,560px);aspect-ratio:1;display:grid;place-items:center}
+    .redTachoRing{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 215deg,#ff3038 0 var(--dashRpmPct),rgba(255,255,255,.07) var(--dashRpmPct) 76%,transparent 76% 100%);-webkit-mask:radial-gradient(circle,transparent 0 70%,#000 71% 78%,transparent 79%);mask:radial-gradient(circle,transparent 0 70%,#000 71% 78%,transparent 79%);filter:drop-shadow(0 0 26px rgba(255,48,56,.44))}
+    .redTachoTicks{position:absolute;inset:2%;border-radius:50%;background:repeating-conic-gradient(from 215deg,rgba(255,255,255,.78) 0 .32deg,transparent .32deg 4.4deg);-webkit-mask:radial-gradient(circle,transparent 0 82%,#000 83% 85%,transparent 86%);mask:radial-gradient(circle,transparent 0 82%,#000 83% 85%,transparent 86%);opacity:.75}
+    .redCore{position:relative;z-index:2;text-align:center}.redSpeed{font-size:clamp(82px,10vw,160px);font-weight:950;line-height:.84;letter-spacing:-6px;text-shadow:0 0 28px rgba(255,48,56,.36)}.redUnit{margin-top:8px;font-size:13px;color:rgba(255,255,255,.62)}
+    .redGear{margin-top:12px;font-size:clamp(30px,3vw,48px);font-weight:950;color:#ff664d}.redRpm{margin-top:5px;font-size:14px;color:rgba(255,255,255,.72)}
+    .redRpmBar{height:9px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:12px}.redRpmBar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff8a5b,#ff3038);box-shadow:0 0 18px rgba(255,48,56,.55)}
+    .redBottom{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .redBottomCard{padding:10px 12px;text-align:center;direction:rtl}.redBottomCard small{display:block;font-size:9px;color:rgba(255,255,255,.48)}.redBottomCard b{display:block;margin-top:3px;font-size:14px}
+    @media(max-width:760px){
+      .dashboardHud[data-theme="red"] .redSport{grid-template-columns:1fr;overflow:auto;inset:max(96px,calc(env(safe-area-inset-top) + 84px)) 10px 10px}.redSide{display:none}.redMain{min-height:70vh}.redTacho{width:min(86vw,430px)}.redSpeed{font-size:clamp(76px,24vw,120px)}.redBottom{grid-template-columns:1fr 1fr}
+    }
+    @media(max-height:520px) and (orientation:landscape){
+      .dashboardHud[data-theme="red"] .redSport{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 10px 8px;grid-template-columns:minmax(135px,.6fr) minmax(340px,2fr) minmax(145px,.68fr);gap:8px}.redSide{padding:8px;gap:7px}.redInfo{padding:8px}.redTacho{width:min(70vh,39vw,360px)}.redSpeed{font-size:clamp(62px,9vw,108px)}.redBottomCard{padding:6px 8px}.redBottomCard b{font-size:12px}
+    }
 
     /* Dedicated Classic Blue layout */
     .blueClassic{display:none;position:absolute;inset:max(58px,calc(env(safe-area-inset-top) + 48px)) clamp(16px,2vw,34px) clamp(14px,2vh,24px);z-index:7;pointer-events:none;direction:ltr}
@@ -350,6 +375,37 @@
             <div class="dashMini"><small>المصدر</small><b id="dashMiniSource">GPS</b></div>
             <div class="dashMini"><small>المشهد</small><b id="dashMiniScene">Sunny</b></div>
           </div>
+          <div id="redSport" class="redSport">
+            <div class="redSide">
+              <div class="redInfo"><div class="redLabel">دواسة الوقود</div><div id="redThrottle" class="redValue">0%</div><div class="redRpmBar"><i id="redThrottleBar"></i></div></div>
+              <div class="redInfo"><div class="redLabel">BOOST / LOAD</div><div id="redBoost" class="redValue">0%</div><div class="redRpmBar"><i id="redBoostBar"></i></div></div>
+              <div class="redInfo" style="margin-top:auto"><div class="redLabel">التسارع</div><div id="redAccel" class="redValue">0.00</div><div class="redLabel">m/s²</div></div>
+            </div>
+            <div class="redMain">
+              <div class="redTacho">
+                <div class="redTachoRing"></div>
+                <div class="redTachoTicks"></div>
+                <div class="redCore">
+                  <div id="redSpeed" class="redSpeed">0</div>
+                  <div class="redUnit">كم/س</div>
+                  <div id="redGear" class="redGear">G1</div>
+                  <div class="redRpm"><span id="redRpm">850</span> RPM</div>
+                  <div class="redRpmBar"><i id="redRpmBar"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="redSide">
+              <div class="redInfo"><div class="redLabel">الطقس</div><div style="display:flex;align-items:center;gap:10px"><div id="redWeatherIcon" style="font-size:34px">☀️</div><div><div id="redWeatherTemp" class="redValue">—°</div><div id="redWeatherState" class="redLabel">بانتظار الطقس</div></div></div></div>
+              <div class="redInfo"><div class="redLabel">مصدر السرعة</div><div id="redGps" class="redValue">GPS</div><div id="redAccuracy" class="redLabel">بانتظار الدقة</div></div>
+              <div class="redInfo" style="margin-top:auto"><div class="redLabel">نمط القيادة</div><div id="redDriveMode" class="redValue">Normal</div></div>
+            </div>
+            <div class="redBottom">
+              <div class="redBottomCard"><small>السرعة</small><b id="redMiniSpeed">0 كم/س</b></div>
+              <div class="redBottomCard"><small>RPM</small><b id="redMiniRpm">850</b></div>
+              <div class="redBottomCard"><small>المصدر</small><b id="redMiniSource">GPS</b></div>
+              <div class="redBottomCard"><small>المشهد</small><b id="redMiniScene">—</b></div>
+            </div>
+          </div>
           <div id="blueClassic" class="blueClassic">
             <div class="blueSide">
               <div class="blueInfo"><div class="blueLabel">الترس الحالي</div><div id="blueGear" class="blueGear">G1</div></div>
@@ -448,10 +504,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.7</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.7 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.8</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.8 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v3.7</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v3.8</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -462,7 +518,7 @@
     demoSpeed:$('demoSpeed'),demoValue:$('demoValue'),sensitivity:$('sensitivity'),sensValue:$('sensValue'),volume:$('volume'),volValue:$('volValue'),
     exhaust:$('exhaust'),exhaustValue:$('exhaustValue'),popMode:$('popMode'),engineType:$('engineType'),modeGroup:$('modeGroup'),sampleStatus:$('sampleStatus'),modelInfo:$('modelInfo'),
     motionBtn:$('motionBtn'),coldStartBtn:$('coldStartBtn'),revDemoBtn:$('revDemoBtn'),driveModeBtn:$('driveModeBtn'),exitDriveMode:$('exitDriveMode'),driveHud:$('driveHud'),driveGpsDot:$('driveGpsDot'),driveGpsText:$('driveGpsText'),driveAudioDot:$('driveAudioDot'),driveAudioText:$('driveAudioText'),driveEngineText:$('driveEngineText'),driveModeText:$('driveModeText'),
-    driveCanvas:$('driveCanvas'),visualHud:$('visualHud'),visualSpeed:$('visualSpeed'),visualRpm:$('visualRpm'),visualGear:$('visualGear'),visualBoost:$('visualBoost'),visualRpmFill:$('visualRpmFill'),visualBoostFill:$('visualBoostFill'),visualSceneTag:$('visualSceneTag'),sceneType:$('sceneType'),teslaCarStage:$('teslaCarStage'),teslaCarLabel:$('teslaCarLabel'),teslaModel:$('teslaModel'),carSize:$('carSize'),colorGrid:$('colorGrid'),teslaMiniInfo:$('teslaMiniInfo'),sceneEdgeZone:$('sceneEdgeZone'),sceneDrawer:$('sceneDrawer'),sceneDrawerOverlay:$('sceneDrawerOverlay'),sceneDrawerClose:$('sceneDrawerClose'),sceneDrawerList:$('sceneDrawerList'),weatherAutoBtn:$('weatherAutoBtn'),weatherRefreshBtn:$('weatherRefreshBtn'),weatherLiveStatus:$('weatherLiveStatus'),driveWeather:$('driveWeather'),driveWeatherIcon:$('driveWeatherIcon'),driveWeatherTemp:$('driveWeatherTemp'),driveWeatherState:$('driveWeatherState'),driveWeatherWind:$('driveWeatherWind'),driveWeatherCloud:$('driveWeatherCloud'),driveWeatherLight:$('driveWeatherLight'),dashboardHud:$('dashboardHud'),dashSpeed:$('dashSpeed'),dashRpm:$('dashRpm'),dashGear:$('dashGear'),dashGearSide:$('dashGearSide'),dashThrottle:$('dashThrottle'),dashThrottleBar:$('dashThrottleBar'),dashAccel:$('dashAccel'),dashBoost:$('dashBoost'),dashBoostBar:$('dashBoostBar'),dashWeatherIcon:$('dashWeatherIcon'),dashWeatherTemp:$('dashWeatherTemp'),dashWeatherState:$('dashWeatherState'),dashGps:$('dashGps'),dashGpsAccuracy:$('dashGpsAccuracy'),dashMiniSpeed:$('dashMiniSpeed'),dashMiniRpm:$('dashMiniRpm'),dashMiniSource:$('dashMiniSource'),dashMiniScene:$('dashMiniScene'),dashQuickThemes:$('dashQuickThemes'),dashThemeName:$('dashThemeName'),dashRpmAlt:$('dashRpmAlt'),dashNeonRpmValue:$('dashNeonRpmValue'),dashNeonSegments:$('dashNeonSegments'),blueClassic:$('blueClassic'),blueSpeed:$('blueSpeed'),blueRpm:$('blueRpm'),blueGear:$('blueGear'),blueThrottle:$('blueThrottle'),blueThrottleBar:$('blueThrottleBar'),blueAccel:$('blueAccel'),blueGps:$('blueGps'),blueAccuracy:$('blueAccuracy'),blueWeatherIcon:$('blueWeatherIcon'),blueWeatherTemp:$('blueWeatherTemp'),blueWeatherState:$('blueWeatherState'),blueBoost:$('blueBoost'),blueBoostBar:$('blueBoostBar'),blueMiniSpeed:$('blueMiniSpeed'),blueMiniRpm:$('blueMiniRpm'),blueMiniSource:$('blueMiniSource'),blueMiniScene:$('blueMiniScene')
+    driveCanvas:$('driveCanvas'),visualHud:$('visualHud'),visualSpeed:$('visualSpeed'),visualRpm:$('visualRpm'),visualGear:$('visualGear'),visualBoost:$('visualBoost'),visualRpmFill:$('visualRpmFill'),visualBoostFill:$('visualBoostFill'),visualSceneTag:$('visualSceneTag'),sceneType:$('sceneType'),teslaCarStage:$('teslaCarStage'),teslaCarLabel:$('teslaCarLabel'),teslaModel:$('teslaModel'),carSize:$('carSize'),colorGrid:$('colorGrid'),teslaMiniInfo:$('teslaMiniInfo'),sceneEdgeZone:$('sceneEdgeZone'),sceneDrawer:$('sceneDrawer'),sceneDrawerOverlay:$('sceneDrawerOverlay'),sceneDrawerClose:$('sceneDrawerClose'),sceneDrawerList:$('sceneDrawerList'),weatherAutoBtn:$('weatherAutoBtn'),weatherRefreshBtn:$('weatherRefreshBtn'),weatherLiveStatus:$('weatherLiveStatus'),driveWeather:$('driveWeather'),driveWeatherIcon:$('driveWeatherIcon'),driveWeatherTemp:$('driveWeatherTemp'),driveWeatherState:$('driveWeatherState'),driveWeatherWind:$('driveWeatherWind'),driveWeatherCloud:$('driveWeatherCloud'),driveWeatherLight:$('driveWeatherLight'),dashboardHud:$('dashboardHud'),dashSpeed:$('dashSpeed'),dashRpm:$('dashRpm'),dashGear:$('dashGear'),dashGearSide:$('dashGearSide'),dashThrottle:$('dashThrottle'),dashThrottleBar:$('dashThrottleBar'),dashAccel:$('dashAccel'),dashBoost:$('dashBoost'),dashBoostBar:$('dashBoostBar'),dashWeatherIcon:$('dashWeatherIcon'),dashWeatherTemp:$('dashWeatherTemp'),dashWeatherState:$('dashWeatherState'),dashGps:$('dashGps'),dashGpsAccuracy:$('dashGpsAccuracy'),dashMiniSpeed:$('dashMiniSpeed'),dashMiniRpm:$('dashMiniRpm'),dashMiniSource:$('dashMiniSource'),dashMiniScene:$('dashMiniScene'),dashQuickThemes:$('dashQuickThemes'),dashThemeName:$('dashThemeName'),dashRpmAlt:$('dashRpmAlt'),dashNeonRpmValue:$('dashNeonRpmValue'),dashNeonSegments:$('dashNeonSegments'),blueClassic:$('blueClassic'),blueSpeed:$('blueSpeed'),blueRpm:$('blueRpm'),blueGear:$('blueGear'),blueThrottle:$('blueThrottle'),blueThrottleBar:$('blueThrottleBar'),blueAccel:$('blueAccel'),blueGps:$('blueGps'),blueAccuracy:$('blueAccuracy'),blueWeatherIcon:$('blueWeatherIcon'),blueWeatherTemp:$('blueWeatherTemp'),blueWeatherState:$('blueWeatherState'),blueBoost:$('blueBoost'),blueBoostBar:$('blueBoostBar'),blueMiniSpeed:$('blueMiniSpeed'),blueMiniRpm:$('blueMiniRpm'),blueMiniSource:$('blueMiniSource'),blueMiniScene:$('blueMiniScene'),redSport:$('redSport'),redSpeed:$('redSpeed'),redRpm:$('redRpm'),redGear:$('redGear'),redRpmBar:$('redRpmBar'),redThrottle:$('redThrottle'),redThrottleBar:$('redThrottleBar'),redBoost:$('redBoost'),redBoostBar:$('redBoostBar'),redAccel:$('redAccel'),redWeatherIcon:$('redWeatherIcon'),redWeatherTemp:$('redWeatherTemp'),redWeatherState:$('redWeatherState'),redGps:$('redGps'),redAccuracy:$('redAccuracy'),redDriveMode:$('redDriveMode'),redMiniSpeed:$('redMiniSpeed'),redMiniRpm:$('redMiniRpm'),redMiniSource:$('redMiniSource'),redMiniScene:$('redMiniScene')
   };
 
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -1661,6 +1717,13 @@
         ui.blueWeatherIcon.textContent=ui.driveWeatherIcon?.textContent||'☀️';ui.blueWeatherTemp.textContent=ui.driveWeatherTemp?.textContent||'—°';ui.blueWeatherState.textContent=ui.driveWeatherState?.textContent||'بانتظار الطقس';
         ui.blueBoost.textContent=bo+'%';ui.blueBoostBar.style.width=bo+'%';
         ui.blueMiniSpeed.textContent=sp+' كم/س';ui.blueMiniRpm.textContent=rp;ui.blueMiniSource.textContent=demo?'Demo':'GPS';ui.blueMiniScene.textContent=scenePresets[ui.sceneType?.value]?.label||ui.sceneType?.value||'—';
+      }
+      if(ui.redSport){
+        ui.redSpeed.textContent=sp;ui.redRpm.textContent=rp;ui.redGear.textContent='G'+gear;ui.redRpmBar.style.width=Math.round(clamp(rp/8000,0,1)*100)+'%';
+        ui.redThrottle.textContent=th+'%';ui.redThrottleBar.style.width=th+'%';ui.redBoost.textContent=bo+'%';ui.redBoostBar.style.width=bo+'%';ui.redAccel.textContent=accel.toFixed(2);
+        ui.redWeatherIcon.textContent=ui.driveWeatherIcon?.textContent||'☀️';ui.redWeatherTemp.textContent=ui.driveWeatherTemp?.textContent||'—°';ui.redWeatherState.textContent=ui.driveWeatherState?.textContent||'بانتظار الطقس';
+        ui.redGps.textContent=demo?'Demo':'GPS';ui.redAccuracy.textContent=demo?'سرعة اختبار':(ui.accuracy?.textContent&&ui.accuracy.textContent!=='—'?'دقة '+ui.accuracy.textContent:'بانتظار الدقة');ui.redDriveMode.textContent=driveMode[0].toUpperCase()+driveMode.slice(1);
+        ui.redMiniSpeed.textContent=sp+' كم/س';ui.redMiniRpm.textContent=rp;ui.redMiniSource.textContent=demo?'Demo':'GPS';ui.redMiniScene.textContent=scenePresets[ui.sceneType?.value]?.label||ui.sceneType?.value||'—';
       }
     }
     if(ui.teslaCarStage){ui.teslaCarStage.classList.toggle('moving',speed>4);ui.teslaCarStage.classList.toggle('accel',accel>1.2);}
