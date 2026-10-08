@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v5.12</title>
+  <title>DriveTone Lab v5.13</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v5.12 Live dashboard display themes */
+    /* v5.13 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v5.12 portrait/landscape Classic Blue corrections */
+    /* v5.13 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v5.12 Classic Blue — faithful 16:9 reference layout */
+    /* v5.13 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v5.12 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v5.13 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v5.12 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v5.13 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v5.12 dedicated dashboard batch */
+    /* v5.13 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -450,7 +450,7 @@
       .neonLeftStack,.neonRightStack{width:28%}.neonCenterStage{left:29%;right:29%}.neonHex{width:42vw}.neonBottomRail{grid-template-columns:1fr 1fr;height:17%}
     }
 
-    /* v5.12 performance mode for in-car browsers */
+    /* v5.13 performance mode for in-car browsers */
     body.driving-mode .redSide,
     body.driving-mode .redMain,
     body.driving-mode .redBottomCard,
@@ -738,14 +738,11 @@
     </section>
 
     <aside class="controls">
-      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn" style="display:none">اختبار الصوت</button><button id="coldStartBtn" class="btn" disabled style="display:none">Cold Start</button><button id="revDemoBtn" class="btn" disabled style="display:none">Rev</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">اختبار واحد فقط: Mini Cooper S 2019 — Gunning it. تسجيل حقيقي باستخدام Contact Microphones على الشاسيه وبلوك المحرك، ومدته 32 ثانية ومخصص للتسارع والـRPM. لا Pitch ولا Loop ولا ربط بالسرعة.</p>
+      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">▶ تشغيل محرك Mini الحقيقي</button><button id="coldStartBtn" class="btn" disabled style="display:none">Cold Start</button><button id="revDemoBtn" class="btn" disabled style="display:none">Rev</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">نسخة تجريبية أولى مرتبطة بالحركة: نفس تسجيل Mini Cooper S 2019 — Gunning it الذي تم اعتماده، محفوظ محليًا داخل التطبيق. Pitch محدود جدًا حسب RPM ومستوى الصوت يتبع الحمل، ولا يوجد أي مصدر صوت آخر.</p>
 <div id="candidateEmbedWrap" style="margin-top:10px">
-  <iframe id="candidateEmbed" frameborder="0" scrolling="no"
-    src="https://freesound.org/embed/sound/iframe/669622/simple/medium/"
-    width="481" height="86" style="max-width:100%;border:0;border-radius:10px;overflow:hidden"
-    title="Mini Cooper S 2019 Gunning it contact engine recording"></iframe>
+  <div class="hint">المصدر المحلي: <strong>Mini Cooper S 2019 — Gunning it</strong> • CC0 • ملف واحد فقط.</div>
 </div></div>
-      <div class="section"><h2>2. الصوت</h2><p class="hint">لا يوجد أي محرك صوتي في هذه النسخة. نبدأ من جديد بصوت واحد فقط بعد اختباره خارج التطبيق.</p><div style="display:none"><select id="engineType" class="select">
+      <div class="section"><h2>2. الصوت</h2><p class="hint">محرك صوت واحد فقط: Mini Cooper S 2019 contact recording. لا يوجد تبديل أصوات في هذه المرحلة.</p><div style="display:none"><select id="engineType" class="select">
 <option value="amg_gt63">Mercedes‑AMG GT 63 — 4.0 V8 Biturbo</option>
 <option value="mclaren_720s">McLaren 720S — 4.0 V8 Twin‑Turbo</option>
 <option value="bmw_m3">BMW M3/M4 Competition — 3.0 Inline‑6 Twin‑Turbo</option>
@@ -791,10 +788,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section" style="display:none"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Gunning-it Source Test • v5.12</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">v5.12 Single Sound Audition: لا يوجد محرك صوتي أو ربط بالسرعة. زر الصوت يشغّل فقط التسجيل الأصلي الكامل لـ Maserati GranTurismo S V8 من Wikimedia Commons، بدون أي معالجة.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Single Real Engine • v5.13</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">v5.13 Single Sound Audition: لا يوجد محرك صوتي أو ربط بالسرعة. زر الصوت يشغّل فقط التسجيل الأصلي الكامل لـ Maserati GranTurismo S V8 من Wikimedia Commons، بدون أي معالجة.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v5.12</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • audio reset / silent</span></div>
+  <div class="footer"><span>Prototype v5.13</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • audio reset / silent</span></div>
 </div>
 <script>
 (() => {
@@ -1102,21 +1099,56 @@
     return Math.round(lerp(base,m.redline,pos));
   }
 
-  // v5.12 CLEAN AUDIO RESET — all previous engine sounds removed.
-  // Keep a tiny API-compatible silent stub so GPS, RPM simulation and dashboards continue to work.
-  class SilentAudio{
-    constructor(){this.running=false;this.sim=null;}
-    async start(){this.running=false;}
-    async enterCarMode(){this.running=false;}
-    async exitCarMode(){this.running=false;}
-    async setEngine(){this.running=false;}
-    async coldStart(){this.running=false;}
-    async revDemo(){this.running=false;}
+  // v5.13 — one approved real recording only. No synth, no Engine_Sim, no extra layers.
+  class SingleRealEngineAudio{
+    constructor(){
+      this.running=false;
+      this.sim=null;
+      this.media=new Audio('assets/audio/mini-cooper-gunning.mp3');
+      this.media.preload='auto';
+      this.media.loop=true;
+      this.media.volume=0;
+      this.lastUpdate=0;
+      try{
+        this.media.preservesPitch=false;
+        this.media.webkitPreservesPitch=false;
+        this.media.mozPreservesPitch=false;
+      }catch(e){}
+    }
+    async start(){
+      try{
+        this.media.volume=0.12;
+        await this.media.play();
+        this.running=true;
+        if(ui.sampleStatus)ui.sampleStatus.textContent='Mini Cooper S real recording يعمل محليًا • RPM-linked test';
+      }catch(e){
+        this.running=false;
+        if(ui.sampleStatus)ui.sampleStatus.textContent='اضغط تشغيل الصوت مرة أخرى للسماح للمتصفح بتشغيل الملف المحلي.';
+      }
+    }
+    async enterCarMode(){if(!this.running)await this.start();}
+    async exitCarMode(){}
+    async setEngine(){}
+    async coldStart(){}
+    async revDemo(){}
     transient(){}
-    update(){}
+    update(rpm,thr,type,isDecel,shiftCut,boost,speed,accel){
+      if(!this.running)return;
+      const now=performance.now();
+      if(now-this.lastUpdate<50)return; // 20 Hz: light enough for Intel Atom
+      this.lastUpdate=now;
+      const n=clamp((rpm-800)/(7000-800),0,1);
+      // Keep pitch change deliberately tiny so the accepted recording keeps its natural timbre.
+      const targetRate=.92+n*.16;
+      this.media.playbackRate=lerp(this.media.playbackRate||1,targetRate,.18);
+      const speedPresence=clamp(speed/18,0,1);
+      const load=isDecel?.52:(.34+.66*clamp(thr,0,1));
+      const targetVol=clamp((.10+.62*speedPresence)*load*(.55+.45*(+ui.volume.value)),.035,.82);
+      this.media.volume=lerp(this.media.volume,targetVol,.16);
+    }
     getState(){return null;}
   }
-  const audio=new SilentAudio();
+  const audio=new SingleRealEngineAudio();
 
   function haversine(a,b){const R=6371000,r=Math.PI/180,dLat=(b.lat-a.lat)*r,dLon=(b.lon-a.lon)*r;const x=Math.sin(dLat/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(x));}
 
@@ -1361,11 +1393,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.12'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.13'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v5.12');
+    localStorage.setItem('drivetone.dashboardMigration','v5.13');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -1483,7 +1515,21 @@
     await requestGps();
   };
   $('demoBtn').onclick=()=>{demo=true;resetGpsFilter();targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');$('startGps').classList.remove('active');syncSourceLabel();syncDriveHud();};
-  $('startAudio').style.display='none';
+  $('startAudio').onclick=async()=>{
+    if(audio.running){
+      audio.media.pause();audio.running=false;
+      $('startAudio').textContent='▶ تشغيل محرك Mini الحقيقي';
+      $('startAudio').classList.add('pulse');
+      syncDriveHud();
+      return;
+    }
+    await audio.start();
+    if(audio.running){
+      $('startAudio').textContent='⏸ إيقاف الصوت';
+      $('startAudio').classList.remove('pulse');
+    }
+    syncDriveHud();
+  };
   ui.coldStartBtn.onclick=()=>{};
   ui.revDemoBtn.onclick=()=>{};
   ui.motionBtn.onclick=enableMotionAssist;
