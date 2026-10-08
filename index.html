@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v4.5</title>
+  <title>DriveTone Lab v4.6</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v4.5 Live dashboard display themes */
+    /* v4.6 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v4.5 portrait/landscape Classic Blue corrections */
+    /* v4.6 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v4.5 Classic Blue — faithful 16:9 reference layout */
+    /* v4.6 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v4.5 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v4.6 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v4.5 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v4.6 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v4.5 dedicated dashboard batch */
+    /* v4.6 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -775,10 +775,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.5</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.5 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.6</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.6 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v4.5</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v4.6</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1060,7 +1060,8 @@
   }
 
   let demo=false, speed=0, targetSpeed=0, accel=0, lastSpeed=0, lastT=performance.now(), gear=1, rpm=850, throttle=0, boost=0, watchId=null;
-  let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0, tripDistanceKm=0, tripSeconds=0; let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null;
+  let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0, tripDistanceKm=0, tripSeconds=0;
+  let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null, gpsFilteredSpeed=0, gpsLastFixAt=0, gpsLastAcceptedAt=0, gpsStationaryHits=0, gpsRejectCount=0;
   const roadViz=new RoadViz(ui.driveCanvas);
 
   const modes={
@@ -1627,20 +1628,89 @@
     ui.source.textContent=demo?'تجريبي':(motionAssist?'GPS + Motion':'GPS');
   }
   function setGpsStatus(text,ok=false){gpsStatusText=text;ui.gpsText.textContent=text;ui.gpsDot.classList.toggle('ok',!!ok);syncDriveHud();}
+  function gpsQuality(acc){
+    if(acc<=10)return {label:'ممتاز',ok:true};
+    if(acc<=25)return {label:'جيد جدًا',ok:true};
+    if(acc<=50)return {label:'جيد',ok:true};
+    if(acc<=80)return {label:'ضعيف',ok:true};
+    return {label:'ضعيف جدًا',ok:false};
+  }
+  function resetGpsFilter(){
+    prevPos=null;gpsFilteredSpeed=0;gpsStationaryHits=0;gpsRejectCount=0;gpsLastAcceptedAt=0;
+  }
   function onPosition(p){
     const lat=Number(p.coords.latitude),lon=Number(p.coords.longitude),acc=Number(p.coords.accuracy||9999);
+    const now=Number(p.timestamp)||Date.now();
+    gpsLastFixAt=Date.now();
+
     if(Number.isFinite(lat)&&Number.isFinite(lon)){
       lastWeatherPos={lat,lon};
-      ui.accuracy.textContent=Math.round(acc)+' m';
-      setGpsStatus('GPS متصل • دقة '+Math.round(acc)+' م',true);syncSourceLabel();
+      const q=gpsQuality(acc);
+      ui.accuracy.textContent=Math.round(acc)+' m • '+q.label;
+      setGpsStatus('GPS متصل • '+q.label+' • '+Math.round(acc)+' م',q.ok);syncSourceLabel();
       applyImmediateLightScene(lat,lon).then(()=>refreshLiveWeather(lat,lon,false));
     }
-    if(!Number.isFinite(lat)||!Number.isFinite(lon)||acc>120){return;}
-    let v=p.coords.speed!=null&&p.coords.speed>=0?p.coords.speed*3.6:null;
-    const now=p.timestamp||Date.now(), pos={lat,lon,t:now};
-    if(v==null&&prevPos){const dt=(now-prevPos.t)/1000;if(dt>.7)v=(haversine(prevPos,pos)/dt)*3.6;}
+    if(!Number.isFinite(lat)||!Number.isFinite(lon))return;
+
+    const pos={lat,lon,t:now,acc};
+    let nativeSpeed=(p.coords.speed!=null&&Number.isFinite(Number(p.coords.speed))&&Number(p.coords.speed)>=0)?Number(p.coords.speed)*3.6:null;
+    let derivedSpeed=null,dist=null,dt=null;
+
+    if(prevPos){
+      dt=(now-prevPos.t)/1000;
+      if(dt>.55&&dt<8){
+        dist=haversine(prevPos,pos);
+        const noiseFloor=Math.max(1.8,Math.min(12,(acc+Number(prevPos.acc||acc))*.16));
+        derivedSpeed=dist<=noiseFloor?0:(dist/dt)*3.6;
+      }
+    }
     prevPos=pos;
-    if(v!=null&&isFinite(v))targetSpeed=clamp(v,0,280);
+
+    // Very poor fixes can still update weather/location, but must not control the engine.
+    if(acc>100)return;
+
+    let raw=null;
+    if(nativeSpeed!=null&&nativeSpeed<=320){
+      raw=nativeSpeed;
+      if(derivedSpeed!=null&&derivedSpeed<=320&&dt!=null){
+        const nativeWeight=acc<=25?.78:acc<=50?.66:.52;
+        raw=nativeSpeed*nativeWeight+derivedSpeed*(1-nativeWeight);
+      }
+    }else if(derivedSpeed!=null&&derivedSpeed<=320){
+      raw=derivedSpeed;
+    }
+    if(raw==null||!Number.isFinite(raw))return;
+
+    // Stationary lock suppresses the common 1–3 km/h GPS crawl while parked.
+    if(raw<2.6){
+      gpsStationaryHits++;
+      if(gpsStationaryHits>=2||acc<=35)raw=0;
+    }else if(raw>4){
+      gpsStationaryHits=0;
+    }
+
+    // Reject implausible one-sample jumps while still allowing strong real acceleration.
+    const sinceAccepted=gpsLastAcceptedAt?Math.max(.2,(now-gpsLastAcceptedAt)/1000):1;
+    const delta=Math.abs(raw-gpsFilteredSpeed);
+    const allowedJump=acc<=20?(48+sinceAccepted*36):(30+sinceAccepted*30);
+    if(gpsLastAcceptedAt&&delta>allowedJump&&acc>18){
+      gpsRejectCount++;
+      if(gpsRejectCount<3)return;
+    }else gpsRejectCount=0;
+
+    // Adaptive smoothing: small jitter is damped, braking and large real changes pass quickly.
+    const gap=raw-gpsFilteredSpeed;
+    let alpha;
+    if(raw===0&&gpsFilteredSpeed<7)alpha=.82;
+    else if(gap<-10)alpha=.78;
+    else if(Math.abs(gap)>14)alpha=.72;
+    else if(Math.abs(gap)>6)alpha=.56;
+    else alpha=acc<=25?.42:acc<=50?.32:.24;
+
+    gpsFilteredSpeed=clamp(gpsFilteredSpeed+(raw-gpsFilteredSpeed)*alpha,0,280);
+    if(gpsFilteredSpeed<.8&&raw<1.5)gpsFilteredSpeed=0;
+    gpsLastAcceptedAt=now;
+    targetSpeed=gpsFilteredSpeed;
   }
   function onGeoError(e){
     const map={1:'تم رفض إذن الموقع',2:'تعذر تحديد الموقع',3:'انتهت مهلة تحديد الموقع'};
@@ -1648,7 +1718,7 @@
   }
   function startGpsWatch(highAccuracy=true){
     if(watchId!=null)navigator.geolocation.clearWatch(watchId);
-    watchId=navigator.geolocation.watchPosition(onPosition,onGeoError,{enableHighAccuracy:highAccuracy,maximumAge:highAccuracy?1500:60000,timeout:highAccuracy?18000:12000});
+    watchId=navigator.geolocation.watchPosition(onPosition,onGeoError,{enableHighAccuracy:highAccuracy,maximumAge:highAccuracy?1000:15000,timeout:highAccuracy?16000:12000});
   }
   async function requestGps(){
     if(!('geolocation' in navigator)){setGpsStatus('GPS غير مدعوم في هذا المتصفح');return;}
@@ -1763,11 +1833,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.5'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.6'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v4.5');
+    localStorage.setItem('drivetone.dashboardMigration','v4.6');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -1878,11 +1948,11 @@
   }
 
   $('startGps').onclick=async()=>{
-    demo=false;$('demoBtn').classList.remove('active');$('startGps').classList.add('active');ui.source.textContent='GPS';
+    demo=false;resetGpsFilter();$('demoBtn').classList.remove('active');$('startGps').classList.add('active');ui.source.textContent='GPS';
     weatherAuto=true;localStorage.setItem('drivetone.weatherAuto','true');syncWeatherButton();syncDriveHud();syncSourceLabel();
     await requestGps();
   };
-  $('demoBtn').onclick=()=>{demo=true;targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');$('startGps').classList.remove('active');syncSourceLabel();syncDriveHud();};
+  $('demoBtn').onclick=()=>{demo=true;resetGpsFilter();targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');$('startGps').classList.remove('active');syncSourceLabel();syncDriveHud();};
   $('startAudio').onclick=async()=>{await audio.start();$('startAudio').classList.remove('pulse');$('startAudio').textContent='الصوت يعمل';syncDriveHud();};
   ui.coldStartBtn.onclick=async()=>{ui.coldStartBtn.classList.add('active');await audio.coldStart();setTimeout(()=>ui.coldStartBtn.classList.remove('active'),3200);};
   ui.revDemoBtn.onclick=async()=>{ui.revDemoBtn.classList.add('active');await audio.revDemo();setTimeout(()=>ui.revDemoBtn.classList.remove('active'),3900);};
@@ -1890,7 +1960,12 @@
   ui.driveModeBtn.onclick=enterDrivingView;
   ui.exitDriveMode.onclick=()=>exitDrivingView(false);
   document.addEventListener('fullscreenchange',()=>{if(drivingView && !document.fullscreenElement)exitDrivingView(true);});
-  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible' && drivingView)requestWakeLock();});
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible' && drivingView){
+      requestWakeLock();
+      if(!demo && Date.now()-gpsLastFixAt>10000)requestGps().catch(()=>{});
+    }
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape' && drivingView)exitDrivingView(false);});
   ui.demoSpeed.oninput=()=>{ui.demoValue.textContent=ui.demoSpeed.value+' كم/س';if(demo)targetSpeed=+ui.demoSpeed.value;};
   ui.sensitivity.oninput=()=>{ui.sensValue.textContent=(+ui.sensitivity.value).toFixed(1)+'x';localStorage.setItem('drivetone.sens',ui.sensitivity.value);};
@@ -1929,6 +2004,13 @@
   if(saved.teslaModel&&teslaCars[saved.teslaModel])selectedTesla=saved.teslaModel;if(saved.teslaPaint&&teslaPaints[saved.teslaPaint])selectedPaint=saved.teslaPaint;if(saved.carSize&&['small','medium','large'].includes(saved.carSize))selectedCarSize=saved.carSize;
   ui.teslaModel.value=selectedTesla;ui.carSize.value=selectedCarSize;renderTeslaCar();
   syncModelInfo();syncDriveHud();applyDashboardTheme(dashboardTheme);
+
+  setInterval(()=>{
+    if(!demo&&watchId!=null&&gpsLastFixAt&&Date.now()-gpsLastFixAt>12000){
+      setGpsStatus('GPS: الإشارة متوقفة — إعادة المحاولة…',false);
+      startGpsWatch(true);
+    }
+  },6000);
 
   function tick(now){
     const dt=Math.min(.10,(now-lastT)/1000||.016);lastT=now;
