@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v5.1</title>
+  <title>DriveTone Lab v5.2</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v5.1 Live dashboard display themes */
+    /* v5.2 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v5.1 portrait/landscape Classic Blue corrections */
+    /* v5.2 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v5.1 Classic Blue — faithful 16:9 reference layout */
+    /* v5.2 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v5.1 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v5.2 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v5.1 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v5.2 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v5.1 dedicated dashboard batch */
+    /* v5.2 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -450,7 +450,7 @@
       .neonLeftStack,.neonRightStack{width:28%}.neonCenterStage{left:29%;right:29%}.neonHex{width:42vw}.neonBottomRail{grid-template-columns:1fr 1fr;height:17%}
     }
 
-    /* v5.1 performance mode for in-car browsers */
+    /* v5.2 performance mode for in-car browsers */
     body.driving-mode .redSide,
     body.driving-mode .redMain,
     body.driving-mode .redBottomCard,
@@ -787,10 +787,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Tesla Intel Atom Safe • DriveTone v5.1</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">وضع Intel Atom Safe مفعّل افتراضيًا لـ Tesla Model 3 2019: محرك صوت خفيف، GPS سريع، ورسوم مخففة لتقليل احتمال انهيار متصفح السيارة.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Tesla Intel Atom Sample Engine • v5.2</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">وضع Intel Atom Sample Engine مفعّل لـ Tesla Model 3 2019: عينات محرك حقيقية CC0 مع Crossfade حسب RPM، بدون تحميل Engine_Sim الثقيل.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v5.1</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v5.2</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1160,13 +1160,14 @@
 
     initRealSamples(){
       if(this.realSamples.length) return;
+      const base='https://cdn.jsdelivr.net/gh/yashimosh/border-run@main/public/sfx/engine/';
       const defs=[
-        {rpm:900, url:'https://opengameart.org/sites/default/files/loop_0.wav'},
-        {rpm:1500,url:'https://opengameart.org/sites/default/files/loop_1_0.wav'},
-        {rpm:2300,url:'https://opengameart.org/sites/default/files/loop_2_0.wav'},
-        {rpm:3200,url:'https://opengameart.org/sites/default/files/loop_3_0.wav'},
-        {rpm:4500,url:'https://opengameart.org/sites/default/files/loop_4_0.wav'},
-        {rpm:6000,url:'https://opengameart.org/sites/default/files/loop_5_0.wav'}
+        {rpm:900, url:base+'loop_0.wav'},
+        {rpm:1500,url:base+'loop_1_0.wav'},
+        {rpm:2300,url:base+'loop_2_0.wav'},
+        {rpm:3200,url:base+'loop_3_0.wav'},
+        {rpm:4500,url:base+'loop_4_0.wav'},
+        {rpm:6000,url:base+'loop_5_0.wav'}
       ];
       this.realSamples=defs.map((d,i)=>{
         const a=new Audio(); a.src=d.url; a.loop=true; a.preload='auto'; a.playsInline=true; a.volume=0;
@@ -1192,28 +1193,30 @@
       this.checkRealReady();
       if(!this.realStarted && ui.sampleStatus)ui.sampleStatus.textContent='المتصفح منع تشغيل العينات الحقيقية؛ اضغط تشغيل الصوت مرة أخرى أو استخدم HTTPS.';
     }
-    updateRealSamples(rpm,thr,isDecel,shiftCut){
+    updateRealSamples(rpm,thr,isDecel,shiftCut,type='v8'){
       if(!this.realSamples.length)return;
       const global=clamp(+ui.volume.value,0,1);
       const exhaust=0.55+0.45*(+ui.exhaust.value);
-      const load=isDecel?0.56:(0.42+0.58*thr);
+      const load=isDecel?0.50:(0.38+0.62*thr);
       const cut=clamp(shiftCut,0.12,1);
+      const pitch=type==='i6'?1.06:type==='hyper'?1.14:.96;
+      const rpmMap=type==='hyper'?rpm*.86:type==='i6'?rpm*.94:rpm;
       const centers=this.realSamples.map(s=>s.rpm);
       // Crossfade only neighboring RPM recordings. The real recording supplies timbre; playbackRate only fine-tunes pitch.
       let lo=0;
-      while(lo<centers.length-2 && rpm>centers[lo+1])lo++;
+      while(lo<centers.length-2 && rpmMap>centers[lo+1])lo++;
       const hi=Math.min(lo+1,centers.length-1);
       const span=Math.max(1,centers[hi]-centers[lo]);
-      const mix=clamp((rpm-centers[lo])/span,0,1);
+      const mix=clamp((rpmMap-centers[lo])/span,0,1);
       this.realSamples.forEach((s,i)=>{
         let w=0;
         if(i===lo)w=Math.cos(mix*Math.PI/2);
         if(i===hi)w=Math.sin(mix*Math.PI/2);
-        if(rpm<=centers[0] && i===0)w=1;
-        if(rpm>=centers[centers.length-1] && i===centers.length-1)w=1;
-        const rate=clamp(rpm/Math.max(1,s.rpm),.84,1.18);
+        if(rpmMap<=centers[0] && i===0)w=1;
+        if(rpmMap>=centers[centers.length-1] && i===centers.length-1)w=1;
+        const rate=clamp((rpmMap/Math.max(1,s.rpm))*pitch,.82,1.22);
         s.audio.playbackRate=rate;
-        const target=clamp(w*global*exhaust*load*cut*.88,0,1);
+        const target=clamp(w*global*exhaust*load*cut*.92,0,.92);
         // HTMLMediaElement volume has no automation; smoothing avoids zipper noise.
         s.audio.volume=lerp(s.audio.volume,target,.22);
       });
@@ -1525,13 +1528,10 @@
         try{if(INTEL_ATOM_SAFE&&this.sim?.ctx?.state!=='closed')await this.sim.ctx.close();}catch(e){}
         if(INTEL_ATOM_SAFE)this.sim=null;
       }
-      await this.fallback.start();
-      if(this.fallback.master){
-        const t=this.fallback.ctx?.currentTime||0;
-        this.fallback.master.gain.cancelScheduledValues(t);
-        this.fallback.master.gain.setTargetAtTime(+ui.volume.value,t,.035);
-      }
-      if(ui.sampleStatus)ui.sampleStatus.textContent='وضع السيارة: Audio Compatibility Mode — صوت أخف وأكثر ثباتًا لمتصفح السيارة.';
+      await this.fallback.startRealSamples();
+      this.running=true;
+      this.fallback.muteRealSamples?.();
+      if(ui.sampleStatus)ui.sampleStatus.textContent='Tesla Intel Atom Sample Engine — عينات محرك حقيقية CC0 مع Crossfade حسب RPM.';
     }
     async exitCarMode(){
       if(INTEL_ATOM_SAFE){this.carLite=true;return;}
@@ -1548,8 +1548,8 @@
     }
     async start(){
       if(INTEL_ATOM_SAFE){
-        this.carLite=true;await this.fallback.start();this.running=true;
-        if(ui.sampleStatus)ui.sampleStatus.textContent='Tesla Intel Atom Safe Mode — محرك صوت خفيف مخصص للاستقرار داخل Model 3 2019.';
+        this.carLite=true;await this.fallback.startRealSamples();this.running=true;
+        if(ui.sampleStatus)ui.sampleStatus.textContent='Tesla Intel Atom Sample Engine — صوت عينات حقيقية خفيف ومخصص لـ Model 3 2019.';
         return;
       }
       if(this.carLite){
@@ -1590,7 +1590,7 @@
         const now=performance.now();
         if(this.lastLiteAt&&now-this.lastLiteAt<40)return;
         this.lastLiteAt=now;
-        this.fallback.update(rpm,thr,this._liteType(type),isDecel,shiftCut,boostAmount);
+        this.fallback.updateRealSamples(rpm,thr,isDecel,shiftCut,this._liteType(type));
         return;
       }
       if(this._isPhysical(type)&&this.sim){
@@ -1924,11 +1924,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.1'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.2'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v5.1');
+    localStorage.setItem('drivetone.dashboardMigration','v5.2');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -2046,7 +2046,7 @@
     await requestGps();
   };
   $('demoBtn').onclick=()=>{demo=true;resetGpsFilter();targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');$('startGps').classList.remove('active');syncSourceLabel();syncDriveHud();};
-  $('startAudio').onclick=async()=>{if(drivingView)await audio.enterCarMode();else await audio.start();audio.running=true;$('startAudio').classList.remove('pulse');$('startAudio').textContent='الصوت يعمل';syncDriveHud();};
+  $('startAudio').onclick=async()=>{if(drivingView||INTEL_ATOM_SAFE)await audio.enterCarMode();else await audio.start();audio.running=true;$('startAudio').classList.remove('pulse');$('startAudio').textContent='الصوت يعمل';syncDriveHud();};
   ui.coldStartBtn.onclick=async()=>{ui.coldStartBtn.classList.add('active');await audio.coldStart();setTimeout(()=>ui.coldStartBtn.classList.remove('active'),3200);};
   ui.revDemoBtn.onclick=async()=>{ui.revDemoBtn.classList.add('active');await audio.revDemo();setTimeout(()=>ui.revDemoBtn.classList.remove('active'),3900);};
   ui.motionBtn.onclick=enableMotionAssist;
