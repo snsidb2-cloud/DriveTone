@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v3.8</title>
+  <title>DriveTone Lab v3.9</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -168,7 +168,7 @@
     }
 
 
-    /* v3.8 Live dashboard display themes */
+    /* v3.9 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -234,29 +234,32 @@
       .dashboardHud[data-theme="red"] .redSport{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 10px 8px;grid-template-columns:minmax(135px,.6fr) minmax(340px,2fr) minmax(145px,.68fr);gap:8px}.redSide{padding:8px;gap:7px}.redInfo{padding:8px}.redTacho{width:min(70vh,39vw,360px)}.redSpeed{font-size:clamp(62px,9vw,108px)}.redBottomCard{padding:6px 8px}.redBottomCard b{font-size:12px}
     }
 
-    /* Dedicated Classic Blue layout */
-    .blueClassic{display:none;position:absolute;inset:max(58px,calc(env(safe-area-inset-top) + 48px)) clamp(16px,2vw,34px) clamp(14px,2vh,24px);z-index:7;pointer-events:none;direction:ltr}
+    /* Dedicated Classic Blue v2 — reference-inspired full layout */
+    .blueClassic{display:none;position:absolute;inset:max(54px,calc(env(safe-area-inset-top) + 46px)) clamp(10px,1.4vw,22px) clamp(10px,1.8vh,20px);z-index:7;pointer-events:none;direction:ltr}
     .dashboardHud[data-theme="blue"] .dashBoardShell,.dashboardHud[data-theme="blue"] .dashBottomStrip{display:none!important}
-    .dashboardHud[data-theme="blue"] .blueClassic{display:grid;grid-template-columns:minmax(160px,.72fr) minmax(430px,2.2fr) minmax(180px,.82fr);grid-template-rows:1fr auto;gap:16px}
-    .blueSide,.blueMain,.blueBottomCard{border:1px solid rgba(73,160,255,.22);background:linear-gradient(180deg,rgba(5,14,25,.74),rgba(3,8,16,.90));backdrop-filter:blur(16px);box-shadow:0 18px 50px rgba(0,0,0,.28),inset 0 0 32px rgba(33,146,255,.04);border-radius:22px}
-    .blueSide{padding:16px;display:flex;flex-direction:column;gap:12px;direction:rtl}
-    .blueInfo{padding:14px;border-radius:17px;background:rgba(255,255,255,.032);border:1px solid rgba(255,255,255,.07)}
-    .blueLabel{font-size:11px;color:rgba(255,255,255,.52)}.blueValue{margin-top:4px;font-size:clamp(22px,2.8vw,40px);font-weight:850}
-    .blueProgress{height:8px;border-radius:999px;background:rgba(255,255,255,.08);margin-top:10px;overflow:hidden}.blueProgress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2d9cff,#79dcff);box-shadow:0 0 16px rgba(45,156,255,.55)}
+    .dashboardHud[data-theme="blue"] .blueClassic{display:grid;grid-template-columns:110px minmax(180px,.78fr) minmax(430px,2.2fr) minmax(190px,.86fr);grid-template-rows:1fr 98px;gap:12px}
+    .blueRail,.blueSide,.blueMain,.blueBottomCard{border:1px solid rgba(76,164,255,.20);background:linear-gradient(180deg,rgba(4,12,22,.78),rgba(3,7,14,.93));backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.30),inset 0 0 34px rgba(45,156,255,.035);border-radius:20px}
+    .blueRail{grid-row:1/3;padding:12px 8px;display:flex;flex-direction:column;gap:8px;direction:rtl}
+    .blueRailTitle{font-size:11px;color:#dbeaff;font-weight:850;padding:8px;text-align:center}
+    .blueRailItem{padding:11px 7px;border-radius:13px;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.025);text-align:center;font-size:10px;color:rgba(255,255,255,.56)}
+    .blueRailItem.active{color:#fff;border-color:rgba(45,156,255,.42);background:linear-gradient(180deg,rgba(45,156,255,.22),rgba(45,156,255,.08));box-shadow:0 0 22px rgba(45,156,255,.16)}
+    .blueRailIcon{display:block;font-size:20px;margin-bottom:5px}
+    .blueSide{padding:14px;display:flex;flex-direction:column;gap:10px;direction:rtl}
+    .blueInfo{padding:13px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.065)}
+    .blueLabel{font-size:10px;color:rgba(255,255,255,.48)}.blueValue{margin-top:3px;font-size:clamp(21px,2.4vw,36px);font-weight:900}
+    .blueProgress{height:7px;border-radius:999px;background:rgba(255,255,255,.075);margin-top:9px;overflow:hidden}.blueProgress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2d9cff,#79dcff);box-shadow:0 0 16px rgba(45,156,255,.52)}
     .blueMain{position:relative;display:grid;place-items:center;overflow:hidden;min-width:0}
-    .blueMain:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 58%,rgba(32,140,255,.12),transparent 46%),linear-gradient(180deg,rgba(5,15,28,.12),rgba(0,0,0,.18));pointer-events:none}
-    .blueArc{position:relative;width:min(64vh,47vw,620px);aspect-ratio:1.26/1;display:grid;place-items:center}
-    .blueArc:before{content:"";position:absolute;inset:3% 2% 7%;border-radius:52% 52% 44% 44% / 62% 62% 38% 38%;background:
-      conic-gradient(from 225deg,#2d9cff 0 var(--dashRpmPct),rgba(255,255,255,.10) var(--dashRpmPct) 75%,transparent 75%);
-      -webkit-mask:radial-gradient(ellipse at 50% 59%,transparent 0 66%,#000 67% 73%,transparent 74%);
-      mask:radial-gradient(ellipse at 50% 59%,transparent 0 66%,#000 67% 73%,transparent 74%);
-      filter:drop-shadow(0 0 20px rgba(45,156,255,.45))}
-    .blueArc:after{content:"";position:absolute;inset:1% 0 5%;border-radius:52% 52% 45% 45%;background:repeating-conic-gradient(from 225deg,rgba(255,255,255,.72) 0 .32deg,transparent .32deg 4deg);-webkit-mask:radial-gradient(ellipse at 50% 59%,transparent 0 76%,#000 77% 79%,transparent 80%);mask:radial-gradient(ellipse at 50% 59%,transparent 0 76%,#000 77% 79%,transparent 80%);opacity:.66}
-    .blueCore{position:relative;z-index:2;text-align:center;transform:translateY(7%)}.blueSpeed{font-size:clamp(84px,11vw,170px);line-height:.84;font-weight:900;letter-spacing:-6px;text-shadow:0 0 28px rgba(45,156,255,.38)}.blueUnit{margin-top:8px;color:rgba(255,255,255,.62);font-size:14px}.blueRpm{margin-top:14px;color:#69d4ff;font-weight:800;font-size:clamp(20px,2vw,30px)}.blueRpm small{display:block;font-size:10px;color:rgba(255,255,255,.48);margin-top:3px}
-    .blueGearBox{margin-top:auto;text-align:center;padding:15px;border-radius:18px;background:rgba(8,17,29,.80);border:1px solid rgba(73,160,255,.20)}.blueGear{font-size:clamp(42px,4.5vw,72px);font-weight:900;color:#69d4ff;line-height:1}
-    .blueGpsRow{display:flex;align-items:center;gap:10px}.blueGpsIcon{font-size:26px;color:#69d4ff}.blueGpsState{font-size:28px;font-weight:850}.blueWeather{display:flex;align-items:center;gap:12px}.blueWeatherIcon{font-size:36px}.blueWeatherTemp{font-size:34px;font-weight:850}
-    .blueBottom{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .blueBottomCard{padding:11px 14px;text-align:center;direction:rtl}.blueBottomCard small{display:block;color:rgba(255,255,255,.48);font-size:9px}.blueBottomCard b{display:block;margin-top:3px;font-size:15px}
+    .blueMain:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,12,22,.05),rgba(1,5,10,.20)),radial-gradient(circle at 50% 55%,rgba(45,156,255,.12),transparent 44%);pointer-events:none}
+    .blueMainTitle{position:absolute;top:16px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:center;direction:rtl;z-index:3}
+    .blueMainTitle strong{font-size:clamp(20px,2vw,30px)}.blueMainTitle span{font-size:10px;color:rgba(255,255,255,.48)}
+    .blueArc{position:relative;width:min(60vh,43vw,590px);aspect-ratio:1.18/1;display:grid;place-items:center;transform:translateY(3%)}
+    .blueArc:before{content:"";position:absolute;inset:0;border-radius:50% 50% 40% 40% / 58% 58% 42% 42%;background:conic-gradient(from 220deg,#2d9cff 0 var(--dashRpmPct),rgba(255,255,255,.085) var(--dashRpmPct) 76%,transparent 76% 100%);-webkit-mask:radial-gradient(ellipse at 50% 59%,transparent 0 64%,#000 65% 71%,transparent 72%);mask:radial-gradient(ellipse at 50% 59%,transparent 0 64%,#000 65% 71%,transparent 72%);filter:drop-shadow(0 0 20px rgba(45,156,255,.40))}
+    .blueArc:after{content:"";position:absolute;inset:-1%;border-radius:50% 50% 42% 42%;background:repeating-conic-gradient(from 220deg,rgba(255,255,255,.74) 0 .28deg,transparent .28deg 3.7deg);-webkit-mask:radial-gradient(ellipse at 50% 59%,transparent 0 76%,#000 77% 79%,transparent 80%);mask:radial-gradient(ellipse at 50% 59%,transparent 0 76%,#000 77% 79%,transparent 80%);opacity:.66}
+    .blueCore{position:relative;z-index:2;text-align:center;transform:translateY(10%)}.blueSpeed{font-size:clamp(86px,10vw,164px);line-height:.82;font-weight:950;letter-spacing:-6px;text-shadow:0 0 30px rgba(45,156,255,.40)}.blueUnit{margin-top:8px;color:rgba(255,255,255,.62);font-size:13px}.blueRpm{margin-top:12px;color:#69d4ff;font-weight:900;font-size:clamp(19px,1.8vw,28px)}.blueRpm small{display:block;font-size:9px;color:rgba(255,255,255,.46);margin-top:2px}
+    .blueGearBox{margin-top:auto;text-align:center;padding:13px;border-radius:16px;background:rgba(7,16,28,.78);border:1px solid rgba(73,160,255,.18)}.blueGear{font-size:clamp(38px,4vw,64px);font-weight:950;color:#69d4ff;line-height:1}
+    .blueGpsRow{display:flex;align-items:center;gap:9px}.blueGpsIcon{font-size:24px;color:#69d4ff}.blueGpsState{font-size:25px;font-weight:900}.blueWeather{display:flex;align-items:center;gap:10px}.blueWeatherIcon{font-size:34px}.blueWeatherTemp{font-size:31px;font-weight:900}
+    .blueBottom{grid-column:2/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .blueBottomCard{padding:10px 12px;text-align:center;direction:rtl}.blueBottomCard small{display:block;color:rgba(255,255,255,.46);font-size:9px}.blueBottomCard b{display:block;margin-top:3px;font-size:14px}
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr;grid-template-rows:auto;overflow:auto;inset:max(96px,calc(env(safe-area-inset-top) + 84px)) 10px 10px}.blueSide{display:none}.blueMain{min-height:70vh}.blueBottom{grid-template-columns:1fr 1fr}.blueArc{width:min(88vw,430px)}.blueSpeed{font-size:clamp(76px,24vw,120px)}
     }
@@ -268,6 +271,17 @@
     }
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
+    }
+    /* v3.9 portrait/landscape Classic Blue corrections */
+    @media(max-width:760px){
+      .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
+      .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
+      .blueSide{display:flex!important;padding:9px;gap:7px}.blueInfo{padding:9px}.blueValue{font-size:22px}.blueWeatherTemp{font-size:25px}.blueWeatherIcon{font-size:28px}.blueGpsState{font-size:21px}.blueGear{font-size:36px}
+      .blueBottom{grid-column:1/-1;grid-template-columns:1fr 1fr}.blueBottomCard{padding:8px 10px}
+    }
+    @media(max-height:520px) and (orientation:landscape){
+      .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:82px minmax(125px,.58fr) minmax(350px,2fr) minmax(145px,.66fr);grid-template-rows:1fr 64px;inset:max(44px,calc(env(safe-area-inset-top) + 40px)) 8px 6px;gap:7px}
+      .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
   </style>
 </head>
@@ -407,12 +421,21 @@
             </div>
           </div>
           <div id="blueClassic" class="blueClassic">
+            <div class="blueRail">
+              <div class="blueRailTitle">أوضاع العرض</div>
+              <div class="blueRailItem"><span class="blueRailIcon">⌂</span>الرئيسية</div>
+              <div class="blueRailItem active"><span class="blueRailIcon">◔</span>لوحة العدادات</div>
+              <div class="blueRailItem"><span class="blueRailIcon">➤</span>الملاحة</div>
+              <div class="blueRailItem"><span class="blueRailIcon">♪</span>الصوت</div>
+              <div class="blueRailItem"><span class="blueRailIcon">⚙</span>الإعدادات</div>
+            </div>
             <div class="blueSide">
               <div class="blueInfo"><div class="blueLabel">الترس الحالي</div><div id="blueGear" class="blueGear">G1</div></div>
               <div class="blueInfo"><div class="blueLabel">دواسة الوقود</div><div id="blueThrottle" class="blueValue">0%</div><div class="blueProgress"><i id="blueThrottleBar"></i></div></div>
               <div class="blueGearBox"><div class="blueLabel">التسارع</div><div id="blueAccel" class="blueValue">0.00</div><div class="blueLabel">m/s²</div></div>
             </div>
             <div class="blueMain">
+              <div class="blueMainTitle"><strong>لوحة العدادات</strong><span>وضع عرض القيادة</span></div>
               <div class="blueArc">
                 <div class="blueCore">
                   <div id="blueSpeed" class="blueSpeed">0</div>
@@ -504,10 +527,10 @@
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
       <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.8</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.8 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v3.9</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v3.9 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v3.8</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
+  <div class="footer"><span>Prototype v3.9</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -1491,7 +1514,12 @@
   }
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
-  let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'red';
+  let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v3.9'){
+    dashboardTheme='blue';
+    localStorage.setItem('drivetone.dashboardTheme','blue');
+    localStorage.setItem('drivetone.dashboardMigration','v3.9');
+  }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
     localStorage.setItem('drivetone.displayMode',drivingDisplay);
