@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090b10" />
-  <title>DriveTone Lab v5.13</title>
+  <title>DriveTone Lab v4.6</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <style>
     :root{
@@ -14,7 +14,7 @@
     }
     *{box-sizing:border-box} html,body{margin:0;height:100%;background:radial-gradient(circle at 50% -20%,#1a1e28 0,#090b10 45%,#05070a 100%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}
     button,input,select{font:inherit}.app{height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:18px;gap:12px;max-width:1500px;margin:auto}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px}.credit{margin-top:6px;font-size:12px;line-height:1.5;color:rgba(255,255,255,.72);max-width:560px}.logo{width:42px;height:42px;border-radius:14px;background:conic-gradient(from 210deg,var(--accent),#ff2f6d,#6c5cff,var(--accent));box-shadow:0 0 40px rgba(255,106,0,.28)}.brand h1{font-size:18px;margin:0}.sub{font-size:12px;color:var(--muted)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:14px;background:conic-gradient(from 210deg,var(--accent),#ff2f6d,#6c5cff,var(--accent));box-shadow:0 0 40px rgba(255,106,0,.28)}.brand h1{font-size:18px;margin:0}.sub{font-size:12px;color:var(--muted)}
     .status{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0d1118;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted)}.dot{width:8px;height:8px;border-radius:50%;background:var(--danger);box-shadow:0 0 16px currentColor}.dot.ok{background:var(--ok)}
     .main{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;min-height:0}.dash,.controls{background:linear-gradient(180deg,rgba(19,24,34,.96),rgba(10,13,19,.96));border:1px solid var(--line);border-radius:24px;position:relative;overflow:hidden}
     .dash{display:grid;grid-template-rows:1fr auto;padding:22px;isolation:isolate}
@@ -168,7 +168,7 @@
     }
 
 
-    /* v5.13 Live dashboard display themes */
+    /* v4.6 Live dashboard display themes */
     .dashboardHud{display:none;position:absolute;inset:0;z-index:6;pointer-events:none;color:#fff;--dashAccent:#ff3b3b;--dashAccent2:#ff8b5f;--dashSpeedPct:0%;--dashRpmPct:0%}
     body.driving-mode.dashboard-mode .dashboardHud{display:block}
     body.driving-mode.dashboard-mode .visualHud{display:none!important}
@@ -272,7 +272,7 @@
     @media(max-height:520px) and (orientation:landscape){
       .dashBoardShell{inset:max(46px,calc(env(safe-area-inset-top) + 42px)) 12px 8px;grid-template-columns:minmax(120px,.64fr) minmax(280px,1.55fr) minmax(140px,.7fr);gap:8px}.dashboardHud[data-theme="amber"] .dashBoardShell{grid-template-columns:minmax(150px,.8fr) minmax(260px,1.1fr) minmax(150px,.8fr)}.dashPanel{padding:8px;gap:7px;border-radius:15px}.dashCard{padding:8px}.dashGauge{width:min(66vh,35vw,330px)}.dashExtraRpm{width:min(58vh,24vw,260px)!important}.dashBottomStrip{bottom:6px;width:66%}.dashMini{padding:6px 8px}.dashMini b{font-size:12px}.dashWeatherIcon{font-size:22px}.dashWeatherTemp{font-size:22px}.dashQuickThemes{top:max(48px,calc(env(safe-area-inset-top) + 44px))}.dashThemeName{display:none}
     }
-    /* v5.13 portrait/landscape Classic Blue corrections */
+    /* v4.6 portrait/landscape Classic Blue corrections */
     @media(max-width:760px){
       .dashboardHud[data-theme="blue"] .blueClassic{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;inset:max(92px,calc(env(safe-area-inset-top) + 82px)) 8px 8px;gap:8px;overflow:auto}
       .blueRail{display:none}.blueMain{grid-column:1/-1;min-height:420px;border-radius:18px}.blueMainTitle{top:12px}.blueArc{width:min(88vw,410px);transform:none}.blueSpeed{font-size:clamp(74px,23vw,116px)}
@@ -284,7 +284,7 @@
       .blueRail{padding:6px 5px}.blueRailItem{padding:7px 4px}.blueRailIcon{font-size:15px}.blueSide{padding:7px;gap:6px}.blueInfo{padding:7px}.blueMain{border-radius:15px}.blueArc{width:min(68vh,40vw,360px)}.blueSpeed{font-size:clamp(60px,8.5vw,104px)}.blueBottom{gap:5px}.blueBottomCard{padding:5px 7px}.blueBottomCard b{font-size:11px}
     }
 
-    /* v5.13 Classic Blue — faithful 16:9 reference layout */
+    /* v4.6 Classic Blue — faithful 16:9 reference layout */
     .dashboardHud[data-theme="blue"] .dashBoardShell,
     .dashboardHud[data-theme="blue"] .dashBottomStrip,
     .dashboardHud[data-theme="blue"] .dashQuickThemes,
@@ -354,7 +354,7 @@
       .blueGpsArrow{font-size:20px}.blueRefGps{font-size:15px}.blueWeatherIconRef{font-size:20px}.blueWeatherTempRef{font-size:20px}
       .blueTripItem{gap:4px}.blueTripItem>span{font-size:11px}.blueTripItem small{font-size:5px}.blueTripItem b{font-size:7px}
     }
-    /* v5.13 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
+    /* v4.6 phone portrait fallback: real full-screen layout, not a tiny 16:9 stage */
     .blueRotateHint{display:none}
     @media(max-width:760px) and (orientation:portrait){
       .dashboardHud[data-theme="blue"] .blueClassic{
@@ -381,7 +381,7 @@
       .blueTripItem{min-height:50%;gap:6px!important}.blueTripItem>span{font-size:16px!important}.blueTripItem small{font-size:8px!important}.blueTripItem b{font-size:11px!important}
       .blueRotateHint{display:block;position:absolute;right:12px;bottom:15.5%;z-index:11;padding:5px 8px;border-radius:999px;background:rgba(2,9,17,.72);border:1px solid rgba(100,174,255,.20);font-size:8px;color:rgba(255,255,255,.62)}
     }
-    /* v5.13 landscape: fill the real device viewport instead of letterboxing 16:9 */
+    /* v4.6 landscape: fill the real device viewport instead of letterboxing 16:9 */
     @media(min-width:761px) and (orientation:landscape){
       .dashboardHud[data-theme="blue"] .blueClassic{
         position:absolute!important;inset:0!important;left:0!important;right:0!important;top:0!important;bottom:0!important;
@@ -402,7 +402,7 @@
     body.driving-mode.dashboard-mode .scene{overflow:visible!important}
     body.driving-mode.dashboard-mode .dash{padding:0!important;overflow:hidden!important}
 
-    /* v5.13 dedicated dashboard batch */
+    /* v4.6 dedicated dashboard batch */
     .blueCarArt{display:none!important}
 
     /* Sport Red: full-screen performance layout */
@@ -449,18 +449,6 @@
       .amberTwinWrap{grid-template-columns:1fr 1fr;height:52%}.amberCenterInfo{display:none}.amberGauge{width:42vw}.amberLower{grid-template-columns:1fr 1fr;height:35%}
       .neonLeftStack,.neonRightStack{width:28%}.neonCenterStage{left:29%;right:29%}.neonHex{width:42vw}.neonBottomRail{grid-template-columns:1fr 1fr;height:17%}
     }
-
-    /* v5.13 performance mode for in-car browsers */
-    body.driving-mode .redSide,
-    body.driving-mode .redMain,
-    body.driving-mode .redBottomCard,
-    body.driving-mode .dashPanel,
-    body.driving-mode .dashCenter,
-    body.driving-mode .blueRefCard,
-    body.driving-mode .amberTile,
-    body.driving-mode .neonCard,
-    body.driving-mode .neonWeatherCard{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-    body.driving-mode .driveCanvas{image-rendering:auto}
   </style>
 </head>
 <body>
@@ -501,7 +489,7 @@
     <div class="sceneDrawerHint">يمكنك دائمًا تغيير المحرك يدويًا لاحقًا من الإعدادات إذا أردت. المعاينات هنا صورية فقط وبدون كتابات داخل البطاقات.</div>
   </aside>
   <div class="topbar">
-    <div class="brand"><div class="logo"></div><div><h1>DriveTone Lab</h1><div class="sub">محرك صوت افتراضي تفاعلي للسيارات الكهربائية</div><div class="credit">تم تصميم هذه المحاكاة بواسطة هشام لمحاكاة أصوات سيارات تسلا</div></div></div>
+    <div class="brand"><div class="logo"></div><div><h1>DriveTone Lab</h1><div class="sub">محرك صوت افتراضي تفاعلي للسيارات الكهربائية</div></div></div>
     <div class="status"><span id="gpsDot" class="dot"></span><span id="gpsText">GPS غير متصل</span></div>
   </div>
 
@@ -738,11 +726,8 @@
     </section>
 
     <aside class="controls">
-      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">▶ تشغيل محرك Mini الحقيقي</button><button id="coldStartBtn" class="btn" disabled style="display:none">Cold Start</button><button id="revDemoBtn" class="btn" disabled style="display:none">Rev</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">نسخة تجريبية أولى مرتبطة بالحركة: نفس تسجيل Mini Cooper S 2019 — Gunning it الذي تم اعتماده، محفوظ محليًا داخل التطبيق. Pitch محدود جدًا حسب RPM ومستوى الصوت يتبع الحمل، ولا يوجد أي مصدر صوت آخر.</p>
-<div id="candidateEmbedWrap" style="margin-top:10px">
-  <div class="hint">المصدر المحلي: <strong>Mini Cooper S 2019 — Gunning it</strong> • CC0 • ملف واحد فقط.</div>
-</div></div>
-      <div class="section"><h2>2. الصوت</h2><p class="hint">محرك صوت واحد فقط: Mini Cooper S 2019 contact recording. لا يوجد تبديل أصوات في هذه المرحلة.</p><div style="display:none"><select id="engineType" class="select">
+      <div class="section"><h2>1. تشغيل النظام</h2><div class="row"><button id="startAudio" class="btn primary pulse">تشغيل الصوت</button><button id="coldStartBtn" class="btn">🔥 Cold Start</button><button id="revDemoBtn" class="btn">💥 Rev + Bangs</button><button id="startGps" class="btn active">إعادة تشغيل GPS</button><button id="motionBtn" class="btn">حساس الحركة</button><button id="demoBtn" class="btn">وضع تجريبي</button><button id="driveModeBtn" class="btn">عرض القيادة</button></div><p class="hint">يحتاج المتصفح إلى ضغطة لبدء الصوت. زر Cold Start يحاكي تشغيل المحرك البارد، وزر Rev + Bangs يرفع الـRPM ثم يرفع القدم تلقائيًا لإظهار صوت العادم. GPS يحتاج HTTPS. حساس الحركة اختياري لتحسين الاستجابة ولا يغيّر السرعة.</p></div>
+      <div class="section"><h2>2. شخصية المحرك</h2><select id="engineType" class="select">
 <option value="amg_gt63">Mercedes‑AMG GT 63 — 4.0 V8 Biturbo</option>
 <option value="mclaren_720s">McLaren 720S — 4.0 V8 Twin‑Turbo</option>
 <option value="bmw_m3">BMW M3/M4 Competition — 3.0 Inline‑6 Twin‑Turbo</option>
@@ -753,11 +738,13 @@
 <option value="phys_v8tt">Physical V8 Twin‑Turbo</option>
 <option value="phys_i6">Physical Inline‑6 Turbo</option>
 <option value="phys_v10">Physical V10</option>
-</select><div id="modelInfo"></div></div></div><div class="section"><h2>3. نمط القيادة</h2><div id="modeGroup" class="modeGroup"><button class="btn" data-mode="relaxed">Relaxed</button><button class="btn active" data-mode="normal">Normal</button><button class="btn" data-mode="sport">Sport</button></div></div>
+</select>
+<div id="modelInfo" class="modelInfo"></div><p class="hint">هذه محاكاة فيزيائية مضبوطة بحسب بنية ومواصفات المحرك، وليست تسجيلات صوت أصلية أو رسمية من الشركات.</p></div>
+      <div class="section"><h2>3. نمط القيادة</h2><div id="modeGroup" class="modeGroup"><button class="btn" data-mode="relaxed">Relaxed</button><button class="btn active" data-mode="normal">Normal</button><button class="btn" data-mode="sport">Sport</button></div></div>
       <div class="section"><h2>4. السرعة التجريبية</h2><div class="range"><div class="rangeHeader"><span>0</span><span id="demoValue">0 كم/س</span><span>240</span></div><input id="demoSpeed" type="range" min="0" max="240" value="0" step="1"></div><p class="hint">الوضع التجريبي متاح للاختبار اليدوي فقط، لكنه ليس مصدر التشغيل الافتراضي.</p></div>
       <div class="section"><h2>5. استجابة المحرك</h2><div class="range"><div class="rangeHeader"><span>ناعم</span><span id="sensValue">1.0x</span><span>حاد</span></div><input id="sensitivity" type="range" min="0.5" max="2" value="1" step="0.1"></div></div>
-      <div class="section" style="display:none"><h2>6. مستوى العادم</h2><div class="range"><div class="rangeHeader"><span>هادئ</span><span id="exhaustValue">65%</span><span>قوي</span></div><input id="exhaust" type="range" min="0" max="1" value="0.65" step="0.01"></div></div>
-      <div class="section" style="display:none"><h2>7. Pops & Bangs — فرقعة الشكمان</h2><select id="popMode" class="select"><option value="off" selected>مطفأ</option><option value="natural">طبيعي</option><option value="sport">Sport — بوم + Crackles</option><option value="wild">Wild — قوي ومتكرر</option></select><p class="hint">تظهر الفرقعات عند رفع القدم وتنزيل الغيار، وتختلف شخصيتها حسب المحرك. وضع Wild مخصص للاستعراض.</p></div>
+      <div class="section"><h2>6. مستوى العادم</h2><div class="range"><div class="rangeHeader"><span>هادئ</span><span id="exhaustValue">65%</span><span>قوي</span></div><input id="exhaust" type="range" min="0" max="1" value="0.65" step="0.01"></div></div>
+      <div class="section"><h2>7. Pops & Bangs — فرقعة الشكمان</h2><select id="popMode" class="select"><option value="off" selected>مطفأ</option><option value="natural">طبيعي</option><option value="sport">Sport — بوم + Crackles</option><option value="wild">Wild — قوي ومتكرر</option></select><p class="hint">تظهر الفرقعات عند رفع القدم وتنزيل الغيار، وتختلف شخصيتها حسب المحرك. وضع Wild مخصص للاستعراض.</p></div>
       <div class="section"><h2>8. مشهد القيادة</h2>
         <select id="sceneType" class="select">
           <option value="sunny" selected>Sunny Day — نهاري مشمس</option>
@@ -787,11 +774,11 @@
         <div id="weatherLiveStatus" class="modelInfo" style="margin-top:10px"><div class="modelNote">بانتظار GPS لجلب الحالة اللحظية…</div></div>
         <p class="hint">عند تشغيل GPS يختار التطبيق المشهد تلقائيًا حسب الحالة الفعلية: نهار/ليل، غائم، مطر، ضباب، ثلج أو عاصفة. يمكنك إيقافه والاختيار يدويًا في أي وقت.</p>
       </div>
-      <div class="section" style="display:none"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
-      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Single Real Engine • v5.13</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">v5.13 Single Sound Audition: لا يوجد محرك صوتي أو ربط بالسرعة. زر الصوت يشغّل فقط التسجيل الأصلي الكامل لـ Maserati GranTurismo S V8 من Wikimedia Commons، بدون أي معالجة.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
+      <div class="section"><h2>11. الصوت</h2><div class="range"><div class="rangeHeader"><span>0%</span><span id="volValue">70%</span><span>100%</span></div><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></div></div>
+      <div class="section"><h2>حالة النسخة</h2><div class="row"><span class="pill">Physical Combustion Engine • Driving Visualization v4.6</span><span class="pill">Firing Order + Exhaust Model</span><span class="pill">Model Gearboxes 7–9</span><span class="pill">GPS</span><span class="pill">PWA</span></div><p id="sampleStatus" class="hint">المحرك يحاكي الاشتعال والعادم وناقل الحركة في الزمن الحقيقي. تحديد الليل/النهار يعمل محليًا من GPS حتى عند تعذر خدمة الطقس. v4.6 تضيف بطاقة طقس أنيقة داخل عرض القيادة تعرض الحالة والحرارة والرياح والغيوم وحالة الليل/النهار.</p><p class="hint warn">RPM والغيارات محاكاة وليست بيانات حقيقية من Tesla. لا تستخدم الواجهة أثناء القيادة.</p></div>
     </aside>
   </div>
-  <div class="footer"><span>Prototype v5.13</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • audio reset / silent</span></div>
+  <div class="footer"><span>Prototype v4.6</span><span>DriveTone Lab • driver-eye road perspective • live GPS speed • physical engine sound</span></div>
 </div>
 <script>
 (() => {
@@ -807,7 +794,6 @@
 
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   const lerp=(a,b,t)=>a+(b-a)*t;
-  const INTEL_ATOM_SAFE=true; // Tesla Model 3 2019 / MCU2: never load the heavy physical engine in production.
 
   class RoadViz{
     constructor(canvas){
@@ -816,7 +802,7 @@
     }
     setScene(scene){this.scene=scene||'highway';}
     resize(force=false){
-      if(!this.canvas)return;const r=this.canvas.getBoundingClientRect(),dpr=Math.min(drivingView?1:1.35,window.devicePixelRatio||1);
+      if(!this.canvas)return;const r=this.canvas.getBoundingClientRect(),dpr=Math.min(2,window.devicePixelRatio||1);
       if(!force&&Math.abs(r.width-this.lastW)<1&&Math.abs(r.height-this.lastH)<1&&dpr===this.dpr)return;
       this.lastW=r.width;this.lastH=r.height;this.dpr=dpr;this.canvas.width=Math.max(1,Math.round(r.width*dpr));this.canvas.height=Math.max(1,Math.round(r.height*dpr));this.ctx.setTransform(dpr,0,0,dpr,0,0);
     }
@@ -1076,7 +1062,6 @@
   let demo=false, speed=0, targetSpeed=0, accel=0, lastSpeed=0, lastT=performance.now(), gear=1, rpm=850, throttle=0, boost=0, watchId=null;
   let driveMode='normal', shiftState=null, lastShiftAt=0, prevPos=null, wakeLock=null, drivingView=false, motionAssist=false, motionEnergy=0, motionPeak=0, tripDistanceKm=0, tripSeconds=0;
   let gpsStatusText='GPS غير متصل', gpsFallbackTimer=null, gpsFilteredSpeed=0, gpsLastFixAt=0, gpsLastAcceptedAt=0, gpsStationaryHits=0, gpsRejectCount=0;
-  let lastRoadFrame=0,lastHudFrame=0,lastBaseHudFrame=0,lastLightCheckAt=0;
   const roadViz=new RoadViz(ui.driveCanvas);
 
   const modes={
@@ -1099,56 +1084,519 @@
     return Math.round(lerp(base,m.redline,pos));
   }
 
-  // v5.13 — one approved real recording only. No synth, no Engine_Sim, no extra layers.
-  class SingleRealEngineAudio{
+  function makeDistortionCurve(amount=18){
+    const n=2048, curve=new Float32Array(n), deg=Math.PI/180;
+    for(let i=0;i<n;i++){const x=i*2/n-1;curve[i]=((3+amount)*x*20*deg)/(Math.PI+amount*Math.abs(x));}
+    return curve;
+  }
+
+  class EngineAudio{
     constructor(){
-      this.running=false;
-      this.sim=null;
-      this.media=new Audio('assets/audio/mini-cooper-gunning.mp3');
-      this.media.preload='auto';
-      this.media.loop=true;
-      this.media.volume=0;
-      this.lastUpdate=0;
-      try{
-        this.media.preservesPitch=false;
-        this.media.webkitPreservesPitch=false;
-        this.media.mozPreservesPitch=false;
-      }catch(e){}
+      this.ctx=null;this.master=null;this.engineBus=null;this.exhaustBus=null;this.intakeBus=null;this.filter=null;this.highShelf=null;this.comp=null;this.drive=null;
+      this.voices=[];this.turboOsc=null;this.turboGain=null;this.turboFilter=null;this.airSrc=null;this.airGain=null;this.airFilter=null;this.noiseBuffer=null;
+      this.running=false;this.lastCrackle=0;this.lastBlowoff=0;this.prevBoost=0;this.prevThrottle=.04;this.realSamples=[];this.realReady=false;this.realStarted=false;
     }
     async start(){
-      try{
-        this.media.volume=0.12;
-        await this.media.play();
-        this.running=true;
-        if(ui.sampleStatus)ui.sampleStatus.textContent='Mini Cooper S real recording يعمل محليًا • RPM-linked test';
-      }catch(e){
-        this.running=false;
-        if(ui.sampleStatus)ui.sampleStatus.textContent='اضغط تشغيل الصوت مرة أخرى للسماح للمتصفح بتشغيل الملف المحلي.';
+      if(this.running){await this.ctx.resume();return;}
+      const C=window.AudioContext||window.webkitAudioContext;
+      if(!C) return alert('Web Audio غير مدعوم في هذا المتصفح');
+      this.ctx=new C();
+      this.master=this.ctx.createGain(); this.master.gain.value=+ui.volume.value;
+      this.comp=this.ctx.createDynamicsCompressor(); this.comp.threshold.value=-18; this.comp.knee.value=18; this.comp.ratio.value=4.5; this.comp.attack.value=.003; this.comp.release.value=.16;
+      this.engineBus=this.ctx.createGain(); this.exhaustBus=this.ctx.createGain(); this.intakeBus=this.ctx.createGain();
+      this.filter=this.ctx.createBiquadFilter(); this.filter.type='lowpass'; this.filter.frequency.value=1700; this.filter.Q.value=.75;
+      this.highShelf=this.ctx.createBiquadFilter(); this.highShelf.type='highshelf'; this.highShelf.frequency.value=1900; this.highShelf.gain.value=-4;
+      this.drive=this.ctx.createWaveShaper(); this.drive.curve=makeDistortionCurve(20); this.drive.oversample='4x';
+      this.engineBus.connect(this.filter); this.filter.connect(this.drive); this.drive.connect(this.highShelf); this.highShelf.connect(this.comp);
+      this.exhaustBus.connect(this.comp); this.intakeBus.connect(this.comp); this.comp.connect(this.master); this.master.connect(this.ctx.destination);
+
+      const defs=[
+        {type:'sawtooth',ratio:1,gain:.18,detune:-8},
+        {type:'square',ratio:.5,gain:.072,detune:4},
+        {type:'triangle',ratio:2.01,gain:.055,detune:10},
+        {type:'sine',ratio:4.02,gain:.026,detune:-5},
+        {type:'sine',ratio:.252,gain:.032,detune:2}
+      ];
+      defs.forEach(d=>{
+        const o=this.ctx.createOscillator(), g=this.ctx.createGain();
+        o.type=d.type; o.detune.value=d.detune; g.gain.value=d.gain; o.connect(g); g.connect(this.engineBus); o.start(); this.voices.push({o,g,...d});
+      });
+
+      // Independent turbo whistle layer.
+      this.turboOsc=this.ctx.createOscillator(); this.turboOsc.type='sine';
+      this.turboGain=this.ctx.createGain(); this.turboGain.gain.value=.0001;
+      this.turboFilter=this.ctx.createBiquadFilter(); this.turboFilter.type='bandpass'; this.turboFilter.frequency.value=4200; this.turboFilter.Q.value=5.5;
+      this.turboOsc.connect(this.turboFilter);this.turboFilter.connect(this.turboGain);this.turboGain.connect(this.intakeBus);this.turboOsc.start();
+
+      // Looping air/noise layer for intake, exhaust texture and blow-off effects.
+      this.noiseBuffer=this.ctx.createBuffer(1,Math.floor(this.ctx.sampleRate*1.2),this.ctx.sampleRate);
+      const data=this.noiseBuffer.getChannelData(0);
+      let brown=0;
+      for(let i=0;i<data.length;i++){
+        const white=Math.random()*2-1; brown=(brown+.025*white)/1.025; data[i]=clamp(brown*3.3,-1,1);
+      }
+      this.airSrc=this.ctx.createBufferSource();this.airSrc.buffer=this.noiseBuffer;this.airSrc.loop=true;
+      this.airGain=this.ctx.createGain();this.airGain.gain.value=.0001;
+      this.airFilter=this.ctx.createBiquadFilter();this.airFilter.type='bandpass';this.airFilter.frequency.value=1200;this.airFilter.Q.value=.65;
+      this.airSrc.connect(this.airFilter);this.airFilter.connect(this.airGain);this.airGain.connect(this.intakeBus);this.airSrc.start();
+
+      this.running=true; await this.ctx.resume();
+      // v1.2: brand-inspired physical engine profiles. Legacy synth remains internal only as an emergency audio fallback and is not user-selectable.
+    }
+
+    initRealSamples(){
+      if(this.realSamples.length) return;
+      const defs=[
+        {rpm:900, url:'https://opengameart.org/sites/default/files/loop_0.wav'},
+        {rpm:1500,url:'https://opengameart.org/sites/default/files/loop_1_0.wav'},
+        {rpm:2300,url:'https://opengameart.org/sites/default/files/loop_2_0.wav'},
+        {rpm:3200,url:'https://opengameart.org/sites/default/files/loop_3_0.wav'},
+        {rpm:4500,url:'https://opengameart.org/sites/default/files/loop_4_0.wav'},
+        {rpm:6000,url:'https://opengameart.org/sites/default/files/loop_5_0.wav'}
+      ];
+      this.realSamples=defs.map((d,i)=>{
+        const a=new Audio(); a.src=d.url; a.loop=true; a.preload='auto'; a.playsInline=true; a.volume=0;
+        try{a.preservesPitch=false;a.webkitPreservesPitch=false;a.mozPreservesPitch=false;}catch(e){}
+        a.addEventListener('canplaythrough',()=>{this.checkRealReady();},{once:true});
+        a.addEventListener('error',()=>{
+          if(ui.sampleStatus)ui.sampleStatus.textContent='تعذر تحميل إحدى العينات الحقيقية. سيستمر الصوت الاصطناعي كاحتياط.';
+        });
+        return {audio:a,rpm:d.rpm,url:d.url,index:i};
+      });
+    }
+    checkRealReady(){
+      const ready=this.realSamples.filter(s=>s.audio.readyState>=3).length;
+      this.realReady=ready>=4;
+      if(ui.sampleStatus){
+        ui.sampleStatus.textContent=this.realReady?`تم تجهيز ${ready}/6 طبقات صوت حقيقية — Real Sample Engine جاهز.`:`تحميل العينات الحقيقية: ${ready}/6…`;
       }
     }
-    async enterCarMode(){if(!this.running)await this.start();}
-    async exitCarMode(){}
-    async setEngine(){}
-    async coldStart(){}
-    async revDemo(){}
-    transient(){}
-    update(rpm,thr,type,isDecel,shiftCut,boost,speed,accel){
-      if(!this.running)return;
-      const now=performance.now();
-      if(now-this.lastUpdate<50)return; // 20 Hz: light enough for Intel Atom
-      this.lastUpdate=now;
-      const n=clamp((rpm-800)/(7000-800),0,1);
-      // Keep pitch change deliberately tiny so the accepted recording keeps its natural timbre.
-      const targetRate=.92+n*.16;
-      this.media.playbackRate=lerp(this.media.playbackRate||1,targetRate,.18);
-      const speedPresence=clamp(speed/18,0,1);
-      const load=isDecel?.52:(.34+.66*clamp(thr,0,1));
-      const targetVol=clamp((.10+.62*speedPresence)*load*(.55+.45*(+ui.volume.value)),.035,.82);
-      this.media.volume=lerp(this.media.volume,targetVol,.16);
+    async startRealSamples(){
+      this.initRealSamples();
+      const results=await Promise.allSettled(this.realSamples.map(s=>s.audio.play()));
+      this.realStarted=results.some(r=>r.status==='fulfilled');
+      this.checkRealReady();
+      if(!this.realStarted && ui.sampleStatus)ui.sampleStatus.textContent='المتصفح منع تشغيل العينات الحقيقية؛ اضغط تشغيل الصوت مرة أخرى أو استخدم HTTPS.';
     }
-    getState(){return null;}
+    updateRealSamples(rpm,thr,isDecel,shiftCut){
+      if(!this.realSamples.length)return;
+      const global=clamp(+ui.volume.value,0,1);
+      const exhaust=0.55+0.45*(+ui.exhaust.value);
+      const load=isDecel?0.56:(0.42+0.58*thr);
+      const cut=clamp(shiftCut,0.12,1);
+      const centers=this.realSamples.map(s=>s.rpm);
+      // Crossfade only neighboring RPM recordings. The real recording supplies timbre; playbackRate only fine-tunes pitch.
+      let lo=0;
+      while(lo<centers.length-2 && rpm>centers[lo+1])lo++;
+      const hi=Math.min(lo+1,centers.length-1);
+      const span=Math.max(1,centers[hi]-centers[lo]);
+      const mix=clamp((rpm-centers[lo])/span,0,1);
+      this.realSamples.forEach((s,i)=>{
+        let w=0;
+        if(i===lo)w=Math.cos(mix*Math.PI/2);
+        if(i===hi)w=Math.sin(mix*Math.PI/2);
+        if(rpm<=centers[0] && i===0)w=1;
+        if(rpm>=centers[centers.length-1] && i===centers.length-1)w=1;
+        const rate=clamp(rpm/Math.max(1,s.rpm),.84,1.18);
+        s.audio.playbackRate=rate;
+        const target=clamp(w*global*exhaust*load*cut*.88,0,1);
+        // HTMLMediaElement volume has no automation; smoothing avoids zipper noise.
+        s.audio.volume=lerp(s.audio.volume,target,.22);
+      });
+    }
+    muteRealSamples(){
+      this.realSamples.forEach(s=>{s.audio.volume=lerp(s.audio.volume,0,.28);});
+    }
+
+    transient(kind='shift',strength=.7){
+      if(!this.running) return;
+      const t=this.ctx.currentTime, src=this.ctx.createBufferSource(), gain=this.ctx.createGain(), f=this.ctx.createBiquadFilter();
+      src.buffer=this.noiseBuffer;
+      if(kind==='upshift'){
+        f.type='bandpass';f.frequency.value=470;f.Q.value=.7;
+        gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.11*strength,t+.008);gain.gain.exponentialRampToValueAtTime(.0001,t+.18);
+      }else if(kind==='downshift'){
+        f.type='bandpass';f.frequency.value=680;f.Q.value=1.0;
+        gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.14*strength,t+.006);gain.gain.exponentialRampToValueAtTime(.0001,t+.24);
+        // Short rev-match blip tone.
+        const o=this.ctx.createOscillator(), og=this.ctx.createGain();o.type='sawtooth';o.frequency.setValueAtTime(115,t);o.frequency.exponentialRampToValueAtTime(230,t+.09);o.frequency.exponentialRampToValueAtTime(150,t+.23);
+        og.gain.setValueAtTime(.0001,t);og.gain.exponentialRampToValueAtTime(.055*strength,t+.02);og.gain.exponentialRampToValueAtTime(.0001,t+.24);o.connect(og);og.connect(this.engineBus);o.start(t);o.stop(t+.26);
+      }else if(kind==='blowoff'){
+        f.type='highpass';f.frequency.value=1550;f.Q.value=.45;
+        gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.19*strength,t+.008);gain.gain.exponentialRampToValueAtTime(.065*strength,t+.075);gain.gain.exponentialRampToValueAtTime(.0001,t+.34);
+      }else{
+        f.type='bandpass';f.frequency.value=190+Math.random()*650;f.Q.value=1.7+Math.random()*1.3;
+        gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.15*strength,t+.003);gain.gain.exponentialRampToValueAtTime(.0001,t+.065+Math.random()*.08);
+      }
+      src.connect(f);f.connect(gain);gain.connect(kind==='blowoff'?this.intakeBus:this.exhaustBus);src.start(t);src.stop(t+.42);
+    }
+
+    update(rpm,thr,type,isDecel,shiftCut,boostAmount){
+      if(!this.running) return;
+      const t=this.ctx.currentTime;
+      let fireHz, ratios, driveAmount, lowpass, voiceProfile;
+      if(type==='real'){
+        fireHz=(rpm/60)*4; ratios=[1,.502,2.01,4.02,.252]; driveAmount=8; lowpass=1300+(rpm/7000)*3500; voiceProfile=[.0001,.0001,.0001,.0001,.0001];
+      }else if(type==='v8'){
+        fireHz=(rpm/60)*4; ratios=[1,.502,2.01,4.02,.252]; driveAmount=25; lowpass=760+(rpm/7000)*3100+thr*1050; voiceProfile=[.215,.078,.052,.021,.042];
+      }else if(type==='i6'){
+        fireHz=(rpm/60)*3; ratios=[1,1.5,3.02,6.01,.335]; driveAmount=14; lowpass=1080+(rpm/7000)*3850+thr*1350; voiceProfile=[.175,.058,.046,.019,.028];
+      }else{
+        fireHz=48+(rpm/7000)*420; ratios=[1,2,3.01,5.02,.5]; driveAmount=4; lowpass=2550+(rpm/7000)*6400; voiceProfile=[.09,.04,.035,.018,.012];
+      }
+
+      this.drive.curve=makeDistortionCurve(driveAmount);
+      const cut=clamp(shiftCut,0.14,1);
+      this.voices.forEach((v,i)=>{
+        const irregular=type==='v8' ? (1+Math.sin(t*(6.4+i*.8)+i*1.9)*.0052+Math.sin(t*2.3+i)*.0022) : (1+Math.sin(t*(10.7+i)+i)*.0022);
+        v.o.frequency.setTargetAtTime(Math.max(18,fireHz*ratios[i]*irregular),t,.014);
+        let g=(type==='real'?.0001:(.018+voiceProfile[i]*(.25+1.02*thr))*cut);
+        if(i===4) g*=type==='hyper'?.35:(.7+.35*(1-thr));
+        v.g.gain.setTargetAtTime(g,t,.022);
+      });
+
+      this.filter.frequency.setTargetAtTime(lowpass,t,.035);
+      this.highShelf.gain.setTargetAtTime(type==='hyper'?2.2:(-6.5+thr*5.4+boostAmount*2.4),t,.07);
+      this.exhaustBus.gain.setTargetAtTime((.30+.70*+ui.exhaust.value)*(type==='hyper'?.08:type==='real'?.12:.86),t,.06);
+      this.intakeBus.gain.setTargetAtTime(type==='hyper'?.35:type==='real'?.08:(.30+.75*thr),t,.07);
+      this.master.gain.setTargetAtTime(+ui.volume.value,t,.06);
+      this.muteRealSamples();
+
+      // Intake noise follows throttle and RPM.
+      const airLevel=type==='hyper'?.008:type==='real'?.0015:(.004+.045*thr*clamp((rpm-900)/5000,0,1));
+      this.airGain.gain.setTargetAtTime(airLevel,t,.05);
+      this.airFilter.frequency.setTargetAtTime(type==='i6'?1100+rpm*.22:760+rpm*.16,t,.06);
+
+      // Turbo is a separate oscillator, not just EQ.
+      if(type==='i6'){
+        const turboHz=1650+boostAmount*4700+rpm*.08;
+        this.turboOsc.frequency.setTargetAtTime(turboHz,t,.045);
+        this.turboFilter.frequency.setTargetAtTime(turboHz,t,.055);
+        this.turboGain.gain.setTargetAtTime(.002+boostAmount*.07*clamp(thr*1.2,0,1),t,.055);
+      }else{
+        this.turboGain.gain.setTargetAtTime(.0001,t,.06);
+      }
+
+      // Blow-off when boost collapses after lifting throttle.
+      const boostDrop=this.prevBoost-boostAmount, throttleDrop=this.prevThrottle-thr;
+      if(type==='i6' && this.prevBoost>.34 && (boostDrop>.10 || throttleDrop>.34) && performance.now()-this.lastBlowoff>650){
+        this.transient('blowoff',clamp(.55+this.prevBoost*.6,.55,1.15)); this.lastBlowoff=performance.now();
+      }
+      this.prevBoost=boostAmount; this.prevThrottle=thr;
+
+      // Exhaust pops on overrun. Kept rate-limited to avoid machine-gun audio.
+      if(isDecel && type!=='hyper' && rpm>2350 && performance.now()-this.lastCrackle>105){
+        const chance=(type==='v8'||type==='real')?.22:.11;
+        if(Math.random()<chance*(.35+.8*+ui.exhaust.value)){
+          this.transient('crackle',clamp(.45+(rpm/7000)*.48,.45,.95));this.lastCrackle=performance.now();
+        }
+      }
+    }
   }
-  const audio=new SingleRealEngineAudio();
+  class PhysicalEngineAudio{
+    constructor(fallback){
+      this.fallback=fallback;this.sim=null;this.running=false;this.failed=false;this.loading=null;this.lastT=performance.now();this.engineKey='phys_v8';
+      this.fxBus=null;this.lastPopAt=0;this.lastPopThrottle=.05;this.popSeq=0;this.sequence=null;this.sequenceToken=0;
+      this.repoRevision='f16e3f5ded382716f4342843d7e4463ebb7d0bd8';
+      this.moduleUrl=`https://cdn.jsdelivr.net/gh/YigitSalihEmecen/Engine_Sim@${this.repoRevision}/src/engine-sim.js`;
+    }
+    _styleFor(type){
+      const styles={
+        amg_gt63:{profile:'v8tt',vehicle:'supercar',tone:{rumble:1.28,brightness:.72,punch:1.24},inputs:{aggression:.91,roughness:.045,strain:.18,distance:.04,environment:0},dynamics:.66,width:.74,reverb:{mix:.035,size:.12,damping:.79}},
+        mclaren_720s:{profile:'v8tt',vehicle:'supercar',tone:{rumble:.86,brightness:1.20,punch:1.08},inputs:{aggression:.74,roughness:.020,strain:.14,distance:.035,environment:0},dynamics:.60,width:.82,reverb:{mix:.028,size:.10,damping:.72}},
+        bmw_m3:{profile:'i6',vehicle:'sports',tone:{rumble:.92,brightness:1.04,punch:1.01},inputs:{aggression:.61,roughness:.016,strain:.12,distance:.05,environment:0},dynamics:.70,width:.70,reverb:{mix:.035,size:.12,damping:.76}},
+        ferrari_458:{profile:'v8flat',vehicle:'supercar',tone:{rumble:.64,brightness:1.44,punch:1.14},inputs:{aggression:.88,roughness:.008,strain:.17,distance:.025,environment:0},dynamics:.54,width:.88,reverb:{mix:.022,size:.08,damping:.64}},
+        ferrari_v12:{profile:'v12',vehicle:'supercar',tone:{rumble:.74,brightness:1.30,punch:1.08},inputs:{aggression:.78,roughness:.006,strain:.15,distance:.03,environment:0},dynamics:.58,width:.86,reverb:{mix:.025,size:.09,damping:.68}},
+        porsche_911gt3:{profile:'flat6',vehicle:'supercar',tone:{rumble:.72,brightness:1.30,punch:1.02},inputs:{aggression:.74,roughness:.010,strain:.13,distance:.03,environment:0},dynamics:.58,width:.86,reverb:{mix:.024,size:.09,damping:.70}},
+        phys_v8:{profile:'v8cross',vehicle:'muscle',tone:{rumble:1.08,brightness:.92,punch:1.08},inputs:{aggression:.58,roughness:.04,strain:.08,distance:.08,environment:0},dynamics:.72,width:.65,reverb:{mix:.08,size:.2,damping:.7}},
+        phys_v8tt:{profile:'v8tt',vehicle:'supercar',tone:{rumble:1.02,brightness:.92,punch:1.06},inputs:{aggression:.60,roughness:.035,strain:.10,distance:.06,environment:0},dynamics:.70,width:.70,reverb:{mix:.06,size:.17,damping:.72}},
+        phys_i6:{profile:'i6',vehicle:'sports',tone:{rumble:.92,brightness:1.02,punch:1.00},inputs:{aggression:.56,roughness:.025,strain:.10,distance:.06,environment:0},dynamics:.72,width:.68,reverb:{mix:.05,size:.15,damping:.74}},
+        phys_v10:{profile:'v10',vehicle:'supercar',tone:{rumble:.82,brightness:1.18,punch:1.08},inputs:{aggression:.68,roughness:.015,strain:.12,distance:.04,environment:0},dynamics:.64,width:.80,reverb:{mix:.04,size:.12,damping:.70}}
+      };
+      return styles[type]||styles.phys_v8;
+    }
+    _modelSpec(type){
+      const specs={
+        amg_gt63:{label:'AMG GT 63',arch:'4.0 V8 Biturbo',redline:6800,gears:9,note:'عزم منخفض قوي • نبرة عميقة • Biturbo مكتوم نسبيًا',params:{'engine.idleRpm':680,'engine.redlineRpm':6800,'engine.peakTorque':800,'engine.peakTorqueRpm':3500,'engine.gears':9,'engine.engineInertia':.43,'engine.exhaust.bank':1.18,'engine.exhaust.collector':1.58,'engine.exhaust.damping':.52,'engine.intake.helmholtz':76,'engine.intake.level':.30,'engine.turbo.inertia':.38,'engine.turbo.maxBoost':1.25,'engine.turbo.whineOrder':42,'engine.turbo.bov':.38,'engine.turbo.surge':.72,'mix.exhaust':1.20,'mix.intake':.62,'mix.turbo':.34,'mix.transmission':.42,'mix.transients':.60,'mix.sub':.34,'fx.popDepth':1.30,'eq.0':2.5,'eq.1':2.0,'eq.3':-1.0}},
+        mclaren_720s:{label:'McLaren 720S',arch:'4.0 V8 Twin‑Turbo',redline:8200,gears:7,note:'V8 أخف وأحدّ • استجابة أسرع • Turbo أكثر سماعًا',params:{'engine.idleRpm':850,'engine.redlineRpm':8200,'engine.peakTorque':770,'engine.peakTorqueRpm':4300,'engine.gears':7,'engine.engineInertia':.31,'engine.gasTempFactor':1.24,'engine.pulse.attack':34,'engine.pulse.hardness':.66,'engine.exhaust.bank':.92,'engine.exhaust.collector':1.18,'engine.exhaust.damping':.46,'engine.intake.helmholtz':118,'engine.intake.level':.38,'engine.turbo.inertia':.26,'engine.turbo.maxBoost':1.35,'engine.turbo.whineOrder':58,'engine.turbo.bov':.55,'engine.turbo.surge':.92,'mix.exhaust':1.06,'mix.intake':.80,'mix.turbo':.52,'mix.transmission':.48,'mix.transients':.52,'mix.sub':.20,'fx.popDepth':1.12,'eq.2':.5,'eq.3':2.0,'eq.4':1.0}},
+        bmw_m3:{label:'BMW M3/M4 Competition',arch:'3.0 Inline‑6 Twin‑Turbo',redline:7200,gears:8,note:'Inline‑6 ناعم • 7200 RPM • Turbo واضح بدون خشونة V8',params:{'engine.idleRpm':760,'engine.redlineRpm':7200,'engine.peakTorque':650,'engine.peakTorqueRpm':3600,'engine.gears':8,'engine.engineInertia':.27,'engine.pulse.jitter':.55,'engine.exhaust.bank':1.42,'engine.exhaust.collector':1.14,'engine.exhaust.damping':.40,'engine.intake.helmholtz':104,'engine.intake.level':.39,'engine.turbo.inertia':.34,'engine.turbo.maxBoost':1.70,'engine.turbo.whineOrder':50,'engine.turbo.bov':.30,'engine.turbo.surge':.95,'mix.exhaust':1.02,'mix.intake':.78,'mix.turbo':.46,'mix.transmission':.44,'mix.transients':.48,'mix.sub':.24,'fx.popDepth':.92,'eq.1':1.0,'eq.2':.8,'eq.3':.8}},
+        ferrari_458:{label:'Ferrari 458 Italia',arch:'4.5 NA Flat‑Plane V8',redline:9000,gears:7,note:'طبيعي بدون Turbo • Flat‑plane • صرخة عالية حتى 9000 RPM',params:{'engine.idleRpm':900,'engine.redlineRpm':9000,'engine.peakTorque':540,'engine.peakTorqueRpm':6000,'engine.gears':7,'engine.engineInertia':.22,'engine.gasTempFactor':1.35,'engine.pulse.attack':58,'engine.pulse.decay':8.8,'engine.pulse.hardness':.88,'engine.pulse.jitter':.38,'engine.exhaust.bank':.72,'engine.exhaust.collector':.58,'engine.exhaust.reflection':.42,'engine.exhaust.damping':.22,'engine.intake.helmholtz':162,'engine.intake.q':8.2,'engine.intake.level':.54,'mix.exhaust':1.16,'mix.intake':1.04,'mix.turbo':0,'mix.transmission':.42,'mix.transients':.58,'mix.sub':.12,'fx.popDepth':.86,'eq.0':-2.0,'eq.1':-1.0,'eq.3':3.0,'eq.4':2.0}},
+        ferrari_v12:{label:'Ferrari V12',arch:'6.5 NA V12',redline:8500,gears:8,note:'V12 طبيعي • متصل وناعم • طبقات عالية كثيفة',params:{'engine.idleRpm':850,'engine.redlineRpm':8500,'engine.peakTorque':690,'engine.peakTorqueRpm':5800,'engine.gears':8,'engine.engineInertia':.34,'engine.intake.helmholtz':148,'engine.intake.level':.48,'mix.exhaust':1.12,'mix.intake':.94,'mix.turbo':0,'mix.transients':.48,'mix.sub':.16,'eq.3':2.0,'eq.4':1.5}},
+        porsche_911gt3:{label:'Porsche 911 GT3',arch:'4.0 NA Flat‑6',redline:9000,gears:7,note:'Flat‑6 طبيعي • Intake howl واضح • يمتد حتى 9000 RPM',params:{'engine.idleRpm':850,'engine.redlineRpm':9000,'engine.peakTorque':450,'engine.peakTorqueRpm':6200,'engine.gears':7,'engine.engineInertia':.20,'engine.gasTempFactor':1.33,'engine.pulse.attack':48,'engine.pulse.decay':7.4,'engine.pulse.hardness':.78,'engine.pulse.jitter':.50,'engine.exhaust.bank':.80,'engine.exhaust.collector':.68,'engine.exhaust.damping':.27,'engine.intake.helmholtz':148,'engine.intake.q':8.0,'engine.intake.level':.58,'mix.exhaust':1.05,'mix.intake':1.12,'mix.turbo':0,'mix.transmission':.46,'mix.transients':.46,'mix.sub':.14,'fx.popDepth':.78,'eq.0':-1.5,'eq.2':.8,'eq.3':2.3,'eq.4':1.7}}
+      };
+      return specs[type]||null;
+    }
+    _applyModelParams(type){
+      const spec=this._modelSpec(type);
+      if(!spec||!this.sim)return;
+      // Apply the whole machine in one preset rebuild. This avoids rebuilding
+      // the exhaust waveguides repeatedly for every pipe/intake parameter.
+      try{
+        if(this.sim.getPreset&&this.sim.loadPreset){
+          const preset=this.sim.getPreset();
+          const setPath=(obj,path,val)=>{const k=path.split('.');let n=obj;for(let i=0;i<k.length-1;i++){if(n[k[i]]==null)n[k[i]]={};n=n[k[i]];}n[k[k.length-1]]=val;};
+          for(const [path,val] of Object.entries(spec.params))setPath(preset,path,val);
+          preset.label=spec.label+' — DriveTone';
+          this.sim.loadPreset(preset);
+        }else if(this.sim.setParam){
+          for(const [path,val] of Object.entries(spec.params))this.sim.setParam(path,val);
+        }
+      }catch(e){console.warn('model preset',e);}
+    }
+    _popStyle(type){
+      const m={
+        amg_gt63:{low:68,mid:198,crack:1250,boom:1.30,snap:.68,decay:.46,pattern:[0,.12]},
+        mclaren_720s:{low:92,mid:330,crack:2200,boom:.75,snap:1.16,decay:.23,pattern:[0,.07,.15]},
+        bmw_m3:{low:82,mid:275,crack:1700,boom:.80,snap:.88,decay:.30,pattern:[0,.12,.23]},
+        ferrari_458:{low:106,mid:395,crack:2800,boom:.58,snap:1.34,decay:.18,pattern:[0,.065,.14]},
+        ferrari_v12:{low:96,mid:345,crack:2400,boom:.68,snap:1.18,decay:.22,pattern:[0,.085]},
+        porsche_911gt3:{low:90,mid:315,crack:2050,boom:.68,snap:1.10,decay:.25,pattern:[0,.09,.19]},
+        phys_v8:{low:70,mid:205,crack:1250,boom:1.08,snap:.70,decay:.40,pattern:[0,.13]},
+        phys_v8tt:{low:74,mid:225,crack:1450,boom:1.06,snap:.78,decay:.36,pattern:[0,.11]},
+        phys_i6:{low:84,mid:275,crack:1700,boom:.82,snap:.90,decay:.30,pattern:[0,.12,.24]},
+        phys_v10:{low:98,mid:355,crack:2450,boom:.68,snap:1.16,decay:.22,pattern:[0,.08,.17]}
+      };
+      return m[type]||m.phys_v8;
+    }
+    _ensureFx(){
+      if(this.fxBus||!this.sim?.ctx)return;
+      const c=this.sim.ctx;
+      this.fxBus=c.createGain();this.fxBus.gain.value=.78;
+      const comp=c.createDynamicsCompressor();comp.threshold.value=-14;comp.knee.value=16;comp.ratio.value=4;comp.attack.value=.002;comp.release.value=.12;
+      this.fxBus.connect(comp);comp.connect(c.destination);
+    }
+    _noiseBuffer(ctx,d=.45){
+      const b=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*d),ctx.sampleRate),a=b.getChannelData(0);
+      for(let i=0;i<a.length;i++)a[i]=(Math.random()*2-1)*(1-i/a.length*.18);
+      return b;
+    }
+    _oneBang(type,strength=1,delay=0){
+      if(!this.sim?.ctx)return;this._ensureFx();
+      const c=this.sim.ctx, st=this._popStyle(type), t=c.currentTime+delay;
+      const global=clamp(strength,0,1.45)*(+ui.volume.value)*(.55+.65*(+ui.exhaust.value));
+      // Deep exhaust pressure wave: the audible "BOOM".
+      const o=c.createOscillator(),og=c.createGain();o.type='sine';o.frequency.setValueAtTime(st.low*1.18,t);o.frequency.exponentialRampToValueAtTime(st.low*.66,t+st.decay);
+      og.gain.setValueAtTime(.0001,t);og.gain.exponentialRampToValueAtTime(.34*st.boom*global,t+.008);og.gain.exponentialRampToValueAtTime(.0001,t+st.decay);
+      o.connect(og);og.connect(this.fxBus);o.start(t);o.stop(t+st.decay+.04);
+      // Exhaust body / pressure burst.
+      const n=c.createBufferSource(),nf=c.createBiquadFilter(),ng=c.createGain();n.buffer=this._noiseBuffer(c,st.decay+.12);nf.type='bandpass';nf.frequency.value=st.mid*(.9+Math.random()*.22);nf.Q.value=.78;
+      ng.gain.setValueAtTime(.0001,t);ng.gain.exponentialRampToValueAtTime(.24*st.boom*global,t+.004);ng.gain.exponentialRampToValueAtTime(.0001,t+st.decay*.82);
+      n.connect(nf);nf.connect(ng);ng.connect(this.fxBus);n.start(t);n.stop(t+st.decay+.1);
+      // Sharp tailpipe crack.
+      const n2=c.createBufferSource(),hf=c.createBiquadFilter(),hg=c.createGain();n2.buffer=this._noiseBuffer(c,.18);hf.type='highpass';hf.frequency.value=st.crack*(.86+Math.random()*.28);hf.Q.value=.35;
+      hg.gain.setValueAtTime(.0001,t);hg.gain.exponentialRampToValueAtTime(.11*st.snap*global,t+.002);hg.gain.exponentialRampToValueAtTime(.0001,t+.055+Math.random()*.055);
+      n2.connect(hf);hf.connect(hg);hg.connect(this.fxBus);n2.start(t);n2.stop(t+.2);
+    }
+    _popBurst(type,strength=1,reason='lift'){
+      if(!this.sim||ui.popMode?.value==='off')return;
+      const mode=ui.popMode?.value||'sport', st=this._popStyle(type);
+      const modeGain=mode==='natural'?.60:mode==='wild'?1.24:1.0;
+      let pat=st.pattern.slice();
+      if(mode==='natural')pat=pat.slice(0,1);
+      if(mode==='wild')pat=pat.concat(pat.map(x=>x+.25)).slice(0,5);
+      if(reason==='downshift')pat=[0,.075];
+      pat.forEach((d,i)=>this._oneBang(type,strength*modeGain*(1-i*.09),d));
+    }
+    _startStyle(type){
+      const m={
+        amg_gt63:{starter:62,flare:.70,boom:.92,settle:.13},
+        mclaren_720s:{starter:80,flare:.84,boom:.64,settle:.09},
+        bmw_m3:{starter:72,flare:.62,boom:.50,settle:.09},
+        ferrari_458:{starter:90,flare:.92,boom:.52,settle:.07},
+        ferrari_v12:{starter:92,flare:.82,boom:.50,settle:.08},
+        porsche_911gt3:{starter:84,flare:.82,boom:.48,settle:.08},
+        phys_v8:{starter:62,flare:.68,boom:.78,settle:.13},
+        phys_v8tt:{starter:66,flare:.68,boom:.74,settle:.12},
+        phys_i6:{starter:72,flare:.58,boom:.50,settle:.09},
+        phys_v10:{starter:90,flare:.84,boom:.52,settle:.08}
+      };
+      return m[type]||m.phys_v8;
+    }
+    _starterSound(type){
+      if(!this.sim?.ctx)return;this._ensureFx();
+      const c=this.sim.ctx,st=this._startStyle(type),t=c.currentTime;
+      const o=c.createOscillator(),g=c.createGain(),f=c.createBiquadFilter();
+      o.type='sawtooth';o.frequency.setValueAtTime(st.starter,t);o.frequency.exponentialRampToValueAtTime(st.starter*1.55,t+.48);
+      f.type='lowpass';f.frequency.value=520;f.Q.value=.8;
+      g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.075*(+ui.volume.value),t+.035);g.gain.setValueAtTime(.068*(+ui.volume.value),t+.36);g.gain.exponentialRampToValueAtTime(.0001,t+.64);
+      o.connect(f);f.connect(g);g.connect(this.fxBus);o.start(t);o.stop(t+.68);
+      const n=c.createBufferSource(),nf=c.createBiquadFilter(),ng=c.createGain();n.buffer=this._noiseBuffer(c,.66);nf.type='bandpass';nf.frequency.value=410;nf.Q.value=.55;
+      ng.gain.setValueAtTime(.0001,t);ng.gain.exponentialRampToValueAtTime(.045*(+ui.volume.value),t+.025);ng.gain.exponentialRampToValueAtTime(.0001,t+.62);
+      n.connect(nf);nf.connect(ng);ng.connect(this.fxBus);n.start(t);n.stop(t+.66);
+    }
+    _finishSequence(){
+      if(!this.sequence)return;
+      this.sequence=null;
+      try{if(this.sim){this.sim.setThrottle(0);this.sim.setBrake(.55);if(this.sim.setClutch)this.sim.setClutch(0);if(this.sim.setAutoShift)this.sim.setAutoShift(true);}}catch(e){}
+      if(ui.sampleStatus)ui.sampleStatus.textContent='Physical Engine جاهز — Model Profiles + Cold Start + Rev Demo جاهزة للتجربة.';
+    }
+    async coldStart(){
+      await this.start();
+      if(!this.sim||!this._isPhysical(this.engineKey)){this.fallback.transient('downshift',.8);return;}
+      this._finishSequence();
+      this.sequence={kind:'cold',start:performance.now(),events:{},type:this.engineKey,token:++this.sequenceToken};
+      try{if(this.sim.setAutoShift)this.sim.setAutoShift(false);if(this.sim.setClutch)this.sim.setClutch(1);if(this.sim.setBrake)this.sim.setBrake(1);}catch(e){}
+      this._starterSound(this.engineKey);
+      if(ui.sampleStatus)ui.sampleStatus.textContent='Cold Start… ستسمع السلف ثم flare قصير واستقرار الـIdle.';
+    }
+    async revDemo(){
+      await this.start();
+      if(!this.sim||!this._isPhysical(this.engineKey)){this.fallback.transient('upshift',1);return;}
+      this._finishSequence();
+      this.sequence={kind:'rev',start:performance.now(),events:{},type:this.engineKey,token:++this.sequenceToken};
+      try{if(this.sim.setAutoShift)this.sim.setAutoShift(false);if(this.sim.setClutch)this.sim.setClutch(1);if(this.sim.setBrake)this.sim.setBrake(1);}catch(e){}
+      if(ui.sampleStatus)ui.sampleStatus.textContent='Rev + Bangs Demo… ارفع الصوت قليلًا لسماع الـBOOM والـcrackles بوضوح.';
+    }
+    _profileFor(type){return this._styleFor(type).profile;}
+    _isPhysical(type){return type.startsWith('phys_')||['amg_gt63','mclaren_720s','bmw_m3','ferrari_458','ferrari_v12','porsche_911gt3'].includes(type);}
+    _applyStyle(type){
+      if(!this.sim)return;
+      const st=this._styleFor(type);
+      try{
+        if(this.sim.setVehicle)this.sim.setVehicle(st.vehicle);
+        this._applyModelParams(type);
+        // Re-design the virtual gearbox after gear-count / torque changes.
+        if(this.sim.setVehicleProfile&&this.sim.vehicle)this.sim.setVehicleProfile(this.sim.vehicle);
+        if(this.sim.setTone)this.sim.setTone(st.tone);
+        if(this.sim.setDynamics)this.sim.setDynamics(st.dynamics);
+        if(this.sim.setWidth)this.sim.setWidth(st.width);
+        if(this.sim.setReverb)this.sim.setReverb(st.reverb);
+        if(this.sim.setInputs)this.sim.setInputs(st.inputs);
+      }catch(e){console.warn('style apply',e);}
+    }
+    async _load(){
+      if(this.sim||this.failed)return;
+      if(this.loading)return this.loading;
+      this.loading=(async()=>{
+        try{
+          if(ui.sampleStatus)ui.sampleStatus.textContent='تحميل محرك الاحتراق الفيزيائي…';
+          const mod=await import(this.moduleUrl);
+          this.EngineSim=mod.EngineSim;
+          const C=window.AudioContext||window.webkitAudioContext;
+          if(!C)throw new Error('Web Audio غير مدعوم');
+          const ctx=new C();
+          const initialStyle=this._styleFor(ui.engineType.value);
+          this.sim=new this.EngineSim(ctx,{engine:initialStyle.profile,vehicle:initialStyle.vehicle,volume:+ui.volume.value,perspective:'exterior'});
+          if(this.sim.setAutoShift)this.sim.setAutoShift(true);
+          this._applyStyle(ui.engineType.value);
+          await this.sim.start();
+          this.running=true;this.engineKey=ui.engineType.value;
+          if(ui.sampleStatus)ui.sampleStatus.textContent='Physical Engine جاهز — الاشتعال والعادم والـdrivetrain يتم توليدها في الزمن الحقيقي.';
+        }catch(e){
+          console.warn('Physical Engine unavailable, using fallback',e);
+          this.failed=true;this.sim=null;
+          await this.fallback.start();this.running=true;
+          if(ui.sampleStatus)ui.sampleStatus.textContent='تعذر تحميل Physical Engine؛ تم تشغيل الصوت الاحتياطي. جرّب الصفحة عبر HTTPS مع اتصال إنترنت.';
+        }
+      })();
+      return this.loading;
+    }
+    async start(){
+      if(this._isPhysical(ui.engineType.value)){
+        await this._load();
+        if(this.sim && this.sim.ctx?.state==='suspended')await this.sim.ctx.resume();
+      }else{
+        await this.fallback.start();this.running=true;
+      }
+    }
+    async setEngine(type){
+      this.engineKey=type;
+      if(this._isPhysical(type)){
+        if(!this.sim && !this.failed)await this._load();
+        if(this.sim && this.sim.setEngineType){
+          try{this.sim.setEngineType(this._profileFor(type));this._applyStyle(type);}catch(e){console.warn(e);}
+        }
+      }
+    }
+    transient(kind,strength){
+      if(this._isPhysical(this.engineKey)&&this.sim){
+        if(kind==='downshift' && ui.popMode?.value!=='off')this._popBurst(this.engineKey,clamp(strength*1.05,.45,1.2),'downshift');
+        return;
+      }
+      this.fallback.transient(kind,strength);
+    }
+    update(rpm,thr,type,isDecel,shiftCut,boostAmount,roadSpeed=0,roadAccel=0){
+      this.engineKey=type;
+      if(this._isPhysical(type)&&this.sim){
+        const now=performance.now();const dt=Math.min(.05,Math.max(.005,(now-this.lastT)/1000));this.lastT=now;
+        const st=this.sim.getState?this.sim.getState():null;
+        const simSpeed=st?.speedKmh||0;
+        const err=roadSpeed-simSpeed;
+        let gas=clamp(thr+Math.max(0,err)*.022,0,1);
+        let brake=err<-.8?clamp((-err)/22,0,1):0;
+        if(roadAccel<-.25)brake=Math.max(brake,clamp(-roadAccel/5,0,.75));
+        if(roadSpeed<.8){gas=0;brake=Math.max(brake,.28);}
+        try{
+          // Stationary showcase sequences. Clutch pedal is held down so the engine can rev without moving the virtual car.
+          if(this.sequence){
+            const age=(now-this.sequence.start)/1000,ev=this.sequence.events,sty=this._startStyle(type);
+            if(this.sim.setAutoShift)this.sim.setAutoShift(false);
+            if(this.sim.setClutch)this.sim.setClutch(1);
+            brake=1;
+            if(this.sequence.kind==='cold'){
+              if(age<.48)gas=.015;
+              else if(age<.90)gas=lerp(.08,sty.flare,(age-.48)/.42);
+              else if(age<1.45)gas=lerp(sty.flare,.16,(age-.90)/.55);
+              else if(age<2.45)gas=.08+Math.sin(age*9)*.018;
+              else gas=.035;
+              if(age>.52&&!ev.ignite){ev.ignite=1;this._oneBang(type,sty.boom*.72,.02);}
+              if(age>.98&&!ev.cough){ev.cough=1;this._oneBang(type,sty.boom*.44,.03);}
+              if(age>3.0)this._finishSequence();
+            }else if(this.sequence.kind==='rev'){
+              // Two revs with a full lift in between, to expose each profile's overrun character.
+              if(age<.35)gas=.05;
+              else if(age<1.00)gas=lerp(.08,.86,(age-.35)/.65);
+              else if(age<1.42)gas=lerp(.86,.02,(age-1.00)/.42);
+              else if(age<1.95)gas=.025;
+              else if(age<2.60)gas=lerp(.06,.76,(age-1.95)/.65);
+              else if(age<3.02)gas=lerp(.76,.015,(age-2.60)/.42);
+              else gas=.025;
+              if(age>1.16&&!ev.pop1){ev.pop1=1;this._popBurst(type,1.02,'lift');}
+              if(age>2.78&&!ev.pop2){ev.pop2=1;this._popBurst(type,1.10,'lift');}
+              if(age>3.65)this._finishSequence();
+            }
+          }
+          this.sim.setThrottle(gas);this.sim.setBrake(brake);
+          this.sim.setVolume(+ui.volume.value);
+          const style=this._styleFor(type), bi=style.inputs, bt=style.tone;
+          if(this.sim.setInputs)this.sim.setInputs({
+            aggression:clamp(bi.aggression*(.62+.58*(+ui.exhaust.value)),0,1),
+            roughness:clamp(bi.roughness+(.045*(1-thr)),0,.22),
+            strain:clamp(bi.strain+thr*.09,0,.32),distance:bi.distance,environment:ui.sceneType?.value==='tunnel'?.92:(ui.sceneType?.value==='city'?.18:0)
+          });
+          if(this.sim.setTone)this.sim.setTone({
+            rumble:clamp(bt.rumble*(.90+.18*(+ui.exhaust.value)),.45,1.45),
+            brightness:clamp(bt.brightness*(isDecel?1.08:(.90+.18*thr)),.55,1.65),
+            punch:clamp(bt.punch*(isDecel?.88:(.90+.18*(+ui.exhaust.value))),.50,1.50)
+          });
+          this.sim.update(dt);
+          // Pops & Bangs: only on a real lift/overrun, never as a constant machine-gun loop.
+          const nowMs=performance.now(), throttleDrop=this.lastPopThrottle-thr;
+          const mode=ui.popMode?.value||'sport';
+          const minGap=mode==='wild'?190:mode==='natural'?650:330;
+          const minRpm=mode==='natural'?2900:2200;
+          if(!this.sequence && ui.popMode?.value!=='off' && isDecel && rpm>minRpm && (throttleDrop>.16 || thr<.16) && nowMs-this.lastPopAt>minGap){
+            const rpmEnergy=clamp((rpm-minRpm)/4200,0,1);
+            const liftEnergy=clamp(throttleDrop*1.8 + Math.max(0,-roadAccel)*.12 + .28,0,1.15);
+            let chance=mode==='wild'?.92:mode==='natural'?.36:.68;
+            const brandBias=this.engineKey==='amg_gt63'?1.18:this.engineKey==='ferrari_458'?.90:this.engineKey==='porsche_911gt3'?.82:1;
+            if(Math.random()<chance*brandBias){
+              this._popBurst(type,clamp(.58+rpmEnergy*.38+liftEnergy*.28,.55,1.22),'lift');this.lastPopAt=nowMs;
+            }
+          }
+          this.lastPopThrottle=thr;
+        }catch(e){console.warn('EngineSim update',e);}
+        return;
+      }
+      const legacyType=type==='hyper'?'hyper':'v8';
+      this.fallback.update(rpm,thr,legacyType,isDecel,shiftCut,boostAmount);
+    }
+    getState(){
+      if(this.sim&&this._isPhysical(this.engineKey)){try{return this.sim.getState();}catch(e){}}
+      return null;
+    }
+  }
+  const audio=new PhysicalEngineAudio(new EngineAudio());
 
   function haversine(a,b){const R=6371000,r=Math.PI/180,dLat=(b.lat-a.lat)*r,dLon=(b.lon-a.lon)*r;const x=Math.sin(dLat/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(x));}
 
@@ -1200,15 +1648,7 @@
       const q=gpsQuality(acc);
       ui.accuracy.textContent=Math.round(acc)+' m • '+q.label;
       setGpsStatus('GPS متصل • '+q.label+' • '+Math.round(acc)+' م',q.ok);syncSourceLabel();
-      if(!drivingView){
-        const wallNow=Date.now();
-        if(wallNow-lastLightCheckAt>60000){
-          lastLightCheckAt=wallNow;
-          applyImmediateLightScene(lat,lon).then(()=>refreshLiveWeather(lat,lon,false));
-        }else{
-          refreshLiveWeather(lat,lon,false);
-        }
-      }
+      applyImmediateLightScene(lat,lon).then(()=>refreshLiveWeather(lat,lon,false));
     }
     if(!Number.isFinite(lat)||!Number.isFinite(lon))return;
 
@@ -1393,11 +1833,11 @@
   function syncWeatherButton(){if(!ui.weatherAutoBtn)return;ui.weatherAutoBtn.classList.toggle('active',weatherAuto);ui.weatherAutoBtn.textContent='الطقس التلقائي: '+(weatherAuto?'يعمل':'متوقف');}
   let drivingDisplay=localStorage.getItem('drivetone.displayMode')||'road';
   let dashboardTheme=localStorage.getItem('drivetone.dashboardTheme')||'blue';
-  if(localStorage.getItem('drivetone.dashboardMigration')!=='v5.13'){
+  if(localStorage.getItem('drivetone.dashboardMigration')!=='v4.6'){
     dashboardTheme='blue';drivingDisplay='dashboard';
     localStorage.setItem('drivetone.dashboardTheme','blue');
     localStorage.setItem('drivetone.displayMode','dashboard');
-    localStorage.setItem('drivetone.dashboardMigration','v5.13');
+    localStorage.setItem('drivetone.dashboardMigration','v4.6');
   }
   function applyDrivingDisplay(mode){
     drivingDisplay=mode==='dashboard'?'dashboard':'road';
@@ -1487,7 +1927,6 @@
   }
   async function enterDrivingView(){
     drivingView=true;document.body.classList.add('driving-mode');document.body.classList.toggle('dashboard-mode',drivingDisplay==='dashboard');ui.driveHud.setAttribute('aria-hidden','false');ui.dashboardHud?.setAttribute('aria-hidden',drivingDisplay==='dashboard'?'false':'true');syncDriveHud();renderSceneDrawer();
-    if(audio.running)await audio.enterCarMode();
     setTimeout(()=>roadViz.resize(true),60);
     await requestWakeLock();
     try{
@@ -1497,7 +1936,6 @@
   }
   async function exitDrivingView(fromFullscreen=false){
     drivingView=false;document.body.classList.remove('driving-mode','dashboard-mode');ui.driveHud.setAttribute('aria-hidden','true');ui.dashboardHud?.setAttribute('aria-hidden','true');closeSceneDrawer();await releaseWakeLock();
-    if(audio.running)audio.exitCarMode().catch(()=>{});
     try{if(screen.orientation?.unlock)screen.orientation.unlock();}catch(e){}
     try{if(!fromFullscreen && document.fullscreenElement && document.exitFullscreen)await document.exitFullscreen();}catch(e){}
   }
@@ -1515,23 +1953,9 @@
     await requestGps();
   };
   $('demoBtn').onclick=()=>{demo=true;resetGpsFilter();targetSpeed=+ui.demoSpeed.value;$('demoBtn').classList.add('active');$('startGps').classList.remove('active');syncSourceLabel();syncDriveHud();};
-  $('startAudio').onclick=async()=>{
-    if(audio.running){
-      audio.media.pause();audio.running=false;
-      $('startAudio').textContent='▶ تشغيل محرك Mini الحقيقي';
-      $('startAudio').classList.add('pulse');
-      syncDriveHud();
-      return;
-    }
-    await audio.start();
-    if(audio.running){
-      $('startAudio').textContent='⏸ إيقاف الصوت';
-      $('startAudio').classList.remove('pulse');
-    }
-    syncDriveHud();
-  };
-  ui.coldStartBtn.onclick=()=>{};
-  ui.revDemoBtn.onclick=()=>{};
+  $('startAudio').onclick=async()=>{await audio.start();$('startAudio').classList.remove('pulse');$('startAudio').textContent='الصوت يعمل';syncDriveHud();};
+  ui.coldStartBtn.onclick=async()=>{ui.coldStartBtn.classList.add('active');await audio.coldStart();setTimeout(()=>ui.coldStartBtn.classList.remove('active'),3200);};
+  ui.revDemoBtn.onclick=async()=>{ui.revDemoBtn.classList.add('active');await audio.revDemo();setTimeout(()=>ui.revDemoBtn.classList.remove('active'),3900);};
   ui.motionBtn.onclick=enableMotionAssist;
   ui.driveModeBtn.onclick=enterDrivingView;
   ui.exitDriveMode.onclick=()=>exitDrivingView(false);
@@ -1592,11 +2016,8 @@
     const dt=Math.min(.10,(now-lastT)/1000||.016);lastT=now;
     if(demo)targetSpeed=+ui.demoSpeed.value;
     const modeResp=modes[driveMode].response, response=.86*+ui.sensitivity.value*modeResp;
-    const followRate=demo?(response*4.2):(Math.abs(targetSpeed-speed)>8?16:10);
-    speed+=(targetSpeed-speed)*Math.min(1,dt*followRate);
-    if(!demo&&Math.abs(targetSpeed-speed)<.18)speed=targetSpeed;
+    speed+=(targetSpeed-speed)*Math.min(1,dt*response*2.55);
     accel=((speed-lastSpeed)/3.6)/Math.max(dt,.016);lastSpeed=speed;
-    tripSeconds+=dt;tripDistanceKm+=Math.max(0,speed)*dt/3600;
 
     const wanted=gearForSpeed(speed);
     if(wanted!==gear)triggerShift(wanted);
@@ -1633,24 +2054,14 @@
     const physState=audio.getState();
     if(physState){rpm=physState.rpm;gear=physState.gear||gear;boost=physState.boost??boost;}
 
-    const baseHudGap=drivingView?100:33;
-    if(now-lastBaseHudFrame>=baseHudGap){
-      lastBaseHudFrame=now;
-      ui.speed.textContent=Math.round(speed);ui.rpm.textContent=Math.round(rpm);ui.gear.textContent=gear;ui.accel.textContent=accel.toFixed(2)+' m/s²';ui.throttle.textContent=Math.round(throttle*100)+'%';ui.boost.textContent=Math.round(boost*100)+'%';
-      if(ui.visualSpeed){ui.visualSpeed.textContent=Math.round(speed);ui.visualRpm.textContent=Math.round(rpm).toLocaleString('en-US');ui.visualGear.childNodes[0].nodeValue=String(gear);ui.visualBoost.textContent=Math.round(boost*100)+'%';}
-      document.documentElement.style.setProperty('--boost',Math.round(boost*100)+'%');
-      const redline=physState?.redline||modes[driveMode].redline,prog=clamp(rpm/redline,0,1)*270;ui.gauge.style.setProperty('--p',prog+'deg');ui.gauge.classList.toggle('redline',rpm>redline*.91);
-      if(ui.visualRpmFill)ui.visualRpmFill.style.width=Math.round(clamp(rpm/redline,0,1)*100)+'%';if(ui.visualBoostFill)ui.visualBoostFill.style.width=Math.round(clamp(boost,0,1)*100)+'%';
-      ui.road.style.animationPlayState=speed>3?'running':'paused';document.documentElement.style.setProperty('--scene-speed',clamp(2.2-speed/135,.22,2.2)+'s');ui.speedGlow.style.opacity=String(clamp(speed/180,0,.9));
-    }
-    const roadFrameGap=drivingView?(drivingDisplay==='dashboard'?100:66):33;
-    if(now-lastRoadFrame>=roadFrameGap){
-      const roadDt=Math.min(.10,lastRoadFrame?(now-lastRoadFrame)/1000:dt);
-      lastRoadFrame=now;
-      roadViz.render(roadDt,speed,rpm,gear,boost,accel);
-    }
-    if(ui.dashboardHud && now-lastHudFrame>=(drivingView?100:66)){
-      lastHudFrame=now;
+    ui.speed.textContent=Math.round(speed);ui.rpm.textContent=Math.round(rpm);ui.gear.textContent=gear;ui.accel.textContent=accel.toFixed(2)+' m/s²';ui.throttle.textContent=Math.round(throttle*100)+'%';ui.boost.textContent=Math.round(boost*100)+'%';
+    if(ui.visualSpeed){ui.visualSpeed.textContent=Math.round(speed);ui.visualRpm.textContent=Math.round(rpm).toLocaleString('en-US');ui.visualGear.childNodes[0].nodeValue=String(gear);ui.visualBoost.textContent=Math.round(boost*100)+'%';}
+    document.documentElement.style.setProperty('--boost',Math.round(boost*100)+'%');
+    const redline=physState?.redline||modes[driveMode].redline,prog=clamp(rpm/redline,0,1)*270;ui.gauge.style.setProperty('--p',prog+'deg');ui.gauge.classList.toggle('redline',rpm>redline*.91);
+    if(ui.visualRpmFill)ui.visualRpmFill.style.width=Math.round(clamp(rpm/redline,0,1)*100)+'%';if(ui.visualBoostFill)ui.visualBoostFill.style.width=Math.round(clamp(boost,0,1)*100)+'%';
+    ui.road.style.animationPlayState=speed>3?'running':'paused';document.documentElement.style.setProperty('--scene-speed',clamp(2.2-speed/135,.22,2.2)+'s');ui.speedGlow.style.opacity=String(clamp(speed/180,0,.9));
+    roadViz.render(dt,speed,rpm,gear,boost,accel);
+    if(ui.dashboardHud){
       const sp=Math.round(speed),rp=Math.round(rpm),th=Math.round(throttle*100),bo=Math.round(boost*100);
       ui.dashboardHud.style.setProperty('--dashSpeedPct',Math.round(clamp(speed/240,0,1)*75)+'%');
       ui.dashboardHud.style.setProperty('--dashRpmPct',Math.round(clamp(rpm/8000,0,1)*75)+'%');
@@ -1664,6 +2075,7 @@
       if(ui.dashNeonRpmValue)ui.dashNeonRpmValue.textContent=(rp/1000).toFixed(1);
       if(ui.dashNeonSegments){const active=Math.round(clamp(rp/8000,0,1)*8);[...ui.dashNeonSegments.children].forEach((el,i)=>el.classList.toggle('on',i<active));}
       if(ui.blueClassic){
+        tripSeconds+=dt;tripDistanceKm+=Math.max(0,speed)*dt/3600;
         const avg=tripSeconds>1?tripDistanceKm/(tripSeconds/3600):0;
         ui.blueSpeed.textContent=sp;
         ui.blueRpm.textContent=rp+' RPM';
